@@ -2,7 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ asset('styles/frontPage.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v15.0" nonce="7RTev8in"></script>
     <title>Odense Danse Center</title>
 </head>
 
@@ -49,6 +53,36 @@
             <a href="/"><li class="navBarActive">Forside</li></a>
         </ul>
     </header>
+
+<main>
+    <article>
+        <h1 class="welcomeh1">Velkommen til Odense Danse Centers hjemmeside</h1>
+        <h2>Den er ikke helt færdig, men vi arbejer på det</h2>
+    </article>
+
+
+    <article class="splitInfoBox">
+        <div class="leftInfoColumn">
+            <h1>Her er noget</h1>
+            Her er plads til en masse god tekst om hvad vi laver. <br><br>
+            Eller måske et billede af noget spændende?<br>
+            <img src="{{asset("teacherDescriptionsAndPictures/SimonA.jpg")}}">
+            <img src="{{asset("teacherDescriptionsAndPictures/SimonH.jpg")}}">
+        </div>
+
+        <div class="middleFiller">
+
+        </div>
+
+        <div class="fb-container">
+            <div class="fb-page" data-href="https://www.facebook.com/OdenseDanseCenter" data-tabs="timeline" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                <blockquote cite="https://www.facebook.com/OdenseDanseCenter" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/OdenseDanseCenter">Odense Danse Center - ODC</a>
+                </blockquote>
+            </div>
+        </div>
+    </article>
+</main>
 
 </body>
 
