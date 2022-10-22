@@ -14,4 +14,4 @@ jobs:
         server: linux296.unoeuro.com
         username: madswp.dk
         password: ${{ secrets.ftp_password }}
-        server-dir: /var/www/madswp.dk/odc_website/laravel/
+        server-dir: /odc_website/laravel/
