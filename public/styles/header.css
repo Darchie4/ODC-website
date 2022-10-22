@@ -4,7 +4,7 @@ body {
 
 header > ul > a > li, header > ul > div > a > li  {
     padding: 22px 30px 23px;
-    font-size: 1.5vw;
+    font-size: max(22px, 1.6vw);
 }
 header > ul {
     float: right;
@@ -75,7 +75,7 @@ header {
     background-color: rgb(6, 54, 102);
     display: none;
     position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 .aboutUsDropdown-content a {
