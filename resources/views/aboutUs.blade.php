@@ -49,7 +49,7 @@
         <a href="/"><li>Forside</li></a>
     </ul>
 </header>
-
+<h1>ODC er en danseskole</h1>
 <a>Dimmer</a>
 
 </body>
