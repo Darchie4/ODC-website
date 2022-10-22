@@ -1,0 +1,12 @@
+hr {
+    background-color: rgb(41, 128, 187);
+    border: rgb(41, 128, 187);
+    color: rgb(41, 128, 187);
+    height: 3px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+
+}

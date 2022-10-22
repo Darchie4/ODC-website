@@ -1,0 +1,168 @@
+article {
+    max-width: 69%;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 20px;
+
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navbarTittle {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fffcfb;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navBoarder {
+    padding: 5px;
+    background-color: rgb(6, 54, 102);
+    border-radius: 5px;
+}
+
+nav {
+    position: fixed;
+    margin-top: 7%;
+    float: left;
+    width: 11%;
+    max-width: 250px;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+nav > div > ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+nav > div > ul > li > a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav > div > ul > li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+nav > div > ul > li:last-child {
+    border-bottom: none;
+}
+
+/* lesson colors */
+.scheduleTableElement {
+    background-color: #cbd5e0;
+}
+
+/*
+.childDance{
+    background-color:#ffcb2f
+}
+
+.ballet {
+    background-color:#fd6864
+}
+
+.hipHop {
+    background-color:#67fd9a
+}
+
+.kPop {
+    background-color: #7CFC00FF;
+}
+
+.mgpDance {
+    background-color:#34ff34;
+}
+
+.showDance {
+    background-color:#32cb00;
+}
+
+.modern {
+    background-color: #925aff;
+}
+
+.tikTok {
+    background-color: #a17bff;
+
+}
+
+.couplesDance {
+    background-color:#34cdf9
+}
+
+.sportsDance {
+    background-color:#68cbd0
+}
+
+.studyDance {
+    background-color:#007799
+}
+
+.danceFit {
+    background-color:#fb88ff
+}
+
+.funkyMoms {
+    background-color:#ff00f2
+}
+ */
+
+/* Making tables look pretty  */
+td > a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.tg td{
+    padding: 10px 5px;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    overflow:hidden;
+    word-break:normal;
+    text-align: center;
+}
+.tg th{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+.tg .scheduleTableHead{
+    border-color:inherit;
+    font-size:20px;
+    font-weight:bold;
+    text-align:left;
+    vertical-align:top
+}
+.tg .scheduleTableElement{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top;
+    font-size: 17px;
+}
