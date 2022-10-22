@@ -1,2 +1,4 @@
-Her er noget tekst i en fil! <br><br>
-<h1>HER ER EN H1</h1>
+<h1>Det her tekst er læst ind fra en fil</h1>
+
+Det gør det super nemt for enhver at skrive en beskrivelse! <br>
+Så skal man bare lige hurtigt tilføje lidt HTML tags og så er det smukt.
