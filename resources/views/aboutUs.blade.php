@@ -50,6 +50,7 @@
     </ul>
 </header>
 <h1>ODC er en danseskole</h1>
+<h2>Og den er faktisk ret god</h2>
 <a>Dimmer</a>
 
 </body>
