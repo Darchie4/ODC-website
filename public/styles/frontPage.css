@@ -1,0 +1,39 @@
+main {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+.splitInfoBox {
+    display: flex;
+}
+
+.leftInfoColumn {
+    left: 0;
+    background-color: rgba(41, 128, 187, 0.84);
+    display: block;
+    width: 49%;
+    height: 50%;
+    border-radius: 4px;
+}
+
+.fb-container {
+    display: block;
+    width: 49%;
+}
+
+.middleFiller {
+    width: 2%;
+}
+
+.fb-page {
+    margin-left: 6%;
+}
+
+article > h1 {
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+}
+img {
+    max-width: 200px;
+}
