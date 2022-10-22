@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teachers.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
@@ -54,11 +55,20 @@
 </header>
 
 <article>
+    <h1>Undervisere</h1>
+    Her hos ODC har vi mange super dygtige undervisere, her kan du læse lidt om dem.
+    <br><br>
     @foreach($teachers as $teacher)
         <div class="teacherContainer">
-            <h1>{{$teacher -> name}}</h1>
-            {!! $teacher -> description !!}
+            <div class="teacherTextContainer">
+                <h1 class="teacherName">{{$teacher -> name}}</h1>
+                {!! $teacher -> description !!}
+            </div>
+            <div class="teacherImgContainer">
+                <img class="teacherImg" src="{{asset("teacherDescriptionsAndPictures/" . $teacher-> imgName)}}" alt="Billede af: {{$teacher-> name}}">
+            </div>
         </div>
+        <hr>
     @endforeach
 
 

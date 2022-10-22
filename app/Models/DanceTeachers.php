@@ -19,9 +19,7 @@ class DanceTeachers extends Model
     protected $fillable = ['name', 'description', 'imgName'];
 
     /**
-     * @param String $name
-     * @param String $description
-     * @param String $imgName
+     * @return array
      */
 
 
