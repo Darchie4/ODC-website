@@ -66,8 +66,8 @@
             <h1>Her er noget</h1>
             Her er plads til en masse god tekst om hvad vi laver. <br><br>
             Eller måske et billede af noget spændende?<br>
-            <img src="{{asset("teacherDescriptionsAndPictures/SimonA.jpg")}}">
-            <img src="{{asset("teacherDescriptionsAndPictures/SimonH.jpg")}}">
+            <img src="{{asset("teacherDescriptionsAndPictures/simonA.jpg")}}" alt="Et godt billede">
+            <img src="{{asset("teacherDescriptionsAndPictures/simonH.jpg")}}" alt="Endnu et godt billede">
         </div>
 
         <div class="middleFiller">
