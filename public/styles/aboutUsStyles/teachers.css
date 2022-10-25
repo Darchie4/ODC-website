@@ -1,22 +1,22 @@
-.teacherContainer {
-    background-color: rgba(41, 128, 187, 0.82);
+.teachersRowContainer {
+    width: 100%;
     display: flex;
+}
+
+.teacherContainer {
     border-radius: 4px;
+    width: 20%;
 }
 .teacherTextContainer {
     margin-left: 2%;
     margin-bottom: 2%;
-    width: 75%;
 }
 .teacherImgContainer {
-    height: 100%;
-    width: 25%;
+
 }
 .teacherImg {
-    vertical-align: middle;
+    margin-top: 5%;
     display: block;
-    padding-top: 5%;
-    padding-bottom: 5%;
     margin-left: auto;
     margin-right: auto;
     max-width: min(262px, 90%);
@@ -24,6 +24,14 @@
 }
 
 .teacherName {
-    margin-left: 35%;
+    margin-left: 10%;
+}
+h1 {
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-left: auto;
     margin-right: auto;
+}
+.teachersContainer {
+    display: block;
 }
