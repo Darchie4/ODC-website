@@ -1,0 +1,20 @@
+simonA:
+  name: "Simon Andersen"
+  teacherID: "simonA"
+  imgType: ".jpg"
+simonH:
+  name: "Simon Horsleben"
+  teacherID: "simonH"
+  imgType: ".jpg"
+frederik:
+  name: "Frederik Bjerring"
+  teacherID: "frederik"
+  imgType: ".png"
+claudia:
+  name: "Claudia L Haugaard"
+  teacherID: "claudia"
+  imgType: ".jpg"
+summer:
+  name: "Summer Lindberg"
+  teacherID: "summer"
+  imgType: ".jpg"

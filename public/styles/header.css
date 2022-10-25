@@ -4,7 +4,7 @@ body {
 
 header > ul > a > li, header > ul > div > a > li  {
     padding: 22px 30px 23px;
-    font-size: max(22px, 1.6vw);
+    font-size: max(16px, 1.2vw);
 }
 header > ul {
     float: right;
@@ -43,7 +43,7 @@ header > ul > a > li:hover, header > ul > div > a > li:hover, .dropdown-element:
 
 .dropdown-element {
     padding: 11px 15px 11px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 
