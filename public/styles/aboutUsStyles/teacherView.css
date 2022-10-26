@@ -8,13 +8,18 @@ section {
 .teacherContainer {
     display: flex;
     margin-left: 0;
+
 }
 .teacherText {
-    margin-left: 4%;
-    width: 50%
+    margin-left: 2%;
+    width: 75%
 }
+.teacherImgContainer {
+    width: 25%;
+}
+
 .teacherImg {
-    width: 200px;
+    width: 100%;
 }
 
 .teacherName {
