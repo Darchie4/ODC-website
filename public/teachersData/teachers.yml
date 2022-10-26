@@ -2,19 +2,43 @@ simonA:
   name: "Simon Andersen"
   teacherID: "simonA"
   imgType: ".jpg"
+  lessons:
+    - "Pardans - begynder"
+    - "Pardans - Let Øvet"
+    - "Studiedans"
 simonH:
   name: "Simon Horsleben"
   teacherID: "simonH"
   imgType: ".jpg"
+  lessons:
+    - "Pardans - Let Øvet"
+    - "Pardans - Let Øvet"
+    - "Pardans - Øvet / Rutineret"
+    - "Pardans - Øvet / Rutineret"
+    - "Sportsdans"
+    - "Sportsdans"
+    - "Studiedans"
 frederik:
   name: "Frederik Bjerring"
   teacherID: "frederik"
   imgType: ".png"
+  lessons:
+    - "Pardans - begynder"
+    - "Pardans - Let Øvet"
+    - "Studiedans"
 claudia:
   name: "Claudia Haugaard"
   teacherID: "claudia"
   imgType: ".jpg"
+  lessons: []
 summer:
   name: "Summer Lindberg"
   teacherID: "summer"
   imgType: ".jpg"
+  lessons:
+    - "Showhold 1,2,3 & K-pop"
+    - "Showhold 1,2,3 & K-pop"
+    - "Showhold 1,2,3 & K-pop"
+    - "Showhold 1,2,3 & K-pop"
+    - "Showhold 1,2,3 & K-pop"
+    - "Showhold 1,2,3 & K-pop"

@@ -2,9 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teachers.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teacherView.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/golbal.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <title>Odense Danse Center</title>
@@ -96,36 +95,30 @@
     </ul>
 </header>
 
-<article>
-    <h1>Undervisere</h1>
-    Her hos ODC har vi mange super dygtige undervisere, her kan du læse lidt om dem.
-    <br><br>
-    <div class="teachersContainer">
-        @foreach($teachers as $teacher)
-            @if($loop->index % 4 == 0)
-                <div class="teachersRowContainer">
-            @endif
-            <div class="teacherContainer">
-                <a href="/aboutUs/teacherView/{{$teacher -> teacherID}}">
-                <div class="teacherImgContainer">
-                    <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher-> imgName)}}"
-                         alt="Billede af: {{$teacher-> name}}">
-                </div>
-                <h1 class="teacherName">{{$teacher -> name}}</h1>
-                {!! $teacher -> shortDescription !!}
-                </a>
-            </div>
-            @if(($loop->index+1)%4 == 0 && $loop->index != 0 || $loop -> last == 1)
-                </div>
-                <hr>
-            @else
-                <hr>
-            @endif
-        @endforeach
-    </div>
+<section>
+    <article class="teacherContainer">
+        <div class="teacherImgContainer">
+            <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher-> imgName)}}"
+                 alt="Billede af: {{$teacher-> name}}">
+        </div>
+        <div class="teacherText">
+            <h1 class="teacherName">{{$teacher -> name}}</h1>
+            <h2>Underviser på:</h2>
+            <ul>
+            @foreach($teacher ->lessons as $lesson)
+                    <li>{{$lesson}}</li>
+                @endforeach
+            </ul>
+        </div>
+    </article>
+    <article class="teacherDescription">
+        <h2 class="aboutTittle">Lidt om {{strtok($teacher -> name, " ")}}</h2>
+        <p>{!! $teacher -> longDescription !!}</p>
+    </article>
 
 
-</article>
+
+</section>
 
 
 </body>
