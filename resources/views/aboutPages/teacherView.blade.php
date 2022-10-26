@@ -110,6 +110,7 @@
                 @endforeach
             </ul>
         </div>
+        Her er en ændring
     </article>
     <article class="teacherDescription">
         <h2 class="aboutTittle">Lidt om {{strtok($teacher -> name, " ")}}</h2>
