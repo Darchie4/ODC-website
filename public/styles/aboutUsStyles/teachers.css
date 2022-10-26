@@ -1,3 +1,8 @@
+article {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .teachersRowContainer {
     width: 100%;
     display: flex;
@@ -12,14 +17,13 @@
     margin-left: 2%;
     margin-bottom: 2%;
 }
-.teacherImgContainer {
 
-}
 .teacherImg {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 5%;
     max-width: min(262px, 100%);
-    max-height: 90%;
 }
 
 .teacherName {
@@ -36,5 +40,9 @@ h1 {
 }
 hr {
     margin: 10px;
+}
 
+a {
+    text-decoration: none;
+    color: black;
 }

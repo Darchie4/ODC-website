@@ -30,6 +30,10 @@ Route::get('/aboutUs/teachers', function () {
     $teachers = App\Models\DanceTeachers::getAllTeachers();
     return view('aboutPages/teachers', ["teachers"=>$teachers]);
 });
+Route::get('/aboutUs/teacherView/{teacherID}', function ($teacherID) {
+    $teacher = App\Models\DanceTeachers::getTeacher($teacherID);
+    return view('aboutPages/teacherView', ["teacher"=>$teacher]);
+});
 Route::get('/aboutUs/board', function () {
     return view('aboutPages/board');
 });

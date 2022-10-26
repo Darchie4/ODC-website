@@ -1,0 +1,47 @@
+section {
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: 0 20px 40px rgba(4, 31, 61, 0.5);
+    padding: 3% 3% 1%;
+}
+.teacherContainer {
+    display: flex;
+    margin-left: 0;
+}
+.teacherText {
+    margin-left: 4%;
+    width: 50%
+}
+.teacherImg {
+    width: 200px;
+}
+
+.teacherName {
+    color: rgb(41, 128, 187);
+    margin-top: 0;
+    margin-bottom: 1%;
+    font-size: 50px;
+}
+li {
+    font-size: 17px;
+}
+.teacherDescription {
+    font-size: 17px;
+}
+ul {
+    margin-top: 1%;
+    padding-inline-start: 20px;
+}
+h2 {
+    color: rgb(6, 54, 102);
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+.aboutTittle {
+    margin-top: .5%;
+    margin-bottom: 0;
+}
+p {
+    margin-top: 1%;
+}

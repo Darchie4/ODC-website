@@ -15,8 +15,9 @@ class DanceTeachers extends Model
     protected String $shortDescription;
     protected String $longDescription;
     protected String $imgName;
+    protected String $lessons;
 
-    protected $fillable = ['name', 'teacherID', 'shortDescription', 'shortDescription', 'imgName'];
+    protected $fillable = ['name', 'teacherID', 'shortDescription', 'longDescription', 'imgName', 'lessons'];
 
     /**
      * @return array
@@ -44,6 +45,30 @@ class DanceTeachers extends Model
         }
 
         return $teachers;
+    }
+
+    public static function getTeacher($paramTeacherID): ?DanceTeachers
+    {
+        $dir    = public_path() . '/teachersData/teachers.yml';
+
+        $teachersMap = YAML::parse(file_get_contents($dir), YAML::PARSE_OBJECT_FOR_MAP);
+        foreach ($teachersMap as $teacher){
+            if ($teacher -> teacherID != $paramTeacherID){
+                continue;
+            }
+            $fileShortDescription = file_get_contents(public_path() . '/teachersData/description/'. $teacher -> teacherID.'ShortDescription.txt');
+            $fileLongDescription = file_get_contents(public_path() . '/teachersData/description/'. $teacher -> teacherID.'LongDescription.txt');
+            return new DanceTeachers([
+                'name' => $teacher -> name,
+                'teacherID' => $teacher -> teacherID,
+                'shortDescription' => $fileShortDescription,
+                'longDescription' => $fileLongDescription,
+                'lessons' => $teacher -> lessons,
+                'imgName' => $teacher -> teacherID . $teacher -> imgType
+            ]);
+
+        }
+        return null;
     }
 
 }
