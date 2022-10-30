@@ -98,17 +98,19 @@
 <section>
     <article class="teacherContainer">
         <div class="teacherImgContainer">
-            <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher-> imgName)}}"
-                 alt="Billede af: {{$teacher-> name}}">
+            <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher -> imgName)}}"
+                 alt="Billede af: {{$teacher -> name}}">
         </div>
         <div class="teacherText">
             <h1 class="teacherName">{{$teacher -> name}}</h1>
             <h2>Underviser på:</h2>
+            <!--
             <ul>
-            @foreach($teacher ->lessons as $lesson)
-                    <li>{{$lesson}}</li>
-                @endforeach
+            @ foreach($teacher ->lessons as $lesson)
+                    <li>{}</li>
+                @ endforeach
             </ul>
+            -->
         </div>
 
     </article>

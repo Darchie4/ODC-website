@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\DanceTeachers;
+use App\Http\Controllers\DanceTeacherController;
+use App\Models\DanceTeacher;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,11 +28,11 @@ Route::get('/aboutUs', function () {
     return view('aboutUs');
 });
 Route::get('/aboutUs/teachers', function () {
-    $teachers = App\Models\DanceTeachers::getAllTeachers();
+    $teachers = DanceTeacherController::getAllTeachers();
     return view('aboutPages/teachers', ["teachers"=>$teachers]);
 });
 Route::get('/aboutUs/teacherView/{teacherID}', function ($teacherID) {
-    $teacher = App\Models\DanceTeachers::getTeacher($teacherID);
+    $teacher = DanceTeacherController::getTeacher($teacherID);
     return view('aboutPages/teacherView', ["teacher"=>$teacher]);
 });
 Route::get('/aboutUs/board', function () {
