@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string("teacher_id");
             $table->foreign("teacher_id") -> references('teacherID') -> on('dance_teachers');
             $table->string("location_id");
-            $table->foreign("teacher_id") -> references('teacherID') -> on('dance_teachers');
+            $table->foreign("location_id") -> references('room_name') -> on('locations');
         });
     }
 

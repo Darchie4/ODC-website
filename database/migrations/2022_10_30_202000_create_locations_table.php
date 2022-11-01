@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('address');
-            $table->string('room_name');
+            $table->string('room_name')->unique();
         });
     }
 

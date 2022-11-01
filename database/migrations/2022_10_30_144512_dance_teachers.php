@@ -13,11 +13,11 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('dance_teachers', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
-            $table->string('teacherID');
+            $table->string('teacherID')->primary();
             $table->string('name');
             $table->string('imgName');
+            $table->unique('imgName');
             $table->string('shortDescription');
             $table->text('longDescription');
         });

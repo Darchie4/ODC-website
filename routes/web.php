@@ -38,3 +38,6 @@ Route::get('/aboutUs/teacherView/{teacherID}', function ($teacherID) {
 Route::get('/aboutUs/board', function () {
     return view('aboutPages/board');
 });
+
+Route::get('/admin/teacherIndex', [DanceTeacherController::class, 'index']);
+
