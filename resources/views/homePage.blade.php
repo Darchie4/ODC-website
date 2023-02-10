@@ -56,7 +56,7 @@
 
 <main>
     <article>
-        <img src="{{asset("img/logo/ODC_logo_blue.png")}}" alt="Odense Danse Center">
+        <img width="1200" src="{{asset("img/logo/ODC_logo_blue_white_background.jpg")}}" alt="Odense Danse Center">
     </article>
 
     <br><br><br>
