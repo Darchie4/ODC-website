@@ -50,3 +50,12 @@ article > h1 {
 .dancerImg{
     width: 35%;
 }
+
+.announcmentcontainer > h1{
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+    margin-bottom: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

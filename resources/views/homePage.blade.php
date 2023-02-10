@@ -55,17 +55,28 @@
     </header>
 
 <main>
+    <article class="announcmentcontainer">
+        <h1>Vinterferie!</h1>
+        <p>ODC holder vinterferie i uge 7, så der er desværre ingen dans <br>
+            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br></p>
+    </article>
+
     <article class="dancerContainer">
         <img class="centered dancerImg" src="{{asset("img/logo/ODC_Dancer.png")}}" alt="Odense Danse Center">
     </article>
+
+
 
     <br><br><br>
 
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
-            <h1>Vinterferie!</h1>
-            ODC holder vinterferie i uge 7, så der er desværre ingen dans <br>
-            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br>
+            <h1>Undskyld vi roder...</h1>
+            Vores hjemmeside er pt. under ombygning, så nogle ting ser halvfærdige ud og andre mangle eller ikke virke.
+
+
+
+
         </div>
 
         <div class="middleFiller">
