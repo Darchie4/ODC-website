@@ -55,7 +55,9 @@ article > h1 {
     font-size: max(22px, 3vw);
     color: rgb(41, 128, 187);
     margin-bottom: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+}
+.announcmentcontainer > p{
+    text-align: center;
+    font-size: max(22px, 1.5vw);
 }
