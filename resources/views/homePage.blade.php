@@ -55,17 +55,32 @@
     </header>
 
 <main>
-    <article>
-        <img width="1200" src="{{asset("img/logo/ODC_logo_blue_white_background.jpg")}}" alt="Odense Danse Center">
+    <article class="announcmentcontainer">
+        <h1>Vinterferie!</h1>
+        <p>ODC holder vinterferie i uge 7, så der er desværre ingen dans i den uge. <br>
+            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br></p>
     </article>
+
+    <article class="dancerContainer">
+        <img class="centered dancerImg" src="{{asset("img/logo/ODC_Dancer.png")}}" alt="Odense Danse Center">
+    </article>
+
+
 
     <br><br><br>
 
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
-            <h1>Vinterferie!</h1>
-            ODC holder vinterferie i uge 7, så der er desværre ingen dans <br>
-            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br>
+            <h1>Undskyld vi roder...</h1>
+            <p>Vores hjemmeside er pt. under ombygning, så nogle ting ser halvfærdige ud og andre mangle eller virke slet ikke.<br>
+            <h4>Men vi arbejder på det!</h4>
+            Vi arbejder på højtryk for at få hjemmesiden færdig. Intil da kan i følge os på vores
+            <a href="https://www.facebook.com/OdenseDanseCenter/">FaceBook</a> og
+            <a href="https://www.instagram.com/odense_danse_center/">Instagram</a>, hvor vi vil poste kommende events og
+            billeder eller videoer af hvad der ellers forgår på danseskolen.
+
+
+
         </div>
 
         <div class="middleFiller">
