@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\DanceTeachers;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeacherController;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,17 +25,32 @@ Route::get('/schedule', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/aboutUs', function () {
-    return view('aboutUs');
+
+Route::prefix('aboutUs')->group(function (){
+    Route::get('/', function () {
+        return view('aboutUs');
+    });
+    Route::get('/board', function () {
+        return view('aboutPages/board');
+    });
+    Route::get('/teachers', [TeacherController::class, "index"]);
+    Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"]);
 });
-Route::get('/aboutUs/teachers', function () {
-    $teachers = App\Models\DanceTeachers::getAllTeachers();
-    return view('aboutPages/teachers', ["teachers"=>$teachers]);
+Route::prefix('admin')->group(function (){
+    Route::get('/registrer', [AdminController::class, 'create'])->name('admin.create');
+    Route::post('/registrer', [AdminController::class, 'doCreate'])->name('admin.doCreate');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::post('/login', [AdminController::class, 'doLogin'])->name('admin.doLogin');
+    Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+    Route::middleware('auth')->group(function (){
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::middleware('can:isAdmin')->group(function (){
+            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex']);
+            Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teacher.create');
+            Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('teacher.doCreate');
+        });
+
+    });
 });
-Route::get('/aboutUs/teacherView/{teacherID}', function ($teacherID) {
-    $teacher = App\Models\DanceTeachers::getTeacher($teacherID);
-    return view('aboutPages/teacherView', ["teacher"=>$teacher]);
-});
-Route::get('/aboutUs/board', function () {
-    return view('aboutPages/board');
-});
+

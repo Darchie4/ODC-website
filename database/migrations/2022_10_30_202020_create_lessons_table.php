@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->boolean('verifiedAdmin')->default(false);
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
+            $table->string("lesson_name");
+            $table->string("age");
+            $table->string("day");
+            $table->string("lesson_start_time");
+            $table->string("lesson_end_time");
+            $table->foreignId("teacher_id") ->constrained();
+            $table->foreignId("location_id") -> constrained();
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('lessons');
     }
 };

@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+}
+
+header > ul > a > li, header > ul > div > a > li  {
+    padding: 22px 30px 23px;
+    font-size: max(16px, 1.2vw);
+}
+header > ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    width: 80%;
+}
+header > ul > div > div > ul {
+    padding-inline-start: 0;
+
+    list-style-type: none;
+    overflow: hidden;
+    position: -webkit-sticky;  /*Safari*/
+    position: sticky;
+}
+
+header > ul > a, header > ul > div > a{
+    display: block;
+    float: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fffcfb;
+    text-decoration: none;
+}
+.dropdown-link{
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fffcfb;
+    text-decoration: none;
+}
+
+header > ul > a > li:hover, header > ul > div > a > li:hover, .dropdown-element:hover {
+    background-color: rgb(26, 74, 122);
+}
+
+.dropdown-element {
+    padding: 11px 15px 11px;
+    font-size: 12px;
+}
+
+
+header {
+    display: flex;
+    background-color: rgb(6, 54, 102);
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 10%;
+}
+
+.topLogoContainer {
+    display: block;
+
+}
+.navBarActive {
+    background-color: rgb(41, 128, 187);
+}
+
+
+.aboutUsDropDown {
+    float: right;
+    overflow: hidden;
+}
+
+.aboutUsDropdown-content {
+    margin-top: 60px;
+    padding-top: 10px;
+    background-color: rgb(6, 54, 102);
+    display: none;
+    position: absolute;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.aboutUsDropdown-content a {
+    float: none;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.aboutUsDropDown:hover .aboutUsDropdown-content {
+    display: block;
+}
+
+.scheduleDropDown {
+    float: right;
+    overflow: hidden;
+}
+
+.scheduleDropdown-content {
+    margin-top: 60px;
+    padding-top: 10px;
+    background-color: rgb(6, 54, 102);
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.scheduleDropdown-content a {
+    float: none;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.scheduleDropDown:hover .scheduleDropdown-content {
+    display: block;
+}

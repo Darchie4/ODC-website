@@ -56,18 +56,16 @@
 
 <main>
     <article>
-        <h1 class="welcomeh1">Velkommen til Odense Danse Centers hjemmeside</h1>
-        <h2>Den er ikke helt færdig, men vi arbejer på det</h2>
+        <img src="{{asset("img/logo/ODC_logo_blue.png")}}" alt="Odense Danse Center">
     </article>
 
+    <br><br><br>
 
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
-            <h1>Her er noget</h1>
-            Her er plads til en masse god tekst om hvad vi laver. <br><br>
-            Eller måske et billede af noget spændende?<br>
-            <img src="{{asset("teachersData/image/simonA.jpg")}}" alt="Et godt billede">
-            <img src="{{asset("teachersData/image/simonH.jpg")}}" alt="Endnu et godt billede">
+            <h1>Vinterferie!</h1>
+            ODC holder vinterferie i uge 7, så der er desværre ingen dans <br>
+            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br>
         </div>
 
         <div class="middleFiller">

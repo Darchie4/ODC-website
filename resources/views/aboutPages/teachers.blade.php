@@ -106,9 +106,9 @@
                 <div class="teachersRowContainer">
             @endif
             <div class="teacherContainer">
-                <a href="/aboutUs/teacherView/{{$teacher -> teacherID}}">
+                <a href="/aboutUs/teacherView/{{$teacher -> id}}">
                 <div class="teacherImgContainer">
-                    <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher-> imgName)}}"
+                    <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
                          alt="Billede af: {{$teacher-> name}}">
                 </div>
                 <h1 class="teacherName">{{$teacher -> name}}</h1>
