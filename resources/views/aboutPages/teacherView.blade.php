@@ -98,7 +98,7 @@
 <section>
     <article class="teacherContainer">
         <div class="teacherImgContainer">
-            <img class="teacherImg" src="{{asset("teachersData/image/" . $teacher -> imgName)}}"
+            <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher -> imgName)}}"
                  alt="Billede af: {{$teacher -> name}}">
         </div>
         <div class="teacherText">

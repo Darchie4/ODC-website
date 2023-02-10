@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Yaml\Yaml;
 
-class DanceTeacher extends Model
+class Teacher extends Model
 {
     use HasFactory;
 

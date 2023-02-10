@@ -21,10 +21,8 @@ return new class extends Migration
             $table->string("day");
             $table->string("lesson_start_time");
             $table->string("lesson_end_time");
-            $table->string("teacher_id");
-            $table->foreign("teacher_id") -> references('teacherID') -> on('dance_teachers');
-            $table->string("location_id");
-            $table->foreign("location_id") -> references('room_name') -> on('locations');
+            $table->foreignId("teacher_id") ->constrained();
+            $table->foreignId("location_id") -> constrained();
         });
     }
 

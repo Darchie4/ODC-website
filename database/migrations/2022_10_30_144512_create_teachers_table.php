@@ -12,12 +12,11 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('dance_teachers', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->timestamps();
-            $table->string('teacherID')->primary();
+            $table->id();
             $table->string('name');
-            $table->string('imgName');
-            $table->unique('imgName');
+            $table->string('imgName') -> unique();
             $table->string('shortDescription');
             $table->text('longDescription');
         });
@@ -30,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('dance_teachers');
+        Schema::dropIfExists('teachers');
     }
 };
