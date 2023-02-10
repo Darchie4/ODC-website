@@ -40,3 +40,13 @@ article > h1 {
     font-size: max(22px, 3vw);
     color: rgb(41, 128, 187);
 }
+
+.centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dancerImg{
+    width: 35%;
+}

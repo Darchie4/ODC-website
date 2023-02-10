@@ -55,8 +55,8 @@
     </header>
 
 <main>
-    <article>
-        <img width="1200" src="{{asset("img/logo/ODC_logo_blue_white_background.jpg")}}" alt="Odense Danse Center">
+    <article class="dancerContainer">
+        <img class="centered dancerImg" src="{{asset("img/logo/ODC_Dancer.png")}}" alt="Odense Danse Center">
     </article>
 
     <br><br><br>
