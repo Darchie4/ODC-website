@@ -17,5 +17,5 @@ jobs:
       with:
         server: linux168.unoeuro.com
         username: odensedansecent.dk
-        password: ${{ secrets.odc_ftp_password }}
+        password: ${{ secrets.ODC_FTP_PASSWORD }}
         server-dir: /laravel/
