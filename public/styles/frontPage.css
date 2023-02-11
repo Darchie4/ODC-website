@@ -1,19 +1,18 @@
 main {
     margin-left: 15%;
     margin-right: 15%;
+    margin-bottom: 3%;
 }
 
 
 .splitInfoBox {
     display: flex;
+    margin: 0 auto; /* Center the splitInfoBox horizontally */
 }
 
 .leftInfoColumn {
-    left: 0;
-    display: block;
-    width: 49%;
-    height: 50%;
-    border-radius: 4px;
+    width: 50%; /* Each column will take up half of the remaining 20% */
+    margin: 0 2.5%; /* Add a 5% margin to each column */
 }
 
 .leftInfoColumn > h1{
@@ -24,8 +23,10 @@ main {
 }
 
 .fb-container {
-    display: block;
-    width: 49%;
+    display: flex;
+    align-items: center;
+    width: 50%; /* Each column will take up half of the remaining 20% */
+    justify-content: right;
 }
 
 .middleFiller {
@@ -33,10 +34,31 @@ main {
 }
 
 .fb-page {
-    margin-left: 6%;
+    width: 500px;
 }
 
 article > h1 {
     font-size: max(22px, 3vw);
     color: rgb(41, 128, 187);
+}
+
+.centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dancerImg{
+    width: 35%;
+}
+
+.announcmentcontainer > h1{
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+    margin-bottom: 0;
+    text-align: center;
+}
+.announcmentcontainer > p{
+    text-align: center;
+    font-size: max(22px, 1.5vw);
 }

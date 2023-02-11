@@ -49,9 +49,9 @@
         <a href="/"><li>Forside</li></a>
     </ul>
 </header>
-<h1>ODC er en danseskole</h1>
-<h2>Og den er faktisk ret god</h2>
-<a>Dimmer</a>
+<h1>Denne side er pt tom</h1>
+<h2>Men vi arbejder på at få noget fedt herind!</h2>
+
 
 </body>
 

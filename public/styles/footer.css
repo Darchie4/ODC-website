@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+footer {
+    color: white;
+    background-color: rgb(6, 54, 102);
+    display: flex;
+    padding: 0 15%;
+}
+
+.left {
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+.right {
+    padding: 20px;
+    width: 50%;
+}
+
+h4{
+    border-left: mediumblue;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 250px;
+    width: 100%;
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 100%;
+}
