@@ -119,8 +119,6 @@
         <p>{!! $teacher -> longDescription !!}</p>
     </article>
 
-
-
 </section>
 
 

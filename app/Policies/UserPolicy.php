@@ -21,6 +21,7 @@ class UserPolicy
 
     public function isAdmin(User $user){
 
-        return $user->verifiedAdmin;
+        return $user->verifiedAdmin ? Response::allow()
+            : Response::deny('You must be an administrator.');
     }
 }

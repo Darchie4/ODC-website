@@ -122,12 +122,6 @@
             <a href="https://www.facebook.com/OdenseDanseCenter/">FaceBook</a> og
             <a href="https://www.instagram.com/odense_danse_center/">Instagram</a>, hvor vi vil poste kommende events og
             billeder eller videoer af hvad der ellers forgår på danseskolen.
-
-
-        </div>
-
-        <div class="middleFiller">
-
         </div>
 
         <div class="fb-container">
@@ -158,20 +152,6 @@
                 <iframe width="529" height="250" id="gmap_canvas"
                         src="https://maps.google.com/maps?q=Dalumvej%2032D,%205250%20Odense%20SV&t=&z=17&ie=UTF8&iwloc=&output=embed"
                         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <a href="https://123movies-to.org">123movies</a><br>
-                <style>.mapouter {
-                        position: relative;
-                        text-align: right;
-                        height: 250px;
-                        width: 529px;
-                    }</style>
-                <a href="https://www.embedgooglemap.net"></a>
-                <style>.gmap_canvas {
-                        overflow: hidden;
-                        background: none !important;
-                        height: 250px;
-                        width: 529px;
-                    }</style>
             </div>
         </div>
     </div>

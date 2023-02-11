@@ -2,24 +2,36 @@ body {
     margin: 0;
 }
 
-
 footer {
-    display: flex;
+    color: white;
     background-color: rgb(6, 54, 102);
-    margin: 0;
-    overflow: hidden;
-    padding: 10px 10%;
-    color:white;
+    display: flex;
+    padding: 0 15%;
 }
 
 .left {
-    left: 0;
-    display: block;
-    width: 49%;
-    height: 50%;
-    border-radius: 4px;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+.right {
+    padding: 20px;
+    width: 50%;
 }
 
 h4{
     border-left: mediumblue;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 250px;
+    width: 100%;
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 100%;
 }
