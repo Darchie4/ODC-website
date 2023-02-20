@@ -45,8 +45,8 @@ Route::prefix('admin')->group(function (){
 
     Route::middleware('auth')->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-        Route::middleware('can:isAdmin')->group(function (){
-            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex']);
+        Route::middleware('can:admin')->group(function (){
+            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("teacher.index");
             Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teacher.create');
             Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('teacher.doCreate');
         });

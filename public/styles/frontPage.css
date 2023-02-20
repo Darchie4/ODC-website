@@ -7,12 +7,12 @@ main {
 
 .splitInfoBox {
     display: flex;
-    margin: 0 auto; /* Center the splitInfoBox horizontally */
+    margin: 0 auto;
 }
 
 .leftInfoColumn {
-    width: 50%; /* Each column will take up half of the remaining 20% */
-    margin: 0 2.5%; /* Add a 5% margin to each column */
+    width: 50%;
+    margin: 0 2.5%;
 }
 
 .leftInfoColumn > h1{
@@ -25,7 +25,7 @@ main {
 .fb-container {
     display: flex;
     align-items: center;
-    width: 50%; /* Each column will take up half of the remaining 20% */
+    width: 50%;
     justify-content: right;
 }
 

@@ -114,6 +114,11 @@
                 <h1 class="teacherName">{{$teacher -> name}}</h1>
                 {!! $teacher -> shortDescription !!}
                 </a>
+                @if( Auth::user() != null && Auth::user() -> can("admin"))
+                    <br>
+                    <button id="mybutton">Rediger</button>
+                    <button id="mybutton">Slet</button>
+                @endif
             </div>
             @if(($loop->index+1)%4 == 0 && $loop->index != 0 || $loop -> last == 1)
                 </div>

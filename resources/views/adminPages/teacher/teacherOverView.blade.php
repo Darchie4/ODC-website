@@ -15,8 +15,8 @@
     </div>
     <ul>
         <a href="/"><li>Forside</li></a>
-        <a href="/"><li>Admin Forside</li></a>
-        <a href="/"><li>Underviser Håndtering</li></a>
+        <a href="{{route("admin.index")}}"><li>Admin Forside</li></a>
+        <a href="{{route("teacher.index")}}"><li>Underviser Håndtering</li></a>
         <a href="/"><li>Hold håndtering</li></a>
     </ul>
 </header>
@@ -37,7 +37,7 @@
 
         @foreach($teachers as $teacher)
         <tr class="scheduleTableElementContainer childDanceContainer">
-            <td class="scheduleTableElement childDance">{{$teacher -> teacherID}}</td>
+            <td class="scheduleTableElement childDance">{{$teacher -> id}}</td>
             <td class="scheduleTableElement childDance">{{$teacher -> name}}</td>
             <td class="scheduleTableElement childDance"><a>{{$teacher ->imgName}}</a></td>
             <td class="scheduleTableElement childDance">{{$teacher -> shortDescription}}</td>
