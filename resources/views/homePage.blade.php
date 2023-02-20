@@ -100,9 +100,6 @@
 
 <main>
     <article class="announcmentcontainer">
-        <h1>Vinterferie!</h1>
-        <p>ODC holder vinterferie i uge 7, så der er desværre ingen dans i den uge. <br>
-            Men vi vender stærkt tilbage i uge 8 med dans som det plejer.<br></p>
     </article>
 
     <article class="dancerContainer">
