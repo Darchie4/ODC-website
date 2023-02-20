@@ -7,14 +7,12 @@ main {
 
 .splitInfoBox {
     display: flex;
+    margin: 0 auto; /* Center the splitInfoBox horizontally */
 }
 
 .leftInfoColumn {
-    left: 0;
-    display: block;
-    width: 49%;
-    height: 50%;
-    border-radius: 4px;
+    width: 50%; /* Each column will take up half of the remaining 20% */
+    margin: 0 2.5%; /* Add a 5% margin to each column */
 }
 
 .leftInfoColumn > h1{
@@ -25,8 +23,10 @@ main {
 }
 
 .fb-container {
-    display: block;
-    width: 49%;
+    display: flex;
+    align-items: center;
+    width: 50%; /* Each column will take up half of the remaining 20% */
+    justify-content: right;
 }
 
 .middleFiller {
@@ -34,7 +34,7 @@ main {
 }
 
 .fb-page {
-    margin-left: 6%;
+    width: 500px;
 }
 
 article > h1 {
