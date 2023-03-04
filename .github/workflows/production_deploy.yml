@@ -5,8 +5,8 @@ on:
 
 name: 🚀 Deploy website to production
 jobs:
-  deploy-legacy:
-    name: 🎉 Deploy to legacy production
+  web-deploy:
+    name: 🎉 Deploy to production
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -18,5 +18,5 @@ jobs:
         server: linux168.unoeuro.com
         username: odensedansecent.dk
         password: ${{ secrets.ODC_FTP_PASSWORD }}
-        server-dir: /laravel/
+        server-dir: /public_html/
 
