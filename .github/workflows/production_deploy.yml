@@ -18,4 +18,18 @@ jobs:
         server: linux168.unoeuro.com
         username: odensedansecent.dk
         password: ${{ secrets.ODC_FTP_PASSWORD }}
+        server-dir: /public_html/
+  legacy-web-deploy:
+    name: 🎉 Deploy to Legacy Production
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: linux168.unoeuro.com
+        username: odensedansecent.dk
+        password: ${{ secrets.ODC_FTP_PASSWORD }}
         server-dir: /laravel/
