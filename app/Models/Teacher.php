@@ -19,7 +19,7 @@ class Teacher extends Model
     protected String $lessons;
     */
 
-    protected $fillable = ['name', 'teacherID', 'shortDescription', 'longDescription', 'imgName', 'lessons'];
+    protected $fillable = ['name', 'shortDescription', 'longDescription', 'imgName', 'lessons'];
     /**
      * @return array
      */

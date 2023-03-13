@@ -7,7 +7,7 @@
     <title>Odense Danse Center</title>
 </head>
 <body>
-
+<main>
     <form action="{{route('admin.doCreate')}}" method="post">
         @csrf
         <label for="name"><b>Navn</b></label><br>
@@ -36,6 +36,8 @@
 
         <button type="submit" class="registerbtn">Register</button>
     </form>
+</main>
+
 
 </body>
 </html>

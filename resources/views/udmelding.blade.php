@@ -12,17 +12,17 @@
 <main>
     <article>
 
-        <h1>Kontakt os</h1>
+        <h1>Udmelding</h1>
 
         <hr>
 
         <br>
 
+        Udmelding forgår ved at kontakte os gennem de nedenstående kommunikationsveje. <br>
+
         Vi kan kontaktes mellem kl 16 og 20 i hverdagene mandag-torsdag. <br><br>
 
         Tlf. <a href="tel:+45-42-36-41-15">42 36 41 15 </a> <br><br>
-
-        På facebook: <a href="https://www.facebook.com/OdenseDanseCenter/"> Odense Danse Center </a><br><br>
 
         Alternativt på mail: <a href="mailto:Formand@odensedansecenter.dk">Formand@odensedansecenter.dk</a><br><br>
 

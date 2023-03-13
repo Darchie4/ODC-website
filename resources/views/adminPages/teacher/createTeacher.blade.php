@@ -4,7 +4,7 @@
     <script src="https://cdn.tiny.cloud/1/c4jyjetaicqxo2qorxx2ygicsi7rddy4mu9rjpjd9i1hqimd/tinymce/6/tinymce.min.js"
             referrerpolicy="origin"></script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
     <title>Odense Danse Center</title>
 </head>

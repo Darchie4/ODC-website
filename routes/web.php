@@ -19,11 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homePage');
 });
+Route::get('/brudevals', function () {
+    return view('bridalwaltz');
+});
 Route::get('/schedule', function () {
     return view('schedule');
 });
 Route::get('/contact', function () {
     return view('contact');
+});
+Route::get('/udmelding', function () {
+    return view('udmelding');
 });
 
 Route::prefix('aboutUs')->group(function (){
@@ -45,8 +51,8 @@ Route::prefix('admin')->group(function (){
 
     Route::middleware('auth')->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-        Route::middleware('can:isAdmin')->group(function (){
-            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex']);
+        Route::middleware('can:admin')->group(function (){
+            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("teacher.index");
             Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teacher.create');
             Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('teacher.doCreate');
         });

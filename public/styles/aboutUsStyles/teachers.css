@@ -1,8 +1,6 @@
-article {
-    margin-right: auto;
-    margin-left: auto;
-    width: min(88%, 1200px);
-
+h1 {
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
 }
 
 .teachersRowContainer {
@@ -47,7 +45,7 @@ hr {
     margin: 10px;
 }
 
-a {
+main > article > div > div > div > a {
     text-decoration: none;
-    color: black;
+    color: black !important;;
 }

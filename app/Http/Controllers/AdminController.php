@@ -24,7 +24,7 @@ class AdminController extends Controller
         $user = new User();
         $user->name = \request('name');
         $user->email = \request('email');
-        $user->password = Hash::make(\request('name'));
+        $user->password = Hash::make(\request('password'));
         $user->save();
 
         Auth::login($user);
@@ -36,10 +36,9 @@ class AdminController extends Controller
     }
     public function doLogin(Request $request){
         $credentials = $request->validate([
-            'email' => ['required', 'email', 'exists:users,email,verifiedAdmin,true'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
         if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
                 return redirect()->route('admin.index');
