@@ -1,7 +1,5 @@
 section {
-    margin-top: 5%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-bottom: 2%;
     box-shadow: 0 20px 40px rgba(4, 31, 61, 0.5);
     padding: 3% 3% 1%;
 }
@@ -50,3 +48,4 @@ h2 {
 p {
     margin-top: 1%;
 }
+
