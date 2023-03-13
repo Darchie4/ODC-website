@@ -2,6 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Hos Odanse Danse Center tilbyder vi dans på mange forskellige niveau og stilarter">
+    <meta name="keywords" content="Dans,dans,Odense, odense, odense dans,Odense dans, dans odense, dans Odense, odense danse center, ODC">
+    <meta name="og:title" property="og:title" content="Odense Danse Center">
+    <meta name="robots" content="index, schedule">
     <link rel="stylesheet" href="{{ asset('styles/frontPage.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
     <div id="fb-root"></div>
