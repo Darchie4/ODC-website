@@ -2,7 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+
     <title>Odense Danse Center</title>
 </head>
 
@@ -20,10 +22,11 @@
         <a href="/"><li>Hold håndtering</li></a>
     </ul>
 </header>
-
-<article>
-    <h1>Du er nu logget ind som admin</h1>
-</article>
+<main>
+    <article>
+        <h1>Du er nu logget ind som admin</h1>
+    </article>
+</main>
 
 
 </body>

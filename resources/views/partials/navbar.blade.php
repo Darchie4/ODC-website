@@ -7,6 +7,7 @@
     </div>
     <ul>
         <a href="/contact"><li>Kontakt</li></a>
+        <a href="/udmelding"><li>Udmelding</li></a>
         <div class="aboutUsDropDown">
             <a href="/aboutUs"><li class="navBarActive">Om os</li></a>
             <div class="aboutUsDropdown-content">

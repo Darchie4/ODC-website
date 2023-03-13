@@ -7,19 +7,20 @@
     <title>Odense Danse Center</title>
 </head>
 <body>
+<main>
+    <form action="{{route('admin.doLogin')}}" method="post">
+        @csrf
+        <label for="email"><b>Email</b></label><br>
+        <input type="email" placeholder="Email" name="email" id="email" required><br><br>
 
-<form action="{{route('admin.doLogin')}}" method="post">
-    @csrf
-    <label for="email"><b>Email</b></label><br>
-    <input type="email" placeholder="Email" name="email" id="email" required><br><br>
+        <label for="psw"><b>Password</b></label><br>
+        <input type="password" placeholder="Adgangskode" name="password" id="psw" required><br><br>
 
-    <label for="psw"><b>Password</b></label><br>
-    <input type="password" placeholder="Adgangskode" name="password" id="psw" required><br><br>
+        <hr>
 
-    <hr>
-
-    <button type="submit" class="registerbtn">Login</button>
-</form>
+        <button type="submit" class="registerbtn">Login</button>
+    </form>
+</main>
 
 </body>
 </html>
