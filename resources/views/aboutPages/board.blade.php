@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <title>Odense Danse Center</title>

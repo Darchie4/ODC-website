@@ -3,14 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>Odense Danse Center</title>
+    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
 </head>
 
 <body>
 
 @include("partials.navbar")
-
-<h1>Denne side er pt tom</h1>
-<h2>Men vi arbejder på at få noget fedt herind!</h2>
+<main>
+    <h1>Denne side er pt tom</h1>
+    <h2>Men vi arbejder på at få noget fedt herind!</h2>
+</main>
 
 @include("partials.footer")
 </body>

@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homePage');
 });
+Route::get('/brudevals', function () {
+    return view('bridalwaltz');
+});
 Route::get('/schedule', function () {
     return view('schedule');
 });

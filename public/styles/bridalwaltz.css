@@ -1,0 +1,8 @@
+main {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+h1 {
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+}

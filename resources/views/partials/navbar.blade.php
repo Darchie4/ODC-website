@@ -1,5 +1,5 @@
 <header>
-    <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
     <div class="topLogoContainer">
         <a href="/">
             <img height="75" src="{{asset("img/logo/darkBlueGackgroundLogo.jpg")}}" alt="Odense Danse Center">
@@ -38,6 +38,7 @@
                 </ul>
             </div>
         </div>
+        <a href="/brudevals"><li>Brudevals</li></a>
         <a href="/"><li>Forside</li></a>
     </ul>
 </header>
