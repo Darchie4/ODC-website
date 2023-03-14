@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    @include("partials.metatags")
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
