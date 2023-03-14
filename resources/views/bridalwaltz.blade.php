@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    @include("partials.metatags")
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
