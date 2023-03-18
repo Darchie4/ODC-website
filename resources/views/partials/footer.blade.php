@@ -13,7 +13,7 @@
     <div class="right">
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe width="529" height="250" id="gmap_canvas"
+                <iframe title="Addresse på Google Maps" width="529" height="250" id="gmap_canvas"
                         src="https://maps.google.com/maps?q=Dalumvej%2032D,%205250%20Odense%20SV&t=&z=17&ie=UTF8&iwloc=&output=embed"
                         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
