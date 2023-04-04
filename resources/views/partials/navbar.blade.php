@@ -8,7 +8,6 @@
     <ul>
         <a href="/contact"><li>Kontakt</li></a>
         <a href="/udmelding"><li>Udmelding</li></a>
-        <a href="http://www.jensesport.dk/danseskole-klubber/odense-dansecenter.html"><li>Klub tøj</li></a>
         <div class="aboutUsDropDown">
             <a href="/aboutUs"><li class="navBarActive">Om os</li></a>
             <div class="aboutUsDropdown-content">
@@ -20,6 +19,7 @@
                 </ul>
             </div>
         </div>
+        <a href="http://www.jensesport.dk/danseskole-klubber/odense-dansecenter.html"><li>Klub tøj</li></a>
         <div class="scheduleDropDown">
             <a href="/schedule"><li>Program/Tilmelding</li></a>
             <div class="scheduleDropdown-content">
