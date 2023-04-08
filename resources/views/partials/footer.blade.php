@@ -6,7 +6,7 @@
         <p>Odense Danse Center</p>
         <p>Dalumvej 32D, 5250 Odense SV</p>
         <p>E-mail: <a href="mailto:Formand@odensedansecenter.dk">Formand@odensedansecenter.dk</a></p>
-        <p>Tlf. Nr.: <a href="tel:+45-31-20-91-96">31 20 91 96</a></p>
+        <p>Tlf. Nr.: <a href="tel:+45-42-36-41-15">42 36 41 15</a></p>
         <p>CVR: 36286660</p>
     </div>
 
