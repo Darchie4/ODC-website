@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
-use App\Models\Teacher;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/sitemap', function (){
+    SitemapGenerator::create('http://odcweb.madswp.dk/')
+        ->writeToFile(public_path('sitemap.xml'));
+    return 'Sitemap has been generated';
+});
 
 Route::get('/', function () {
     return view('homePage');
