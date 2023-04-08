@@ -35,7 +35,7 @@
         </script>
         <label for="teacherImg">Billede</label> <br>
         <input type="file" name="teacherImg" id="teacherImg" accept="image/*"> <br><br>
-        <input type="submit" value="Opret">
+        <input type="submit" value="Rediger">
     </form>
 </article>
 

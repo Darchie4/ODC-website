@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "spatie/backtrace": "^1.2",
+        "spatie/laravel-sitemap": "^6.2",
         "symfony/yaml": "^6.1"
     },
     "require-dev": {
