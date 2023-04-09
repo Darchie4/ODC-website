@@ -10,16 +10,8 @@ class Teacher extends Model
 {
     use HasFactory;
 
-    /*
-    protected String $name;
-    protected String $teacherID;
-    protected String $shortDescription;
-    protected String $longDescription;
-    protected String $imgName;
-    protected String $lessons;
-    */
 
-    protected $fillable = ['name', 'shortDescription', 'longDescription', 'imgName', 'lessons'];
+    protected $fillable = ['name', 'shortDescription', 'longDescription', 'imgName'];
     /**
      * @return array
      */
