@@ -4,3 +4,4 @@
 <meta name="robots" content="index, schedule, contact, brudevals">
 <meta name="viewport" content= "width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="{{ asset('img/logo/ODC_Dancer.png') }}">
+<meta charset="utf-8">
