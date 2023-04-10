@@ -12,6 +12,7 @@
             <div class="aboutUsDropdown-content">
                 <ul>
                     <a class="dropdown-link" href="/aboutUs/teachers"><li class="dropdown-element">Undervisere</li></a>
+                    <a class="dropdown-link" href="/aboutUs/locations"><li class="dropdown-element">Lokaler</li></a>
                     <a class="dropdown-link" href="/aboutUs/board"><li class="dropdown-element">Bestyrelsen</li></a>
                     <a class="dropdown-link" href="#"><li class="dropdown-element">Generalforsamling</li></a>
                     <a class="dropdown-link" href="#"><li class="dropdown-element">Vedtægter</li></a>
