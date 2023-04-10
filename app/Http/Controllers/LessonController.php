@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\lesson;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class LessonController extends Controller
 {
@@ -21,11 +22,10 @@ class LessonController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return View
      */
-    public function create()
+    public function create(): View
     {
-        //
     }
 
     /**
@@ -34,18 +34,18 @@ class LessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function doCreate(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param lesson $lesson
+     * @param Lesson $lesson
      * @return Response
      */
-    public function show(lesson $lesson)
+    public function show(Lesson $lesson)
     {
         //
     }
@@ -53,10 +53,10 @@ class LessonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param lesson $lesson
+     * @param Lesson $lesson
      * @return Response
      */
-    public function edit(lesson $lesson)
+    public function edit(Lesson $lesson)
     {
         //
     }
@@ -65,10 +65,10 @@ class LessonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param lesson $lesson
+     * @param Lesson $lesson
      * @return Response
      */
-    public function update(Request $request, lesson $lesson)
+    public function update(Request $request, Lesson $lesson)
     {
         //
     }
@@ -76,10 +76,10 @@ class LessonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param lesson $lesson
+     * @param Lesson $lesson
      * @return Response
      */
-    public function destroy(lesson $lesson)
+    public function destroy(Lesson $lesson)
     {
         //
     }
