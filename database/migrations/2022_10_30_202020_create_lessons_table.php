@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("day");
             $table->string("lesson_start_time");
             $table->string("lesson_end_time");
+            $table->string("km_id") -> unique();
             $table->foreignId("teacher_id") ->constrained();
             $table->foreignId("location_id") -> constrained();
         });

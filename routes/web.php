@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TeacherController;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +46,9 @@ Route::prefix('aboutUs')->group(function (){
     });
     Route::get('/teachers', [TeacherController::class, "index"]);
     Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"]);
+
+    Route::get('/locations', [LocationController::class, 'index']) -> name('location.index');
+
 });
 Route::prefix('admin')->group(function (){
     Route::get('/registrer', [AdminController::class, 'create'])->name('admin.create');
@@ -60,6 +63,12 @@ Route::prefix('admin')->group(function (){
             Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("teacher.index");
             Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teacher.create');
             Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('teacher.doCreate');
+
+            Route::get('/createLocation', [LocationController::class, 'create']) -> name('location.create');
+            Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('location.doCreate');
+
+            Route::get('/createLesson', [LessonController::class, 'create']) -> name('lesson.create');
+            Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('lesson.doCreate');
         });
 
     });

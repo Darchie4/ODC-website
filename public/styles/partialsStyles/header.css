@@ -2,41 +2,50 @@ body {
     margin: 0;
 }
 
-header > ul > a > li, header > ul > div > a > li  {
-    padding: 23px 26px 23px;
-    font-size: max(16px, 1.2vw);
+.headerContentContainer {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85rem;
 }
-header > ul {
-    float: right;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    width: 80%;
-}
-header > ul > div > div > ul {
-    padding-inline-start: 0;
 
+header > div > ul > a > li, header > div > ul > div > a > li {
+
+    padding: 1.5rem 1rem 1.5rem;
+    font-size: max(16px, min(1.55rem, 2vw));
+}
+
+header > div > ul {
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header > div > ul > div > div > ul {
+    padding-inline-start: 0;
     list-style-type: none;
     overflow: hidden;
-    position: -webkit-sticky;  /*Safari*/
+    position: -webkit-sticky; /*Safari*/
     position: sticky;
 }
 
-header > ul > a, header > ul > div > a{
+header > div > ul > a, header > div > ul > div > a {
     display: block;
     float: right;
     font-family: 'Source Sans Pro', sans-serif;
     color: #fffcfb;
     text-decoration: none;
 }
-.dropdown-link{
+
+.dropdown-link {
     display: block;
     font-family: 'Source Sans Pro', sans-serif;
     color: #fffcfb;
     text-decoration: none;
 }
 
-header > ul > a > li:hover, header > ul > div > a > li:hover, .dropdown-element:hover {
+header > div > ul > a > li:hover, header > div > ul > div > a > li:hover, .dropdown-element:hover {
     background-color: rgb(26, 74, 122);
 }
 
@@ -48,14 +57,18 @@ header > ul > a > li:hover, header > ul > div > a > li:hover, .dropdown-element:
 
 header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: rgb(6, 54, 102);
     margin: 0;
     overflow: hidden;
-    padding: 10px 10%;
+    padding: 0.5rem 0.5rem;
 }
 
 .topLogoContainer {
-    display: block;
+    flex-shrink: 0;
+    margin-right: 20px;
+    height: min(5rem, max(5vw, 3rem));
 
 }
 
@@ -71,9 +84,10 @@ header {
     background-color: rgb(6, 54, 102);
     display: none;
     position: absolute;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+
 .aboutUsDropdown-content a {
     float: none;
     text-decoration: none;
@@ -87,7 +101,6 @@ header {
 
 .scheduleDropDown {
     float: right;
-    overflow: hidden;
 }
 
 .scheduleDropdown-content {
@@ -96,9 +109,10 @@ header {
     background-color: rgb(6, 54, 102);
     display: none;
     position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+
 .scheduleDropdown-content a {
     float: none;
     text-decoration: none;
@@ -108,4 +122,31 @@ header {
 
 .scheduleDropDown:hover .scheduleDropdown-content {
     display: block;
+}
+.headerLogo{
+    width: 100%; /* set the width of the image to 100% */
+    height: 100%; /* set the height of the image to 100% */
+    object-fit: cover; /* scale the image to cover the container while preserving aspect ratio */
+}
+
+@media screen and (max-aspect-ratio: 2/3) {
+    .headerContentContainer{
+        display: block;
+    }
+
+    .topLogoContainer {
+        margin-right: 0;
+    }
+    .headerLogo{
+        width: 30vw;
+        height: auto;
+    }
+
+    header > div > div > a{
+        margin-left: 30vw;
+    }
+
+    header > div > ul > a > li, header > div > ul > div > a > li {
+        padding: 0.7rem 1rem 0.7rem;
+    }
 }

@@ -5,19 +5,27 @@ body {
 footer {
     color: white;
     background-color: rgb(6, 54, 102);
+}
+
+.innerContainer{
     display: flex;
-    padding: 0 15%;
+    margin-top: 1.85%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85rem;
 }
 
 .left {
     width: 50%;
     text-align: left;
     padding: 20px;
+    max-height: 20rem;
 }
 
 .right {
     padding: 20px;
     width: 50%;
+    max-height: 20rem;
 }
 
 h4{
@@ -38,4 +46,26 @@ h4{
 
 a{
     color: rgb(41, 126, 189);
+}
+@media screen and (max-aspect-ratio: 2/3) {
+    .innerContainer{
+        display: block;
+    }
+    .gmap_canvas {
+        width: 90vw;
+    }
+    .mapouter {
+        width: 90vw;
+    }
+    .right {
+        width: 100vw;
+        padding-top: 0;
+    }
+    .left {
+        width: 100vw;
+        padding-bottom: 0;
+    }
+    footer{
+        width: 100vw;
+    }
 }

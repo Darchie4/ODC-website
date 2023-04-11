@@ -1,0 +1,32 @@
+.locationsContainer{
+    width: 100%;
+    display: block;
+}
+
+.location{
+    display: flex;
+    margin: 1%;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.locationLeftInfo{
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.location > .mapouter {
+    position: relative;
+    text-align: right;
+    height: 250px;
+    width: 30%;
+}
+.location > .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 30%;
+}
+h3{
+    margin: 0;
+}

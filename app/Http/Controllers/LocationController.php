@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\location;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
@@ -10,21 +10,21 @@ class LocationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        return view('aboutPages/locationsIndex', ['locations' => Location::all()]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('adminPages/locations/create');
     }
 
     /**
@@ -33,18 +33,36 @@ class LocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function doCreate(Request $request)
     {
-        //
+        $request->validate([
+            'address' => 'required',
+            'g_maps_embed_link' => 'required',
+            'room_name' => 'required',
+        ]);
+
+        $uploadedFile = $request->file('roomImg');
+        $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
+        $uploadedFile->storeAs('/locationsData/image', $fileName, 'public');
+
+        $lesson = new Location();
+
+        $lesson -> address = \request("address");
+        $lesson -> description = \request("room_description");
+        $lesson -> room_name = \request("room_name");
+        $lesson -> g_maps_embed_link = \request("g_maps_embed_link");
+        $lesson -> image_path = $fileName;
+        $lesson -> save();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\location  $location
+     * @param  \App\Models\Location  $location
      * @return \Illuminate\Http\Response
      */
-    public function show(location $location)
+    public function show(Location $location)
     {
         //
     }
@@ -52,10 +70,10 @@ class LocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\location  $location
+     * @param  \App\Models\Location  $location
      * @return \Illuminate\Http\Response
      */
-    public function edit(location $location)
+    public function edit(Location $location)
     {
         //
     }
@@ -64,10 +82,10 @@ class LocationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\location  $location
+     * @param  \App\Models\Location  $location
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, location $location)
+    public function update(Request $request, Location $location)
     {
         //
     }
@@ -75,10 +93,10 @@ class LocationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\location  $location
+     * @param  \App\Models\Location  $location
      * @return \Illuminate\Http\Response
      */
-    public function destroy(location $location)
+    public function destroy(Location $location)
     {
         //
     }

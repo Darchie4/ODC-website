@@ -24,7 +24,7 @@
                 <h2>Underviser på:</h2>
                 <!--
                 <ul>
-                @ foreach($teacher -> lessons as $lesson)
+                @ foreach($teacher -> lessons as $locations)
                         <li>{}</li>
                     @ endforeach
                 </ul>
