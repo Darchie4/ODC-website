@@ -34,6 +34,7 @@ class TeacherController extends Controller
             'teacherImg' => 'required',
             'shortDescription' => 'required',
             'longDescription' => 'required',
+            'km_id' => 'required|integer'
         ]);
         $uploadedFile = $request->file('teacherImg');
         $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
@@ -43,6 +44,7 @@ class TeacherController extends Controller
         $danceTeacher->imgName = $fileName;
         $danceTeacher->shortDescription = \request('shortDescription');
         $danceTeacher->longDescription = \request('longDescription');
+        $danceTeacher->km_id = \request('km_id');
         $danceTeacher->save();
         return redirect('aboutUs/teacherView/' . $danceTeacher->id);
     }

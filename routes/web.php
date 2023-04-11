@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Carbon;
@@ -68,6 +69,8 @@ Route::prefix('admin')->group(function (){
             Route::get('/createLocation', [LocationController::class, 'create']) -> name('location.create');
             Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('location.doCreate');
 
+            Route::get('/createLesson', [LessonController::class, 'create']) -> name('lesson.create');
+            Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('lesson.doCreate');
         });
 
     });
