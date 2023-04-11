@@ -35,3 +35,9 @@ main {
 h1 {
     margin-top: 0;
 }
+@media screen and (max-aspect-ratio: 2/3) {
+    main {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}

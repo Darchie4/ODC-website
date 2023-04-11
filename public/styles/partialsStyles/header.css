@@ -128,3 +128,25 @@ header {
     height: 100%; /* set the height of the image to 100% */
     object-fit: cover; /* scale the image to cover the container while preserving aspect ratio */
 }
+
+@media screen and (max-aspect-ratio: 2/3) {
+    .headerContentContainer{
+        display: block;
+    }
+
+    .topLogoContainer {
+        margin-right: 0;
+    }
+    .headerLogo{
+        width: 30vw;
+        height: auto;
+    }
+
+    header > div > div > a{
+        margin-left: 30vw;
+    }
+
+    header > div > ul > a > li, header > div > ul > div > a > li {
+        padding: 0.7rem 1rem 0.7rem;
+    }
+}
