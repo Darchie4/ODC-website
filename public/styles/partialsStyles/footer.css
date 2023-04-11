@@ -48,3 +48,8 @@ h4{
 a{
     color: rgb(41, 126, 189);
 }
+@media screen and (max-aspect-ratio: 2/3) {
+    .innerContainer{
+        display: block;
+    }
+}
