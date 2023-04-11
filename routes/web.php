@@ -4,10 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TeacherController;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
 
 /*
 |--------------------------------------------------------------------------

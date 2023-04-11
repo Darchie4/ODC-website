@@ -6,7 +6,7 @@ body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    max-width: 85rem;
+    max-width: max(85rem, 10vw);
 }
 
 header > div > ul > a > li, header > div > ul > div > a > li {
@@ -16,7 +16,6 @@ header > div > ul > a > li, header > div > ul > div > a > li {
 }
 
 header > div > ul {
-    display: flex;
     justify-content: flex-start;
     list-style: none;
     padding: 0;
@@ -32,7 +31,6 @@ header > div > ul > div > div > ul {
 }
 
 header > div > ul > a, header > div > ul > div > a {
-    height: 100%;
     display: block;
     float: right;
     font-family: 'Source Sans Pro', sans-serif;
