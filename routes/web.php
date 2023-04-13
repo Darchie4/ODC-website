@@ -36,6 +36,9 @@ Route::get('/schedule', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/udmelding', function () {
+    return view('udmelding');
+});
 
 Route::prefix('aboutUs')->group(function (){
     Route::get('/', function () {
