@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('imgName') -> unique();
-            $table->string("km_id") -> unique();
+            $table->integer("km_id") -> unique();
             $table->string('shortDescription');
             $table->text('longDescription');
         });

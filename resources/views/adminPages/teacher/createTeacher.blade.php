@@ -17,7 +17,7 @@
         @csrf
         <label for="name">Navn</label> <br>
         <input name="name" type="text"> <br><br>
-        <label for="km_id">Navn</label> <br>
+        <label for="km_id">Klubmodul ID</label> <br>
         <input name="km_id" type="number"> <br><br>
         <label for="shortDescription">Kort beskrivelse:</label> <br>
         <textarea name="shortDescription"></textarea><br><br>
