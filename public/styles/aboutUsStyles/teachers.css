@@ -6,12 +6,15 @@ h1 {
 .teachersRowContainer {
     width: 100%;
     display: flex;
+    flex-direction: row;
 }
 
 .teacherContainer {
     margin: 1%;
     border-radius: 4px;
-    width: min(22%, 300px);
+    width: auto;
+    min-width: min(22%, 260px);
+    flex: 0 1 auto;
 }
 .teacherTextContainer {
     margin-left: 2%;
@@ -41,11 +44,42 @@ h1 {
     display: block;
 
 }
-hr {
+.verticalHr{
     margin: 10px;
+    background-color: rgb(41, 128, 187);
+    border: rgb(41, 128, 187) solid 0;
+    width: 2px;
+    height: auto !important;
+    flex: 0 0 auto;
 }
 
 main > article > div > div > div > a {
     text-decoration: none;
     color: black !important;;
+}
+@media screen and (max-device-width: 480px) {
+    .teachersRowContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .verticalHr{
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background-color: rgb(41, 128, 187);
+        border: rgb(41, 128, 187) solid 0;
+        width: auto !important;
+        height: 2px !important;
+        flex: 0 0 auto;
+    }
+    .teacherName{
+        display: flex;
+        font-size: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+    }
+    .teacherInfoContainer{
+        display: block;
+    }
 }
