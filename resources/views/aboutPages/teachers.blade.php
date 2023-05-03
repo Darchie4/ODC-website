@@ -21,27 +21,33 @@
             @foreach($teachers as $teacher)
                 @if($loop->index % 4 == 0)
                     <div class="teachersRowContainer">
-                        @endif
-                        <div class="teacherContainer">
-                            <a href="/aboutUs/teacherView/{{$teacher -> id}}">
-                                <div class="teacherImgContainer">
-                                    <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
-                                         alt="Billede af: {{$teacher-> name}}">
-                                </div>
-                                <h1 class="teacherName">{{$teacher -> name}}</h1>
-                                {!! $teacher -> shortDescription !!}
-                            </a>
-                            @if( Auth::user() != null && Auth::user() -> can("admin"))
-                                <br>
-                                <button id="mybutton">Rediger</button>
-                                <button id="mybutton">Slet</button>
-                            @endif
+                @endif
+                <div class="teacherContainer">
+                    <a href="/aboutUs/teacherView/{{$teacher -> id}}">
+                        <div class="teacherImgContainer">
+                            <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
+                                 alt="Billede af: {{$teacher-> name}}">
                         </div>
-                        @if(($loop->index+1)%4 == 0 && $loop->index != 0 || $loop -> last == 1)
+                        <article class="teacherInfoContainer">
+                            <h1 class="teacherName">{{$teacher -> name}}</h1>
+                            <p>{!! $teacher -> shortDescription !!}</p>
+                        </article>
+                    </a>
+                @if( Auth::user() != null && Auth::user() -> can("admin"))
+                        <br>
+                        <button id="mybutton">Rediger</button>
+                        <button id="mybutton">Slet</button>
+                    @endif
+                </div>
+                @if($loop -> last)
                     </div>
+                @elseif(($loop->index+1)%4 != 0)
+                    <hr class="verticalHr">
                 @else
+                    </div>
                     <hr>
                 @endif
+
             @endforeach
         </div>
     </article>

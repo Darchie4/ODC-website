@@ -6,11 +6,11 @@
                 <img class="headerLogo" src="{{asset("img/logo/darkBlueGackgroundLogo.jpg")}}" alt="Odense Danse Center">
             </a>
         </div>
-        <ul>
-            <a href="/contact"><li>Kontakt</li></a>
-            <a href="/udmelding"><li>Udmelding</li></a>
+        <ul class="rowLinkContainer">
+            <a class="headerRowLink" href="/contact"><li>Kontakt</li></a>
+            <a class="headerRowLink" href="/udmelding"><li>Udmelding</li></a>
             <div class="aboutUsDropDown">
-                <a href="/aboutUs"><li class="navBarActive">Om os</li></a>
+                <a class="headerRowLink" href="/aboutUs"><li class="navBarActive">Om os</li></a>
                 <div class="aboutUsDropdown-content">
                     <ul>
                         <a class="dropdown-link" href="/aboutUs/teachers"><li class="dropdown-element">Undervisere</li></a>
