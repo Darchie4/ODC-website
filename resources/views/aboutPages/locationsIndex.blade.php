@@ -21,7 +21,7 @@
 
                     <div class="locationLeftInfo">
                         <h2>{{$location -> room_name}}</h2>
-                        
+
                         <h3>Addresse: {{$location -> address}}</h3><br>
                         {!! $location -> description !!} <br>
                     </div>
