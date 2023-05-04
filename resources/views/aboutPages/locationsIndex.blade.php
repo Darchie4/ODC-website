@@ -17,21 +17,23 @@
         <br><br>
         <div class="locationsContainer">
             @foreach($locations as $location)
-                <h1>{{$location -> room_name}}</h1>
-
                 <div class="location">
 
                     <div class="locationLeftInfo">
+                        <h2>{{$location -> room_name}}</h2>
+                        
                         <h3>Addresse: {{$location -> address}}</h3><br>
-                        {{$location -> description}} <br>
+                        {!! $location -> description !!} <br>
                     </div>
-                    <img class="teacherImg" src="{{asset("storage/locationsData/image/" . $location -> image_path)}}"
-                         alt="Billede af: {{$location -> room_name}}" height = "250">
-                    <div class="mapouter">
-                        <div class="gmap_canvas">
-                            <iframe title="Addresse på Google Maps" width="350" height="250" id="gmap_canvas"
-                                    src={{$location -> g_maps_embed_link}}
+                    <div class="locationInfoRight">
+                        <img class="teacherImg" src="{{asset("storage/locationsData/image/" . $location -> image_path)}}"
+                             alt="Billede af: {{$location -> room_name}}" height = "250">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe title="Addresse på Google Maps" width="100%" height="250" id="gmap_canvas"
+                                        src={{$location -> g_maps_embed_link}}
                                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div> <br>
