@@ -23,7 +23,7 @@
                     <div class="teachersRowContainer">
                 @endif
                 <div class="teacherContainer">
-                    <a href="/aboutUs/teacherView/{{$teacher -> id}}">
+                    <a href="{{route('teacherView', ['teacherID' => $teacher -> id])}}">
                         <div class="teacherImgContainer">
                             <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
                                  alt="Billede af: {{$teacher-> name}}">
@@ -33,11 +33,6 @@
                             <p>{!! $teacher -> shortDescription !!}</p>
                         </article>
                     </a>
-                @if( Auth::user() != null && Auth::user() -> can("admin"))
-                        <br>
-                        <button id="mybutton">Rediger</button>
-                        <button id="mybutton">Slet</button>
-                    @endif
                 </div>
                 @if($loop -> last)
                     </div>

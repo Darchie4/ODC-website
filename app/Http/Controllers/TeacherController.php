@@ -56,5 +56,21 @@ class TeacherController extends Controller
         return view('/adminPages/teacher/teacherOverView', ["teachers" => Teacher::all()]);
     }
 
+    public function delete($teacherID){
+        $teacher = Teacher::findOrFail($teacherID);
+        return view('/adminPages/teacher/deleteTeacher', ["teacher" => $teacher]);
+    }
+    public function doDelete($teacherID){
+        $teacher = Teacher::findOrFail($teacherID);
+        Teacher::destroy($teacher -> id);
 
+        return redirect(route('admin.teacher.index'));
+    }
+
+    public function edit($teacherID){
+
+    }
+    public function doEdit($teacherID, Request $request){
+
+    }
 }

@@ -11,38 +11,51 @@
 <body>
 @include("adminPages.adminPartials.adminHeaderPartial")
 
-<article class="with-margin">
+<article class="with-margin with-flex">
+    <br>
+    <br>
+    <h1>Underviser overblik</h1>
     <div class="createButtonContainer">
-        <a href="{{route("admin.teacher.create")}}">Klik her for at oprette en ny underviser</a>
+        <a class="createTeacher" href="{{route("admin.teacher.create")}}">Klik her for at oprette en ny underviser</a>
     </div>
+    <br>
+    <br>
 
-</article>
 
-<article class="with-margin">
-
-    <table class="tg sortable">
-        <thead>
-        <tr>
-            <th class="scheduleTableHead">Underviser ID</th>
-            <th class="scheduleTableHead">Navn</th>
-            <th class="scheduleTableHead">Billede</th>
-            <th class="scheduleTableHead">Kort beskrivelse</th>
-        </tr>
-        </thead>
-        <tbody>
-
+    <div class="teachersContainer">
         @foreach($teachers as $teacher)
-        <tr class="scheduleTableElementContainer childDanceContainer">
-            <td class="scheduleTableElement childDance">{{$teacher -> id}}</td>
-            <td class="scheduleTableElement childDance">{{$teacher -> name}}</td>
-            <td class="scheduleTableElement childDance">
-                <img class="teacherImg" height="150" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}" alt="Hmm... Der er sket en fejl med billedet af {{$teacher-> name}}">
-            </td>
-            <td class="scheduleTableElement childDance">{{$teacher -> shortDescription}}</td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
+            @if($loop->index % 4 == 0)
+                <div class="teachersRowContainer">
+                    @endif
+                    <div class="teacherContainer">
+                        <a href="{{route('teacherView', ['teacherID' => $teacher -> id])}}">
+                            <div class="teacherImgContainer">
+                                <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
+                                     alt="Billede af: {{$teacher-> name}}">
+                            </div>
+                            <article class="teacherInfoContainer">
+                                <h1 class="teacherName">{{$teacher -> name}}</h1>
+                                <p>{!! $teacher -> shortDescription !!}</p>
+                            </article>
+                        </a>
+                        @if( Auth::user() != null && Auth::user() -> can("admin"))
+                            <br>
+                            <a class="createTeacher" href="{{route("admin.teacher.edit", ['teacherID' => $teacher -> id])}}">Rediger</a>
+                            <br>
+                            <a class="createTeacher red" href="{{route("admin.teacher.delete", ['teacherID' => $teacher -> id])}}">Slet</a>
+                        @endif
+                    </div>
+                    @if($loop -> last)
+                </div>
+            @elseif(($loop->index+1)%4 != 0)
+                <hr class="verticalHr">
+            @else
+    </div>
+    <hr>
+    @endif
+
+    @endforeach
+    </div>
 
 </article>
 

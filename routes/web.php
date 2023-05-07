@@ -51,7 +51,7 @@ Route::prefix('aboutUs')->group(function (){
         return view('aboutPages/board');
     });
     Route::get('/teachers', [TeacherController::class, "index"])->name('teacher.index');
-    Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"]);
+    Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"])->name('teacherView');
 
     Route::get('/locations', [LocationController::class, 'index']) -> name('location.index');
 
@@ -67,8 +67,13 @@ Route::prefix('admin')->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::middleware('can:admin')->group(function (){
             Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("admin.teacher.index");
+
             Route::get('/createTeacher', [TeacherController::class, 'create'])->name('admin.teacher.create');
             Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('admin.teacher.doCreate');
+            Route::get('/teacherEdit/{teacherID}', [TeacherController::class, 'edit'])->name("admin.teacher.edit");
+            Route::post('/teacherEdit/{teacherID}', [TeacherController::class, 'doEdit'])->name("admin.teacher.doEdit");
+            Route::get('/teacherDelete/{teacherID}', [TeacherController::class, 'delete'])->name("admin.teacher.delete");
+            Route::get('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
 
             Route::get('/createLocation', [LocationController::class, 'create']) -> name('admin.location.create');
             Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('admin.location.doCreate');
