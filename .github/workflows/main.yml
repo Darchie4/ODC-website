@@ -1,7 +1,7 @@
 on:
   push:
       branches:
-      - test
+      - Test
 
 name: 🚀 Deploy website on push
 jobs:
