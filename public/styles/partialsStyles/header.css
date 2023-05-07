@@ -18,7 +18,7 @@ header > div > ul > a > li, header > div > ul > div > a > li {
 
 .rowLinkContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: flex-start;
 
     list-style: none;
