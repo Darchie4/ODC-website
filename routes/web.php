@@ -73,7 +73,7 @@ Route::prefix('admin')->group(function (){
             Route::get('/teacherEdit/{teacherID}', [TeacherController::class, 'edit'])->name("admin.teacher.edit");
             Route::post('/teacherEdit/{teacherID}', [TeacherController::class, 'doEdit'])->name("admin.teacher.doEdit");
             Route::get('/teacherDelete/{teacherID}', [TeacherController::class, 'delete'])->name("admin.teacher.delete");
-            Route::get('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
+            Route::delete('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
 
             Route::get('/createLocation', [LocationController::class, 'create']) -> name('admin.location.create');
             Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('admin.location.doCreate');

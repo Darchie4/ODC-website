@@ -34,7 +34,6 @@ class TeacherController extends Controller
             'teacherImg' => 'required',
             'shortDescription' => 'required',
             'longDescription' => 'required',
-            'km_id' => 'required|integer'
         ]);
         $uploadedFile = $request->file('teacherImg');
         $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
@@ -44,7 +43,6 @@ class TeacherController extends Controller
         $danceTeacher->imgName = $fileName;
         $danceTeacher->shortDescription = \request('shortDescription');
         $danceTeacher->longDescription = \request('longDescription');
-        $danceTeacher->km_id = \request('km_id');
         $danceTeacher->save();
         return redirect('aboutUs/teacherView/' . $danceTeacher->id);
     }
@@ -68,9 +66,29 @@ class TeacherController extends Controller
     }
 
     public function edit($teacherID){
+        $teacher = Teacher::findOrFail($teacherID);
+        return view('/adminPages/teacher/editTeacher', ["teacher" => $teacher]);
 
     }
     public function doEdit($teacherID, Request $request){
+        $request->validate([
+            'name' => 'required',
+            'shortDescription' => 'required',
+            'longDescription' => 'required',
+        ]);
+        $danceTeacher = Teacher::findOrFail($teacherID);
 
+        if ($request->file() != null){
+            $uploadedFile = $request->file('teacherImg');
+            $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
+            $request->file('teacherImg')->storeAs('/teachersData/image', $fileName, 'public');
+            $danceTeacher->imgName = $fileName;
+        }
+
+        $danceTeacher->name = \request('name');
+        $danceTeacher->shortDescription = \request('shortDescription');
+        $danceTeacher->longDescription = \request('longDescription');
+        $danceTeacher->save();
+        return redirect('aboutUs/teacherView/' . $danceTeacher->id);
     }
 }
