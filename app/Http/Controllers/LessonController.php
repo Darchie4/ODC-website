@@ -7,6 +7,7 @@ use App\Models\Lesson;
 use App\Models\Location;
 use App\Models\Teacher;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -19,11 +20,11 @@ class LessonController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        //
+        return view('NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
     }
 
     /**

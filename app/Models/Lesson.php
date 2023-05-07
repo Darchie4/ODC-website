@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -18,13 +19,13 @@ class Lesson extends Model
     {
         return $this->belongsToMany(Teacher::class);
     }
-    public function location(): HasOne
+    public function location(): BelongsTo
     {
-        return $this->hasOne(Location::class);
+        return $this->belongsTo(Location::class);
     }
-    public function danceStyle(): HasOne
+    public function danceStyle(): BelongsTo
     {
-        return $this->hasOne(DanceStyle::class);
+        return $this->belongsTo(DanceStyle::class);
     }
 
 }

@@ -36,6 +36,8 @@ Route::get('/brudevals', function () {
 Route::get('/schedule', function () {
     return view('schedule');
 });
+Route::get('/NEWSchedule', [LessonController::class, "index"])->name('schedule');
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -67,7 +69,6 @@ Route::prefix('admin')->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::middleware('can:admin')->group(function (){
             Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("admin.teacher.index");
-
             Route::get('/createTeacher', [TeacherController::class, 'create'])->name('admin.teacher.create');
             Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('admin.teacher.doCreate');
             Route::get('/teacherEdit/{teacherID}', [TeacherController::class, 'edit'])->name("admin.teacher.edit");
@@ -75,9 +76,17 @@ Route::prefix('admin')->group(function (){
             Route::get('/teacherDelete/{teacherID}', [TeacherController::class, 'delete'])->name("admin.teacher.delete");
             Route::delete('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
 
+
+            Route::get('/locationIndex', [LocationController::class, 'adminIndex'])->name("admin.location.index");
             Route::get('/createLocation', [LocationController::class, 'create']) -> name('admin.location.create');
             Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('admin.location.doCreate');
+            Route::get('/editLocation/{locationID}', [LocationController::class, 'edit'])->name("admin.location.edit");
+            Route::post('/doEditLocation/{locationID}', [LocationController::class, 'doEdit'])->name("admin.location.doEdit");
+            Route::get('/deleteLocation/{locationID}', [LocationController::class, 'delete'])->name("admin.location.delete");
+            Route::delete('/doDeleteLocation/{locationID}', [LocationController::class, 'doDelete'])->name("admin.location.doDelete");
 
+
+            Route::get('/lessonIndex', [LessonController::class, 'create']) -> name('admin.lesson.index');
             Route::get('/createLesson', [LessonController::class, 'create']) -> name('admin.lesson.create');
             Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('admin.lesson.doCreate');
         });

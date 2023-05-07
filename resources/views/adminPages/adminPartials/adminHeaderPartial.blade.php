@@ -11,8 +11,8 @@
             <a class="headerRowLink" href="/"><li>Normal Forside</li></a>
             <a class="headerRowLink" href="{{route("admin.index")}}"><li>Admin Forside</li></a>
             <a class="headerRowLink" href="{{route("admin.teacher.index")}}"><li>Underviser Håndtering</li></a>
-            <a class="headerRowLink" href="{{route("admin.lesson.create")}}"><li>Hold håndtering</li></a>
-            <a class="headerRowLink" href="{{route("admin.location.create")}}"><li>Lokation håndtering</li></a>
+            <a class="headerRowLink" href="{{route("admin.lesson.index")}}"><li>Hold håndtering</li></a>
+            <a class="headerRowLink" href="{{route("admin.location.index")}}"><li>Lokation håndtering</li></a>
         </ul>
     </div>
 </header>
