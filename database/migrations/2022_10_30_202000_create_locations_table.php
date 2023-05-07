@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('address');
-            $table->string('description');
+            $table->text('description');
             $table->string('g_maps_embed_link');
             $table->string('room_name')->unique();
             $table->string('image_path')->unique();

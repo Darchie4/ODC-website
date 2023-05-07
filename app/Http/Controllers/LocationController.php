@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lesson;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class LocationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function doCreate(Request $request)
@@ -45,59 +46,65 @@ class LocationController extends Controller
         $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
         $uploadedFile->storeAs('/locationsData/image', $fileName, 'public');
 
-        $lesson = new Location();
+        $location = new Location();
 
-        $lesson -> address = \request("address");
-        $lesson -> description = \request("room_description");
-        $lesson -> room_name = \request("room_name");
-        $lesson -> g_maps_embed_link = \request("g_maps_embed_link");
-        $lesson -> image_path = $fileName;
-        $lesson -> save();
+        $location->address = \request("address");
+        $location->description = \request("room_description");
+        $location->room_name = \request("room_name");
+        $location->g_maps_embed_link = \request("g_maps_embed_link");
+        $location->image_path = $fileName;
+        $location->save();
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Location $location)
+    public function adminIndex()
     {
-        //
+        return view('/adminPages/locations/index', ["locations" => Location::all()]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Location $location)
+    public function delete($locationID)
     {
-        //
+        $location = Location::findOrFail($locationID);
+        return view('/adminPages/locations/confirmDestroy', ["location" => $location]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Location $location)
+    public function doDelete($locationID)
     {
-        //
+        $location = Location::findOrFail($locationID);
+        Location::destroy($location->id);
+
+        return redirect(route('admin.location.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Location $location)
+    public function edit($locationID)
     {
-        //
+        $location = Location::findOrFail($locationID);
+        return view('adminPages/locations/edit', ['location' => $location]);
+    }
+
+    public function doEdit($locationID, Request $request)
+    {
+        $request->validate([
+            'address' => 'required',
+            'g_maps_embed_link' => 'required',
+            'room_name' => 'required',
+        ]);
+
+        $location = Location::findOrFail($locationID);
+
+        if ($request->file('roomImg') != null) {
+            $uploadedFile = $request->file('roomImg');
+            $fileName = time() . '_' . $uploadedFile->getClientOriginalName();
+            $uploadedFile->storeAs('/locationsData/image', $fileName, 'public');
+            $location->image_path = $fileName;
+        }
+
+
+        $location->address = \request("address");
+        $location->description = \request("room_description");
+        $location->room_name = \request("room_name");
+        $location->g_maps_embed_link = \request("g_maps_embed_link");
+        $location->save();
+        return redirect(route('admin.location.index'));
     }
 }

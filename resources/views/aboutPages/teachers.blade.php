@@ -4,7 +4,7 @@
     @include("partials.metatags")
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teachers.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <title>Odense Danse Center</title>
@@ -23,7 +23,7 @@
                     <div class="teachersRowContainer">
                 @endif
                 <div class="teacherContainer">
-                    <a href="/aboutUs/teacherView/{{$teacher -> id}}">
+                    <a href="{{route('teacherView', ['teacherID' => $teacher -> id])}}">
                         <div class="teacherImgContainer">
                             <img class="teacherImg" src="{{asset("storage/teachersData/image/" . $teacher-> imgName)}}"
                                  alt="Billede af: {{$teacher-> name}}">
@@ -33,11 +33,6 @@
                             <p>{!! $teacher -> shortDescription !!}</p>
                         </article>
                     </a>
-                @if( Auth::user() != null && Auth::user() -> can("admin"))
-                        <br>
-                        <button id="mybutton">Rediger</button>
-                        <button id="mybutton">Slet</button>
-                    @endif
                 </div>
                 @if($loop -> last)
                     </div>

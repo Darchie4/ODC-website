@@ -4,7 +4,7 @@
     @include("partials.metatags")
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <title>Odense Danse Center</title>
 </head>
 

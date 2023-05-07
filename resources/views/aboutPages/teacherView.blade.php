@@ -4,7 +4,7 @@
     @include("partials.metatags")
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teacherView.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <title>Odense Danse Center</title>
@@ -22,13 +22,12 @@
             <div class="teacherText">
                 <h1 class="teacherName">{{$teacher -> name}}</h1>
                 <h2>Underviser på:</h2>
-                <!--
                 <ul>
-                @ foreach($teacher -> lessons as $locations)
-                        <li>{}</li>
-                    @ endforeach
+                @foreach($teacher -> lessons as $lesson)
+                    <li>{{$lesson->name}}</li>
+                @endforeach
                 </ul>
-                -->
+
             </div>
 
         </article>
