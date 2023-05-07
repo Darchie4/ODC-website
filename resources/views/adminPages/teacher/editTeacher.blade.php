@@ -5,7 +5,7 @@
             referrerpolicy="origin"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <title>Odense Danse Center</title>
 </head>
 
@@ -13,7 +13,7 @@
 @include("adminPages.adminPartials.adminHeaderPartial")
 
 <article class="with-margin">
-    <form action="{{route('teacher.doCreate')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.teacher.doCreate')}}" method="post" enctype="multipart/form-data">
         @csrf
         <label for="name">Navn</label> <br>
         <input name="name" type="text"> <br><br>

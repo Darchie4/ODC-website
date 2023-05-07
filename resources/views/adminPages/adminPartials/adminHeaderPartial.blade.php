@@ -1,14 +1,18 @@
+
 <header>
-    <div class="topLogoContainer">
-        <a href="/">
-            <img height="75" src="{{asset("img/logo/darkBlueGackgroundLogo.jpg")}}" alt="Odense Danse Center">
-        </a>
+    <div class="headerContentContainer">
+        <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
+        <div class="topLogoContainer">
+            <a href="/">
+                <img class="headerLogo" src="{{asset("img/logo/darkBlueGackgroundLogo.jpg")}}" alt="Odense Danse Center">
+            </a>
+        </div>
+        <ul class="rowLinkContainer">
+            <a class="headerRowLink" href="/"><li>Normal Forside</li></a>
+            <a class="headerRowLink" href="{{route("admin.index")}}"><li>Admin Forside</li></a>
+            <a class="headerRowLink" href="{{route("admin.teacher.index")}}"><li>Underviser Håndtering</li></a>
+            <a class="headerRowLink" href="{{route("admin.lesson.create")}}"><li>Hold håndtering</li></a>
+            <a class="headerRowLink" href="{{route("admin.location.create")}}"><li>Lokation håndtering</li></a>
+        </ul>
     </div>
-    <ul>
-        <a href="/"><li>Forside</li></a>
-        <a href="{{route("admin.index")}}"><li>Admin Forside</li></a>
-        <a href="{{route("teacher.index")}}"><li>Underviser Håndtering</li></a>
-        <a href="{{route("lesson.create")}}"><li>Hold håndtering</li></a>
-        <a href="{{route("location.create")}}"><li>Lokation håndtering</li></a>
-    </ul>
 </header>

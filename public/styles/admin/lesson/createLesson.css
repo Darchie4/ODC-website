@@ -1,0 +1,21 @@
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 5vh;
+}
+
+.leftInputContainer{
+    width: 50%;
+}
+.middelInfoContainer{
+    width: 50%;
+}
+.rightInputContainer{
+    width: 50%;
+}
+
+.choices{
+    width: 75%;
+}

@@ -4,6 +4,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TeacherController;
+use App\Models\DanceStyle;
+use App\Models\Location;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 
@@ -47,7 +50,7 @@ Route::prefix('aboutUs')->group(function (){
     Route::get('/board', function () {
         return view('aboutPages/board');
     });
-    Route::get('/teachers', [TeacherController::class, "index"]);
+    Route::get('/teachers', [TeacherController::class, "index"])->name('teacher.index');
     Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"]);
 
     Route::get('/locations', [LocationController::class, 'index']) -> name('location.index');
@@ -63,15 +66,15 @@ Route::prefix('admin')->group(function (){
     Route::middleware('auth')->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::middleware('can:admin')->group(function (){
-            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("teacher.index");
-            Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teacher.create');
-            Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('teacher.doCreate');
+            Route::get('/teacherIndex', [TeacherController::class, 'adminIndex'])->name("admin.teacher.index");
+            Route::get('/createTeacher', [TeacherController::class, 'create'])->name('admin.teacher.create');
+            Route::post('/createTeacher', [TeacherController::class, 'doCreate'])->name('admin.teacher.doCreate');
 
-            Route::get('/createLocation', [LocationController::class, 'create']) -> name('location.create');
-            Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('location.doCreate');
+            Route::get('/createLocation', [LocationController::class, 'create']) -> name('admin.location.create');
+            Route::post('/createLocation', [LocationController::class, 'doCreate']) -> name('admin.location.doCreate');
 
-            Route::get('/createLesson', [LessonController::class, 'create']) -> name('lesson.create');
-            Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('lesson.doCreate');
+            Route::get('/createLesson', [LessonController::class, 'create']) -> name('admin.lesson.create');
+            Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('admin.lesson.doCreate');
         });
 
     });

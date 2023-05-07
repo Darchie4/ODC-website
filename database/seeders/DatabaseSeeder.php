@@ -17,13 +17,8 @@ class DatabaseSeeder extends Seeder
         $this ->call([
             TeacherSeeder::class,
             AdminSeeder::class,
-            LocationSeeder::class
+            LocationSeeder::class,
+            DanceStyleSeeder::class,
         ]);
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

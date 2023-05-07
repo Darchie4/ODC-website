@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DanceStyle;
 use App\Models\Lesson;
 use App\Models\Location;
 use App\Models\Teacher;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class LessonController extends Controller
@@ -28,14 +33,14 @@ class LessonController extends Controller
      */
     public function create(): View
     {
-        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all()]);
+        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all()]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function doCreate(Request $request)
     {
@@ -46,10 +51,10 @@ class LessonController extends Controller
             'start_time' => 'required',
             'end_time' => 'required',
             'km_id' => 'required|integer',
-            'teacher' => 'required|integer',
+            'teachers' => 'required|array',
+            'danceStyle' => 'required',
             'location' => 'required|integer',
         ]);
-
         $lesson = new Lesson();
         $lesson->name = \request("name");
         $lesson->age = \request("age");
@@ -57,9 +62,17 @@ class LessonController extends Controller
         $lesson->lesson_start_time = \request("start_time");
         $lesson->lesson_end_time = \request("end_time");
         $lesson->km_id = \request("km_id");
-        $lesson->teacher_id = \request("teacher");
         $lesson->location_id = \request("location");
-        $lesson -> save();
+        $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
+        if ($DBFoundStyle->doesntExist()) {
+            $danceStyle = new DanceStyle();
+            $danceStyle->name = \request('danceStyle');
+            $danceStyle->save();
+        }
+        $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+        $lesson->save();
+        $lesson->teachers()->attach(\request('teachers'));
+        return redirect(route('teacher.index'));
     }
 
     /**

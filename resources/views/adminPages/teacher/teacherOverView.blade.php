@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/admin/teacher/teacherView.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/partialsStyles/header.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <title>Odense Danse Center</title>
 </head>
 
@@ -13,7 +13,7 @@
 
 <article class="with-margin">
     <div class="createButtonContainer">
-        <a href="{{route("teacher.create")}}">Klik her for at oprette en ny underviser</a>
+        <a href="{{route("admin.teacher.create")}}">Klik her for at oprette en ny underviser</a>
     </div>
 
 </article>
