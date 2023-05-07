@@ -21,6 +21,7 @@
             Tilmelding til hold forgår på <a href="https://odensedansecenter.klub-modul.dk/cms/TeamOverviewAlt.aspx">Klubmodul</a>. <br>
             Psst! Du kan også bare trykke på holdet i tabellen her uden ;)
         </div>
+        
         <div class="lessonsContainer">
             @foreach($lessons as $lesson)
                 <div class="lessonContainer">
