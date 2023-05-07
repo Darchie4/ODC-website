@@ -2,16 +2,29 @@
     width: 100%;
     display: block;
 }
-
+h1{
+    font-size: max(22px, 3.5vw);
+    color: rgb(41, 128, 187);
+    margin-bottom: 1vw;
+}
+h2{
+    font-size: max(14px, 2vw);
+    color: rgb(41, 128, 187);
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+}
 .location{
     display: flex;
     margin: 1%;
     border-radius: 4px;
     width: 100%;
+    box-shadow: 0 20px 40px rgba(4, 31, 61, 0.5);
+    padding: 3% 3% 1%;
 }
 
 .locationLeftInfo{
     margin-left: 2%;
+    margin-right: 2%;
     margin-bottom: 2%;
 }
 
@@ -29,4 +42,8 @@
 }
 h3{
     margin: 0;
+}
+.locationInfoRight{
+    display: flex;
+    flex-direction: column;
 }

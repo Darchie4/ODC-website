@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("lesson_name");
+            $table->string("name");
             $table->string("age");
             $table->string("day");
             $table->string("lesson_start_time");
             $table->string("lesson_end_time");
             $table->string("km_id") -> unique();
-            $table->foreignId("teacher_id") ->constrained();
             $table->foreignId("location_id") -> constrained();
+            $table->foreignId("dance_style_id") -> constrained();
         });
     }
 

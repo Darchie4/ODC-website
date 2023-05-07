@@ -4,6 +4,7 @@ body {
 
 .headerContentContainer {
     display: flex;
+    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
     max-width: 85rem;
@@ -15,8 +16,11 @@ header > div > ul > a > li, header > div > ul > div > a > li {
     font-size: max(16px, min(1.55rem, 2vw));
 }
 
-header > div > ul {
+.rowLinkContainer{
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -129,13 +133,21 @@ header {
     object-fit: cover; /* scale the image to cover the container while preserving aspect ratio */
 }
 
-@media screen and (max-aspect-ratio: 2/3) {
+@media screen and (max-device-width: 834px) {
     .headerContentContainer{
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     .topLogoContainer {
-        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
+
+    .topLogoContainer > a{
+        margin-left: auto;
+        margin-right: auto;
     }
     .headerLogo{
         width: 30vw;
@@ -148,5 +160,8 @@ header {
 
     header > div > ul > a > li, header > div > ul > div > a > li {
         padding: 0.7rem 1rem 0.7rem;
+    }
+    .rowLinkContainer{
+        display: block;
     }
 }

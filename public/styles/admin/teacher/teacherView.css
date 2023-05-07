@@ -1,3 +1,83 @@
-p {
-    width: 50%
+.with-flex{
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    font-size: max(22px, 2vw);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.teachersRowContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.teacherContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    border-radius: 4px;
+    width: auto;
+    min-width: min(22%, 260px);
+    flex: 0 1 auto;
+}
+.teacherTextContainer {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.teacherImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    max-width: min(250px, 100%);
+    max-height: 250px;
+    border-radius: 50%;
+}
+
+.teacherName {
+    margin-top: 4%;
+    margin-bottom: 6%;
+    font-size: 1.26em;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+.teachersContainer {
+    display: block;
+
+}
+.verticalHr{
+    margin: 10px;
+    background-color: rgb(41, 128, 187);
+    border: rgb(41, 128, 187) solid 0;
+    width: 2px;
+    height: auto !important;
+    flex: 0 0 auto;
+}
+
+article > div > div > div > a {
+    text-decoration: none;
+    color: black !important;;
+}
+
+.createTeacher{
+    display: block;
+    background: rgb(41, 128, 187);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin-top: auto;
+}
+
+.red{
+    background-color: red;
+    margin-top: 0;
 }

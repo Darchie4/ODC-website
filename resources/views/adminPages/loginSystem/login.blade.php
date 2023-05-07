@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/header.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <title>Odense Danse Center</title>
 </head>
 <body>

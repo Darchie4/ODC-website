@@ -5,7 +5,7 @@
     @include("partials.metatags")
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <title>Odense Danse Center</title>
 </head>

@@ -3,7 +3,7 @@
 <head>
     @include("partials.metatags")
     <title>Odense Danse Center</title>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
 </head>
 
 <body>

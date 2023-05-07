@@ -4,7 +4,7 @@
     @include("partials.metatags")
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('styles/frontPage.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v15.0"
             nonce="7RTev8in"></script>
