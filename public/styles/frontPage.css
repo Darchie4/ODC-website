@@ -40,6 +40,17 @@ article > h1 {
     color: rgb(41, 128, 187);
 }
 
+.leftInfoColumn > h2 {
+    font-size: max(14px, 1.5vw);
+    color: rgb(41, 128, 187);
+}
+.leftInfoColumn > h3 {
+    color: rgb(41, 128, 187);
+}
+.leftInfoColumn > h4 {
+    font-size: 1.1em;
+    color: rgb(6, 54, 102);
+}
 .centered{
     display: block;
     margin-left: auto;
@@ -60,3 +71,4 @@ article > h1 {
     text-align: center;
     font-size: max(22px, 1.5vw);
 }
+
