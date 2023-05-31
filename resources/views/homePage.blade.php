@@ -33,7 +33,7 @@
 
             <b>Lørdag den 1. Juli</b> er der mulighed for at tilmelde sig de forskellige hold. Vi planlægger også et åbenhuscarrangement i august, inden sæsonstart, hvor det er muligt at få en smagsprøve på de forskellige hold.<br><br>
             <b>Mandag den 21. August</b> er der sæsonstart for alle hold, bortset fra pardanserholdene, der starter lidt senere.<br><br>
-            <b>Tirsdag den 19. December</b> vil vi holde vores Julebal<br><br>
+            <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
             <b>Lørdag den 4. Maj 2024</b> holder vi vores store sæsonopvisning<br><br>
 
 
