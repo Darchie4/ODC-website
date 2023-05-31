@@ -44,8 +44,8 @@
             <br><br>
 
 
-            <h2>Husk at følge os på de scoiale medier!</h2>
-            Vi er både på <a href="https://www.facebook.com/OdenseDanseCenter/">FaceBook</a> og
+            <h2>Husk at følge os på de sociale medier!</h2>
+            Vi er både på <a href="https://www.facebook.com/OdenseDanseCenter/">Facebook</a> og
             <a href="https://www.instagram.com/odense_danse_center/">Instagram</a>, hvor vi poster kommende events og
             billeder eller videoer af hvad der ellers forgår på danseskolen.
         </div>
