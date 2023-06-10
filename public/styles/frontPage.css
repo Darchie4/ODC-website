@@ -72,3 +72,14 @@ article > h1 {
     font-size: max(22px, 1.5vw);
 }
 
+@media screen and (max-device-width: 834px) {
+    .splitInfoBox{
+        flex-direction: column;
+    }
+    .leftInfoColumn{
+        width: 100%;
+    }
+    .fb-container{
+        width: 100%;
+    }
+}
