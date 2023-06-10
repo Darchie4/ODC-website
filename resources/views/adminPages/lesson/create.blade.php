@@ -49,14 +49,22 @@
                 <label for="age">Alders krav</label> <br>
                 <input name="age"><br><br>
                 <label for="danceStyle">Stil art</label><br>
-                <input name="danceStyle" type="text" list="danceStyles"
-                       placeholder="Ex. Pardans, Hip Hop osv..."/>
+                <input name="danceStyle" list="danceStyles"
+                       placeholder="Ex. Pardans, Hip Hop osv..."/><br><br>
                 <datalist id="danceStyles">
                     @foreach($danceStyles as $style)
-                        <option value="{{$style->name}}">
+                        <option value="{{$style->name}}">{{$style->name}}</option>
                     @endforeach
                 </datalist>
-                <br><br>
+
+                <label for="skillLevel">Dygtigheds krav</label><br>
+                <input name="skillLevel" list="skillLeveles"
+                       placeholder="Ex. Pardans, Hip Hop osv..."/><br><br>
+                <datalist id="skillLeveles">
+                    @foreach($skillLevels as $skillLevel)
+                        <option value="{{$skillLevel->name}}">{{$skillLevel->name}}</option>
+                    @endforeach
+                </datalist>
                 <label for="teachers[]">Underviser(er)</label><br>
                 <select id="choices-multiple-remove-button" placeholder="Vælg undervisere" multiple id="teacher"
                         name="teachers[]">
@@ -79,7 +87,7 @@
                     @foreach($locations as $location)
                         <option value={{$location -> id}}>{{$location -> room_name}}</option>
                     @endforeach
-                </select> <br><br>
+                </select>
             </div>
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DanceStyle;
 use App\Models\Lesson;
 use App\Models\Location;
+use App\Models\SkillLevel;
 use App\Models\Teacher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -34,7 +35,7 @@ class LessonController extends Controller
      */
     public function create(): View
     {
-        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all()]);
+        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all(), "skillLevels" => SkillLevel::all()]);
     }
 
     /**
@@ -71,6 +72,14 @@ class LessonController extends Controller
             $danceStyle->save();
         }
         $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+
+        $DBFoundSkillLevel = DB::table('skill_level')->where('name', \request('skillLevel'));
+        if ($DBFoundSkillLevel->doesntExist()) {
+            $skillLevel = new SkillLevel();
+            $skillLevel->name = \request('skillLevel');
+            $skillLevel->save();
+        }
+        $lesson->skill_Level_id = DanceStyle::where('name', \request('skillLevel'))->first()->id;
         $lesson->save();
         $lesson->teachers()->attach(\request('teachers'));
         return redirect(route('teacher.index'));

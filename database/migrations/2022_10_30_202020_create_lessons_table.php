@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string("km_id") -> unique();
             $table->foreignId("location_id") -> constrained();
             $table->foreignId("dance_style_id") -> constrained();
+            $table->foreignId("skill_level_id") -> constrained();
         });
     }
 
