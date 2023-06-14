@@ -13,7 +13,7 @@ class Lesson extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['lesson_name', 'age', 'day', 'lesson_start_time', 'lesson_end_time', 'location_id', 'danceStyle'];
+    protected $fillable = ['lesson_name', 'age', 'day', 'lesson_start_time', 'lesson_end_time', 'location_id', 'danceStyle', 'skillLevel'];
 
     public function teachers(): BelongsToMany
     {
@@ -27,5 +27,8 @@ class Lesson extends Model
     {
         return $this->belongsTo(DanceStyle::class);
     }
-
+    public function skillLevel(): BelongsTo
+    {
+        return $this->belongsTo(SkillLevel::class);
+    }
 }

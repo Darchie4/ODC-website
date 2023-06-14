@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DanceStyle;
 use App\Models\Lesson;
 use App\Models\Location;
+use App\Models\SkillLevel;
 use App\Models\Teacher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -24,7 +25,17 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
+        return view('lesson.NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
+    }
+
+    /**
+     * Display a listing of the resource with search.
+     *
+     * @return Application|Factory|View
+     */
+    public function indexSearch($styleID)
+    {
+        return view('lesson.NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::select()->where("dance_style_id", $styleID)->get()]);
     }
 
     /**
@@ -34,7 +45,7 @@ class LessonController extends Controller
      */
     public function create(): View
     {
-        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all()]);
+        return view('adminPages/lesson/create', ["teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all(), "skillLevels" => SkillLevel::all()]);
     }
 
     /**
@@ -55,6 +66,9 @@ class LessonController extends Controller
             'teachers' => 'required|array',
             'danceStyle' => 'required',
             'location' => 'required|integer',
+            'skillLevel' => 'required',
+            'shortLessonDescription' => 'required',
+            'longLessonDescription' => 'required',
         ]);
         $lesson = new Lesson();
         $lesson->name = \request("name");
@@ -64,6 +78,8 @@ class LessonController extends Controller
         $lesson->lesson_end_time = \request("end_time");
         $lesson->km_id = \request("km_id");
         $lesson->location_id = \request("location");
+        $lesson->short_description = \request("shortLessonDescription");
+        $lesson->long_description = \request("longLessonDescription");
         $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
         if ($DBFoundStyle->doesntExist()) {
             $danceStyle = new DanceStyle();
@@ -71,6 +87,14 @@ class LessonController extends Controller
             $danceStyle->save();
         }
         $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+
+        $DBFoundSkillLevel = DB::table('skill_levels')->where('name', \request('skillLevel'));
+        if ($DBFoundSkillLevel->doesntExist()) {
+            $skillLevel = new SkillLevel();
+            $skillLevel->name = \request('skillLevel');
+            $skillLevel->save();
+        }
+        $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
         $lesson->save();
         $lesson->teachers()->attach(\request('teachers'));
         return redirect(route('teacher.index'));
@@ -80,11 +104,11 @@ class LessonController extends Controller
      * Display the specified resource.
      *
      * @param Lesson $lesson
-     * @return Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Lesson $lesson)
+    public function show($lessonID)
     {
-        //
+        return view('lesson.show', ['lesson' => Lesson::where('id', $lessonID)->first()]);
     }
 
     /**

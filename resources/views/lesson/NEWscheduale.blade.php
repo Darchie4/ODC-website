@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    @include("partials.metatags")
+    <link rel="stylesheet" href="{{ asset('styles/NEWschedule.css') }}"/>
+    <script src="{{ asset('js/scheduleHide.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <title>Odense Danse Center</title>
+</head>
+
+<body>
+@include("partials.navbar")
+
+<main>
+    <article>
+        <div class="programTextContainer">
+            <h1>Program</h1>
+            Her kan du se en oversigt over hvilke hold Odense Danse Center tilbyder. <br>
+            Tilmelding til hold forgår på <a href="https://odensedansecenter.klub-modul.dk/cms/TeamOverviewAlt.aspx">Klubmodul</a>.
+            <br>
+            Psst! Du kan også bare trykke på holdet i tabellen her uden ;)
+        </div>
+
+        <article class="danceStyles">
+            <a class="danceStyleButton" href="{{route("schedule")}}">Alle hold</a>
+
+            @foreach($danceStyles as $danceStyle)
+
+                <a class="danceStyleButton" href="{{route("schedule.search", $danceStyle->id)}}">{{$danceStyle -> name}}</a>
+            @endforeach
+
+
+        </article>
+
+        <section class="lessonsContainer">
+            @foreach($lessons as $lesson)
+                @if($loop->index % 2 == 0)
+                    <div class="lessonContainerRow">
+                @endif
+                <div class="lessonContainer">
+                    <h3>{{$lesson -> name}}</h3>
+                    <div class="mainInfoContainer">
+                        <div class="leftInfoContainer">
+                            <b>Alder:</b> {{$lesson -> age}} <br>
+                            <b>Tidspunkt:</b> {{$lesson -> day}} {{$lesson -> lesson_start_time}}
+                            - {{$lesson -> lesson_end_time}} <br>
+                            <b>Lokation:</b> <a
+                                href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
+                            <b>Stilart:</b> {{$lesson -> skillLevel -> name}} {{$lesson -> danceStyle -> name}}
+                            <br>
+                        </div>
+                        <div class="rightInfoContainer">
+                            <b>Underviser{{count($lesson -> teachers) > 1 ? "e" : ""}}:</b> <br>
+                            @foreach($lesson->teachers as $teacher)
+                                <a href="{{route("teacherView", ["teacherID" => $teacher->id])}}">{{$teacher -> name}}</a>
+                                <br>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="bottomInfoContainer">
+                        <h4>Beskrivelse</h4>
+                        {{$lesson -> short_description}}
+                    </div>
+                    <div class="buttonContainer">
+                        <a class="lessonButton" href="{{route("lesson.show", ["lessonID" => $lesson->id])}}">Læs mere</a>
+                        <a class="lessonButton greenBackground" href="https://odensedansecenter.klub-modul.dk/cms/ProfileMaintainEnrollment.aspx?TeamID={{$lesson->km_id}}">Tilmeld</a>
+                    </div>
+                </div>
+                    @if($loop -> last || ($loop->index+1)%2 == 0)
+                    </div>
+                @endif
+            @endforeach
+        </section>
+
+
+    </article>
+</main>
+
+@include("partials.footer")
+</body>
+
+</html>

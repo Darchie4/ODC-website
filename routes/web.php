@@ -37,6 +37,9 @@ Route::get('/schedule', function () {
     return view('schedule');
 });
 Route::get('/NEWSchedule', [LessonController::class, "index"])->name('schedule');
+Route::get('/schedule/{styleID}', [LessonController::class, "indexSearch"])->name('schedule.search');
+
+Route::get('/lesson/{lessonID}', [LessonController::class, "show"])->name('lesson.show');
 
 Route::get('/contact', function () {
     return view('contact');
