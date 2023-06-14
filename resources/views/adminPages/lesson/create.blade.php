@@ -35,6 +35,9 @@
 <main>
     <h1>Opret Hold</h1>
 
+        @foreach($errors->keys() as $message)
+        {{$message}},
+        @endforeach
 
     <form action="{{route('admin.lesson.doCreate')}}" method="post" enctype="multipart/form-data">
         @csrf

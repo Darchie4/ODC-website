@@ -36,6 +36,12 @@ h1 {
     rgb(41, 128, 187);
 }
 
+.centered{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 @media screen and (max-device-width: 480px) {
     main {
         margin-left: 2vw;

@@ -1,0 +1,112 @@
+h1 {
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+}
+
+h2{
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+.teachersRowContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.teacherContainer {
+    width: calc(50% - 11px);
+    margin: 1%;
+    border-radius: 4px;
+    flex: 0 1 auto;
+}
+.teacherTextContainer {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.teacherImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    max-width: min(250px, 100%);
+    max-height: 250px;
+    border-radius: 50%;
+}
+
+.teacherName {
+    margin-top: 4%;
+    margin-bottom: 6%;
+    font-size: 1.26em;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+.teachersContainer {
+    padding: 2%;
+    display: block;
+}
+.verticalHr{
+    margin: 10px;
+    background-color: rgb(41, 128, 187);
+    border: rgb(41, 128, 187) solid 0;
+    width: 2px;
+    height: auto !important;
+    flex: 0 0 auto;
+}
+
+.teacherLink {
+    text-decoration: none;
+    color: black !important;;
+}
+
+.lessonInfoContainer{
+    display: flex;
+    flex-direction: row;
+}
+.locationContainer{
+    padding: 2%;
+    box-shadow: 0 5px 15px rgba(4, 31, 61, 0.5);
+}
+
+.teachersContainer{
+    margin-bottom: 3vh;
+    box-shadow: 0 5px 15px rgba(4, 31, 61, 0.5);
+}
+
+.rightInfoContainer{
+    max-width: 50%;
+}
+.leftInfoColumn{
+    min-width: 50%;
+    max-width: 70%;
+    margin-right: 5%;
+}
+@media screen and (max-device-width: 480px) {
+    .teachersRowContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .verticalHr{
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background-color: rgb(41, 128, 187);
+        border: rgb(41, 128, 187) solid 0;
+        width: auto !important;
+        height: 2px !important;
+        flex: 0 0 auto;
+    }
+    .teacherName{
+        display: flex;
+        font-size: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+    }
+    .teacherInfoContainer{
+        display: block;
+    }
+}
