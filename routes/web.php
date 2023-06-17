@@ -33,10 +33,8 @@ Route::get('/', function () {
 Route::get('/brudevals', function () {
     return view('bridalwaltz');
 });
-Route::get('/schedule', function () {
-    return view('schedule');
-});
-Route::get('/NEWSchedule', [LessonController::class, "index"])->name('schedule');
+Route::get('/schedule', [LessonController::class, "index"])->name('schedule');
+Route::get('/hold', [LessonController::class, "index"]);
 Route::get('/schedule/{styleID}', [LessonController::class, "indexSearch"])->name('schedule.search');
 
 Route::get('/lesson/{lessonID}', [LessonController::class, "show"])->name('lesson.show');
@@ -89,9 +87,13 @@ Route::prefix('admin')->group(function (){
             Route::get('/doDeleteLocation/{locationID}', [LocationController::class, 'doDelete'])->name("admin.location.doDelete");
 
 
-            Route::get('/lessonIndex', [LessonController::class, 'create']) -> name('admin.lesson.index');
+            Route::get('/lessonIndex', [LessonController::class, 'adminIndex']) -> name('admin.lesson.index');
             Route::get('/createLesson', [LessonController::class, 'create']) -> name('admin.lesson.create');
             Route::post('/createLesson', [LessonController::class, 'doCreate']) -> name('admin.lesson.doCreate');
+            Route::get('/editLesson/{lessonID}', [LessonController::class, 'edit']) -> name('admin.lesson.edit');
+            Route::post('/doEditLesson/{lessonID}', [LessonController::class, 'doEdit']) -> name('admin.lesson.doEdit');
+            Route::get('/deleteLesson/{lessonID}', [LessonController::class, 'destroy']) -> name('admin.lesson.destroy');
+            Route::get('/doDeleteLesson/{lessonID}', [LessonController::class, 'doDestroy']) -> name('admin.lesson.doDestroy');
         });
 
     });

@@ -42,9 +42,8 @@
                     <h3>{{$lesson -> name}}</h3>
                     <div class="mainInfoContainer">
                         <div class="leftInfoContainer">
-                            <b>Alder:</b> {{$lesson -> age}} <br>
-                            <b>Tidspunkt:</b> {{$lesson -> day}} {{$lesson -> lesson_start_time}}
-                            - {{$lesson -> lesson_end_time}} <br>
+                            <b>Alder:</b> {{$lesson -> age_from}} - {{$lesson -> age_to}} <br>
+                            <b>Tidspunkt:</b> {{$lesson -> day}} {{\Carbon\Carbon::parse($lesson -> lesson_start_time)->format('H:i')}} - {{\Carbon\Carbon::parse($lesson -> lesson_end_time)->format('H:i')}} <br>
                             <b>Lokation:</b> <a
                                 href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
                             <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a>

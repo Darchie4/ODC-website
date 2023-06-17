@@ -25,9 +25,13 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('lesson.NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
     }
 
+    public function adminIndex()
+    {
+        return view('adminPages.lesson.index', ['danceStyles' => DanceStyle::all(),]);
+    }
     /**
      * Display a listing of the resource with search.
      *
@@ -35,7 +39,7 @@ class LessonController extends Controller
      */
     public function indexSearch($styleID)
     {
-        return view('lesson.NEWscheduale', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::select()->where("dance_style_id", $styleID)->get()]);
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::select()->where("dance_style_id", $styleID)->get()]);
     }
 
     /**
@@ -73,6 +77,7 @@ class LessonController extends Controller
             'shortLessonDescription' => 'required|string',
             'longLessonDescription' => 'required|string',
         ]);
+
         $lesson = new Lesson();
         $lesson->name = \request("name");
         $lesson->age_from = \request("ageFrom");
@@ -122,11 +127,64 @@ class LessonController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Lesson $lesson
-     * @return Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Lesson $lesson)
+    public function edit($lessonID)
     {
-        //
+        return view('adminPages.lesson.edit', ['lesson' => Lesson::find($lessonID), "teachers" => Teacher::all(), "locations" => Location::all(), "danceStyles" => DanceStyle::all(), "skillLevels" => SkillLevel::all()]);
+    }
+    public function doEdit(Request $request, $lessonID)
+    {
+        $request->validate([
+            'name' => ['required', 'string'],
+            'ageFrom' => ['required', 'integer', 'lte:ageTo'],
+            'ageTo' => ['required', 'integer', 'gte:ageFrom'],
+            'day' => ['required', 'string'],
+            'start_time' => ['required', 'before:end_time', 'date_format:H:i'],
+            'end_time' => ['required', 'after:start_time', 'date_format:H:i'],
+            'km_id' => ['required', 'integer', 'unique:lessons,km_id,'.$lessonID],
+            'seasonStart' => ['required', 'before:seasonEnd', 'date_format:Y-m-d'],
+            'seasonEnd' => ['required', 'after:seasonStart', 'date_format:Y-m-d'],
+            'teachers' => ['required', 'array'],
+            'danceStyle' => ['required', 'string'],
+            'location' => ['required', 'integer', 'exists:locations,id'],
+            'skillLevel' => ['required', 'string'],
+            'shortLessonDescription' => ['required', 'string'],
+            'longLessonDescription' => ['required', 'string'],
+        ]);
+
+        $lesson = Lesson::findOrFail($lessonID);
+        $lesson->name = \request("name");
+        $lesson->age_from = \request("ageFrom");
+        $lesson->age_to = \request("ageTo");
+        $lesson->day = \request("day");
+        $lesson->lesson_start_time = \request("start_time");
+        $lesson->lesson_end_time = \request("end_time");
+        $lesson->km_id = \request("km_id");
+        $lesson->location_id = \request("location");
+        $lesson->short_description = \request("shortLessonDescription");
+        $lesson->long_description = \request("longLessonDescription");
+        $lesson->season_start = \request("seasonStart");
+        $lesson->season_end = \request("seasonEnd");
+
+        $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
+        if ($DBFoundStyle->doesntExist()) {
+            $danceStyle = new DanceStyle();
+            $danceStyle->name = \request('danceStyle');
+            $danceStyle->save();
+        }
+        $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+
+        $DBFoundSkillLevel = DB::table('skill_levels')->where('name', \request('skillLevel'));
+        if ($DBFoundSkillLevel->doesntExist()) {
+            $skillLevel = new SkillLevel();
+            $skillLevel->name = \request('skillLevel');
+            $skillLevel->save();
+        }
+        $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
+        $lesson->save();
+        $lesson->teachers()->syncWithoutDetaching(\request('teachers'));
+        return redirect(route('admin.lesson.index'));
     }
 
     /**
@@ -145,10 +203,16 @@ class LessonController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Lesson $lesson
-     * @return Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
-    public function destroy(Lesson $lesson)
+    public function destroy($lessonID)
     {
-        //
+        return view('adminPages.lesson.delete',  ['lesson' => Lesson::where('id', $lessonID)->first()]);
+    }
+    public function doDestroy($lessonID)
+    {
+        Lesson::find($lessonID)->teachers()->detach();
+        Lesson::destroy($lessonID);
+        return redirect(route('admin.lesson.index'));
     }
 }
