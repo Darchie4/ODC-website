@@ -30,8 +30,8 @@ class TeacherController extends Controller
     public function doCreate(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'teacherImg' => 'required',
+            'name' => 'required|unique:teachers,name',
+            'teacherImg' => 'required|unique:teachers,imgName|image',
             'shortDescription' => 'required',
             'longDescription' => 'required',
         ]);

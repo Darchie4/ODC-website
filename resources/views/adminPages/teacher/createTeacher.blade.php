@@ -24,6 +24,15 @@
     <form action="{{route('admin.teacher.doCreate')}}" method="post" enctype="multipart/form-data">
         @csrf
         <h1>Opret Underviser</h1>
+        @if($errors->any())
+            <b class="textRed">Der er fejl!</b>
+            <ul>
+                @foreach($errors->keys() as $key)
+                    <li>{{$key}}: {{implode(', ', $errors->get($key))}}</li>
+                @endforeach
+
+            </ul>
+        @endif
         <div class="infoContainer">
             <div class="leftInputContainer">
                 <label for="name">Navn</label> <br>

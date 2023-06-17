@@ -23,7 +23,15 @@
 
 <main>
     <h1>Opret lokale</h1>
+    @if($errors->any())
+        <b class="textRed">Der er fejl!</b>
+        <ul>
+            @foreach($errors->keys() as $key)
+                <li>{{$key}}: {{implode(', ', $errors->get($key))}}</li>
+            @endforeach
 
+        </ul>
+    @endif
     <form action="{{route('admin.location.doCreate')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="infoContainer">

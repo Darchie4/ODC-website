@@ -77,7 +77,7 @@ Route::prefix('admin')->group(function (){
             Route::get('/teacherEdit/{teacherID}', [TeacherController::class, 'edit'])->name("admin.teacher.edit");
             Route::post('/teacherEdit/{teacherID}', [TeacherController::class, 'doEdit'])->name("admin.teacher.doEdit");
             Route::get('/teacherDelete/{teacherID}', [TeacherController::class, 'delete'])->name("admin.teacher.delete");
-            Route::delete('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
+            Route::get('/teacherDoDelete/{teacherID}', [TeacherController::class, 'doDelete'])->name("admin.teacher.doDelete");
 
 
             Route::get('/locationIndex', [LocationController::class, 'adminIndex'])->name("admin.location.index");
@@ -86,7 +86,7 @@ Route::prefix('admin')->group(function (){
             Route::get('/editLocation/{locationID}', [LocationController::class, 'edit'])->name("admin.location.edit");
             Route::post('/doEditLocation/{locationID}', [LocationController::class, 'doEdit'])->name("admin.location.doEdit");
             Route::get('/deleteLocation/{locationID}', [LocationController::class, 'delete'])->name("admin.location.delete");
-            Route::delete('/doDeleteLocation/{locationID}', [LocationController::class, 'doDelete'])->name("admin.location.doDelete");
+            Route::get('/doDeleteLocation/{locationID}', [LocationController::class, 'doDelete'])->name("admin.location.doDelete");
 
 
             Route::get('/lessonIndex', [LessonController::class, 'create']) -> name('admin.lesson.index');

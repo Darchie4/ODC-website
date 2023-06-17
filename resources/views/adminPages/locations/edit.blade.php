@@ -23,7 +23,15 @@
 
 <main>
     <h1>Rediger lokale</h1>
+    @if($errors->any())
+        <b class="textRed">Der er fejl!</b>
+        <ul>
+            @foreach($errors->keys() as $key)
+                <li>{{$key}}: {{implode(', ', $errors->get($key))}}</li>
+            @endforeach
 
+        </ul>
+    @endif
     <form action="{{route('admin.location.doEdit', ['locationID' => $location->id])}}" method="post"
           enctype="multipart/form-data">
         @csrf

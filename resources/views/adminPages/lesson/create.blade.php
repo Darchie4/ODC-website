@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 
+    <script src="{{ asset('js/admin/lesson/updateMinMaxValues.js') }}"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
     <script>
@@ -35,25 +38,30 @@
 <main>
     <h1>Opret Hold</h1>
 
-        @foreach($errors->keys() as $message)
-        {{$message}},
-        @endforeach
+    @if($errors->any())
+        <b class="textRed">Der er fejl!</b>
+        <ul>
+            @foreach($errors->keys() as $key)
+                <li>{{$key}}: {{implode(', ', $errors->get($key))}}</li>
+            @endforeach
+
+        </ul>
+    @endif
 
     <form action="{{route('admin.lesson.doCreate')}}" method="post" enctype="multipart/form-data">
         @csrf
-
-
-
         <div class="infoContainer">
             <div class="leftInputContainer">
                 <h2>General information</h2>
                 <label for="name">Holdets navn</label> <br>
-                <input name="name"><br><br>
-                <label for="age">Alders krav</label> <br>
-                <input name="age"><br><br>
+                <input name="name"  required><br><br>
+                <label for="ageFrom">Alders krav fra</label> <br>
+                <input name="ageFrom" id="ageFrom" type="number" min="0" value="0" oninput="updateMaxValues()" required><br><br>
+                <label for="ageTo">Alders krav til</label> <br>
+                <input name="ageTo" id="ageTo" type="number" max="99" value="99" oninput="updateMinValues()" required><br><br>
                 <label for="danceStyle">Stil art</label><br>
                 <input name="danceStyle" list="danceStyles"
-                       placeholder="Ex. Pardans, Hip Hop osv..."/><br><br>
+                       placeholder="Ex. Pardans, Hip Hop osv..." required><br><br>
                 <datalist id="danceStyles">
                     @foreach($danceStyles as $style)
                         <option value="{{$style->name}}">{{$style->name}}</option>
@@ -62,7 +70,7 @@
 
                 <label for="skillLevel">Dygtigheds krav</label><br>
                 <input name="skillLevel" list="skillLeveles"
-                       placeholder="Ex. Pardans, Hip Hop osv..."/><br><br>
+                       placeholder="Ex. Begynder, Let Øvet osv..." required><br><br>
                 <datalist id="skillLeveles">
                     @foreach($skillLevels as $skillLevel)
                         <option value="{{$skillLevel->name}}">{{$skillLevel->name}}</option>
@@ -80,13 +88,19 @@
             <div class="middelInfoContainer">
                 <h2>Praktisk information</h2>
                 <label for="day">Uge dag</label><br>
-                <input name="day"><br><br>
+                <input name="day" required><br><br>
                 <label for="start_time">Start tid</label><br>
-                <input name="start_time"><br><br>
+                <input name="start_time" type="time" required><br><br>
                 <label for="end_time">Slut tid</label><br>
-                <input name="end_time"><br><br>
+                <input name="end_time" type="time" required><br><br>
+
+                <label for="seasonStart">Sæson Start</label><br>
+                <input type="date" name="seasonStart" required><br><br>
+                <label for="seasonEnd">Sæson Slut</label><br>
+                <input type="date" name="seasonEnd" required><br><br>
+
                 <label for="location">Lokation</label><br>
-                <select id="choices-multiple-remove-button" name="location">
+                <select id="choices-multiple-remove-button" name="location" required>
                     @foreach($locations as $location)
                         <option value={{$location -> id}}>{{$location -> room_name}}</option>
                     @endforeach
@@ -97,9 +111,9 @@
             <div class="rightInputContainer">
                 <h2>Andet Information</h2>
                 <label for="km_id">Klubmodul ID</label><br>
-                <input name="km_id" type="number"><br><br>
+                <input name="km_id" type="number" required><br><br>
                 <label for="shortLessonDescription">Kort beskrivelse</label> <br>
-                <textarea name="shortLessonDescription" id="shortLessonDescription"></textarea><br><br>
+                <textarea name="shortLessonDescription" id="shortLessonDescription" required></textarea><br><br>
             </div>
         </div>
 

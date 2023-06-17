@@ -57,22 +57,26 @@ class LessonController extends Controller
     public function doCreate(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'age' => 'required',
-            'day' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required',
-            'km_id' => 'required|integer',
+            'name' => 'required|string',
+            'ageFrom' => 'required|integer|lte:ageTo',
+            'ageTo' => 'required|integer|gte:ageFrom',
+            'day' => 'required|string',
+            'start_time' => 'required|date_format:H:i|before:end_time',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+            'km_id' => 'required|integer|unique:lessons,km_id',
+            'seasonStart' => 'required|date_format:Y-m-d|before:seasonEnd',
+            'seasonEnd' => 'required|date_format:Y-m-d|after:seasonStart',
             'teachers' => 'required|array',
-            'danceStyle' => 'required',
-            'location' => 'required|integer',
-            'skillLevel' => 'required',
-            'shortLessonDescription' => 'required',
-            'longLessonDescription' => 'required',
+            'danceStyle' => 'required|string',
+            'location' => 'required|integer|exists:locations,id',
+            'skillLevel' => 'required|string',
+            'shortLessonDescription' => 'required|string',
+            'longLessonDescription' => 'required|string',
         ]);
         $lesson = new Lesson();
         $lesson->name = \request("name");
-        $lesson->age = \request("age");
+        $lesson->age_from = \request("ageFrom");
+        $lesson->age_to = \request("ageTo");
         $lesson->day = \request("day");
         $lesson->lesson_start_time = \request("start_time");
         $lesson->lesson_end_time = \request("end_time");
@@ -80,6 +84,9 @@ class LessonController extends Controller
         $lesson->location_id = \request("location");
         $lesson->short_description = \request("shortLessonDescription");
         $lesson->long_description = \request("longLessonDescription");
+        $lesson->season_start = \request("seasonStart");
+        $lesson->season_end = \request("seasonEnd");
+
         $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
         if ($DBFoundStyle->doesntExist()) {
             $danceStyle = new DanceStyle();
@@ -97,7 +104,7 @@ class LessonController extends Controller
         $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
         $lesson->save();
         $lesson->teachers()->attach(\request('teachers'));
-        return redirect(route('teacher.index'));
+        return redirect(route('lesson.show', ["lessonID" => $lesson->id]));
     }
 
     /**

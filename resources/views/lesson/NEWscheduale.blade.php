@@ -27,7 +27,6 @@
             <a class="danceStyleButton" href="{{route("schedule")}}">Alle hold</a>
 
             @foreach($danceStyles as $danceStyle)
-
                 <a class="danceStyleButton" href="{{route("schedule.search", $danceStyle->id)}}">{{$danceStyle -> name}}</a>
             @endforeach
 
