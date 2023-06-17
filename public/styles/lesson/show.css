@@ -78,6 +78,7 @@ h1 {
 
 .rightInfoContainer{
     max-width: 50%;
+    min-width: 35%;
 }
 .leftInfoColumn{
     min-width: 50%;
