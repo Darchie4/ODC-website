@@ -48,7 +48,7 @@
                             - {{$lesson -> lesson_end_time}} <br>
                             <b>Lokation:</b> <a
                                 href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
-                            <b>Stilart:</b> {{$lesson -> skillLevel -> name}} {{$lesson -> danceStyle -> name}}
+                            <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a>
                             <br>
                         </div>
                         <div class="rightInfoContainer">

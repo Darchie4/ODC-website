@@ -24,7 +24,7 @@
                 <h2>Underviser på:</h2>
                 <ul>
                 @foreach($teacher -> lessons as $lesson)
-                    <li>{{$lesson->name}}</li>
+                    <li><a href="{{route("lesson.show", ["lessonID" => $lesson->id])}}">{{$lesson->name}}</a></li>
                 @endforeach
                 </ul>
 
