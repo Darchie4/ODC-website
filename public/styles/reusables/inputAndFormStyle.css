@@ -31,7 +31,6 @@ textarea{
 .infoContainer{
     display: flex;
     flex-direction: row;
-
     margin-bottom: 5vh;
 }
 .leftInputContainer{
