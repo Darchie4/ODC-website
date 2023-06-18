@@ -25,7 +25,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::all()]);
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all()]);
     }
 
     public function adminIndex()

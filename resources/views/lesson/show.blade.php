@@ -20,6 +20,7 @@
             <b>Lokation:</b>
             <a href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
             <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a> <br>
+            <h2>Om holdet</h2>
             {!! $lesson -> long_description!!}
         </div>
         <div class="rightInfoContainer">
