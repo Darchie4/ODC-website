@@ -44,7 +44,7 @@ class TeacherController extends Controller
         $danceTeacher->shortDescription = \request('shortDescription');
         $danceTeacher->longDescription = \request('longDescription');
         $danceTeacher->save();
-        return redirect('aboutUs/teacherView/' . $danceTeacher->id);
+        return redirect(route('admin.teacher.index'));
     }
 
     //Admin stuff under here
@@ -89,6 +89,6 @@ class TeacherController extends Controller
         $danceTeacher->shortDescription = \request('shortDescription');
         $danceTeacher->longDescription = \request('longDescription');
         $danceTeacher->save();
-        return redirect('aboutUs/teacherView/' . $danceTeacher->id);
+        return redirect(route('admin.teacher.index'));
     }
 }

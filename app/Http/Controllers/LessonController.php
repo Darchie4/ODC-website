@@ -109,7 +109,7 @@ class LessonController extends Controller
         $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
         $lesson->save();
         $lesson->teachers()->attach(\request('teachers'));
-        return redirect(route('lesson.show', ["lessonID" => $lesson->id]));
+        return redirect(route('admin.lesson.index'));
     }
 
     /**
