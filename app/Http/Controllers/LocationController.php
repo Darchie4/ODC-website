@@ -39,7 +39,8 @@ class LocationController extends Controller
         $request->validate([
             'address' => 'required',
             'g_maps_embed_link' => 'required',
-            'room_name' => 'required',
+            'room_name' => 'required|unique:locations,room_name',
+            'roomImg' => 'required|image'
         ]);
 
         $uploadedFile = $request->file('roomImg');
@@ -87,7 +88,7 @@ class LocationController extends Controller
         $request->validate([
             'address' => 'required',
             'g_maps_embed_link' => 'required',
-            'room_name' => 'required',
+            'room_name' => 'required|unique:locations,room_name',
         ]);
 
         $location = Location::findOrFail($locationID);
