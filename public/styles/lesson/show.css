@@ -107,7 +107,16 @@ h1 {
         margin-left: auto;
         justify-content: center;
     }
-    .teacherInfoContainer{
-        display: block;
+    .lessonInfoContainer{
+        flex-direction: column;
+    }
+    .leftInfoColumn{
+        max-width: 100%;
+    }
+    .rightInfoContainer{
+        max-width: 100%;
+    }
+    .teacherContainer{
+        width: auto;
     }
 }

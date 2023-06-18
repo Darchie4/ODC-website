@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     @include("partials.metatags")
-    <link rel="stylesheet" href="{{ asset('styles/NEWschedule.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
     <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
@@ -32,9 +32,10 @@
 
 
         </article>
-
+        @foreach($danceStyles as $danceStyle)
+            <h1>{{$danceStyle->name}}</h1>
         <section class="lessonsContainer">
-            @foreach($lessons as $lesson)
+            @foreach(\App\Models\Lesson::where('dance_style_id', $danceStyle->id)->get() as $lesson)
                 @if($loop->index % 2 == 0)
                     <div class="lessonContainerRow">
                 @endif
@@ -71,6 +72,8 @@
                 @endif
             @endforeach
         </section>
+        @endforeach
+
 
 
     </article>
