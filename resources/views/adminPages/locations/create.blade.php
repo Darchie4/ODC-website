@@ -44,7 +44,7 @@
                 <input name="address" type="text"> <br><br>
             </div>
             <div class="rightInputContainer">
-                <label for="g_maps_embed_link">Link til GMaps embed</label><br>
+                <label for="g_maps_embed_link">Link til GMaps embed <a href="https://www.embedgooglemap.net/">Link til generator</a></label><br>
                 <input name="g_maps_embed_link"> <br><br>
             </div>
         </div>
