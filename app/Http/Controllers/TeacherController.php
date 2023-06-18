@@ -72,7 +72,7 @@ class TeacherController extends Controller
     }
     public function doEdit($teacherID, Request $request){
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:teachers,name,'.$teacherID,
             'shortDescription' => 'required',
             'longDescription' => 'required',
         ]);

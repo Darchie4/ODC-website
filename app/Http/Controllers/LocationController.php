@@ -88,7 +88,7 @@ class LocationController extends Controller
         $request->validate([
             'address' => 'required',
             'g_maps_embed_link' => 'required',
-            'room_name' => 'required|unique:locations,room_name',
+            'room_name' => 'required|unique:locations,room_name,'.$locationID,
         ]);
 
         $location = Location::findOrFail($locationID);
