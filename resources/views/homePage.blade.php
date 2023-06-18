@@ -28,16 +28,18 @@
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
             <h1>Sæson 23/24</h1>
-            <p>Vi er nu meget tæt på at kunne løfte sløret for et fantastisk program for 23/24! Vi vil i løbet at de næste uger kunne vise det.<br>
-            <h3>Vi kan dog allerede nu afsløre vigtige datoer for sæsonen.</h3>
+            <p>Så er vi klar med programmet for næste sæson. Klik på program og se de mange spændende hold vi tilbyder i sæson 23/24.<br>
+            OBS: Tilmelding først mulig fra den 1. juli</p>
+
+            <h3>Vi kan derudover afsløre vigtige datoer for sæsonen.</h3>
 
             <b>Lørdag den 1. Juli</b> er der mulighed for at tilmelde sig de forskellige hold. Vi planlægger også et åbenhuscarrangement i august, inden sæsonstart, hvor det er muligt at få en smagsprøve på de forskellige hold.<br><br>
-            <b>Mandag den 21. August</b> er der sæsonstart for alle hold, bortset fra pardanserholdene, der starter lidt senere.<br><br>
+            <b>Mandag den 14 august</b> starter sportsdans<br><br>
+            <b>Mandag den 21. August</b> er der sæsonstart for alle andre hold, bortset fra pardanserholdene, der starter den 4 september.<br><br>
             <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
             <b>Lørdag den 4. Maj 2024</b> holder vi vores store sæsonopvisning<br><br>
 
 
-            Vi glæder os meget til i nærmeste fremtid at kunne vise det fantastiske spændende program for den kommende sæson.
 
             <h4>Vi glæder os til at se jer i den kommende sæson.</h4>
 
