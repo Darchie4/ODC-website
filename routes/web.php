@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 Route::get('/brudevals', function () {
     return view('bridalwaltz');
-});
+})->name('bridalwaltz');
 Route::get('/schedule', [LessonController::class, "index"])->name('schedule');
 Route::get('/hold', [LessonController::class, "index"]);
 Route::get('/schedule/{styleID}', [LessonController::class, "indexSearch"])->name('schedule.search');
@@ -41,7 +41,7 @@ Route::get('/lesson/{lessonID}', [LessonController::class, "show"])->name('lesso
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 Route::get('/udmelding', function () {
     return view('udmelding');
 });
@@ -49,7 +49,7 @@ Route::get('/udmelding', function () {
 Route::prefix('aboutUs')->group(function (){
     Route::get('/', function () {
         return view('aboutUs');
-    });
+    })->name('about.index');
     Route::get('/board', function () {
         return view('aboutPages/board');
     });
