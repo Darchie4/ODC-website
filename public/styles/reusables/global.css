@@ -40,7 +40,12 @@ h1 {
     color: rgb(41, 128, 187);
 
 }
-
+.greenBackground{
+    background: green;
+}
+.redBackground{
+    background: red;
+}
 .centered{
     margin-left: auto;
     margin-right: auto;

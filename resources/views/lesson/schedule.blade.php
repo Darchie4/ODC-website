@@ -17,10 +17,8 @@
     <article>
         <div class="programTextContainer">
             <h1>Program</h1>
-            Her kan du se en oversigt over hvilke hold Odense Danse Center tilbyder. <br>
-            Tilmelding til hold forgår på <a href="https://odensedansecenter.klub-modul.dk/cms/TeamOverviewAlt.aspx">Klubmodul</a>.
-            <br>
-            Psst! Du kan også bare trykke på holdet i tabellen her uden ;)
+            Så er vi mere eller mindre klar med 23/24 programmet, vi forventer at det bliver som det står herunder der kan dog stadig forekommer rettelser.<br>
+            <b>Vi åbner for tildeling den 1. Juli.</b>
         </div>
 
         <article class="danceStyles">
@@ -64,7 +62,9 @@
                     </div>
                     <div class="buttonContainer">
                         <a class="lessonButton" href="{{route("lesson.show", ["lessonID" => $lesson->id])}}">Læs mere</a>
-                        <a class="lessonButton greenBackground" href="https://odensedansecenter.klub-modul.dk/cms/ProfileMaintainEnrollment.aspx?TeamID={{$lesson->km_id}}">Tilmeld</a>
+                        <!--<a class="lessonButton greenBackground" href="https://odensedansecenter.klub-modul.dk/cms/ProfileMaintainEnrollment.aspx?TeamID={{$lesson->km_id}}">Tilmeld</a> -->
+                        <a class="lessonButton redBackground" title="Vi åbner for tilmeldinger d. 1. Juli">Tilmeld</a>
+
                     </div>
                 </div>
                     @if($loop -> last || ($loop->index+1)%2 == 0)
