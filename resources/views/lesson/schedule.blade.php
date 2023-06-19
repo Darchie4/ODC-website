@@ -30,7 +30,7 @@
 
 
         </article>
-        @foreach($danceStyles as $danceStyle)
+        @foreach($danceStylesToList as $danceStyle)
             <h1>{{$danceStyle->name}}</h1>
         <section class="lessonsContainer">
             @foreach(\App\Models\Lesson::where('dance_style_id', $danceStyle->id)->get() as $lesson)
