@@ -25,12 +25,12 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('lesson.schedule', ['danceStyles' => DanceStyle::all()]);
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'danceStylesToList' => DanceStyle::all()]);
     }
 
     public function adminIndex()
     {
-        return view('adminPages.lesson.index', ['danceStyles' => DanceStyle::all(),]);
+        return view('adminPages.lesson.index', ['danceStyles' => DanceStyle::all(), 'danceStylesToList' => DanceStyle::all()]);
     }
     /**
      * Display a listing of the resource with search.
@@ -39,7 +39,7 @@ class LessonController extends Controller
      */
     public function indexSearch($styleID)
     {
-        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'lessons' => Lesson::select()->where("dance_style_id", $styleID)->get()]);
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'danceStylesToList' => DanceStyle::where('id', $styleID)->get()]);
     }
 
     /**
