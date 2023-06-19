@@ -17,7 +17,7 @@ h2{
     display: flex;
     margin: 1%;
     border-radius: 4px;
-    width: 100%;
+    width: 80%;
     box-shadow: 0 20px 40px rgba(4, 31, 61, 0.5);
     padding: 3% 3% 1%;
 }
@@ -46,4 +46,10 @@ h3{
 .locationInfoRight{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-device-width: 480px) {
+    .location {
+        flex-direction: column;
+    }
 }
