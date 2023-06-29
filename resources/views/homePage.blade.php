@@ -53,6 +53,14 @@
         </div>
 
         <div class="fb-container">
+            <h1>Talent hold audition</h1>
+            <br>
+            
+            <img src="{{asset("img/other/Ad_for_show.jpeg")}}" alt="">
+
+            <br>
+            <br>
+
             <div class="fb-page" data-href="https://www.facebook.com/OdenseDanseCenter" data-tabs="timeline"
                  data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true"
                  data-hide-cover="false" data-show-facepile="false">
