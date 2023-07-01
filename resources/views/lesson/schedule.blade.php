@@ -20,7 +20,7 @@
 
             <h2>Tilmelding åben!</h2>
 
-            Så fik vi programmet from 23/24 sæsonen klar og tilmeldingen er nu <b>åben!</b><br>
+            Så fik vi programmet for 23/24 sæsonen klar og tilmeldingen er nu <b>åben!</b><br>
             Herunder kan du se de stilarter vi tilbyder og ved et hurtigt klik kan du se hvilke hold vi har med præcis din yndlings stilart, eller du kan bare rulle ned og kigge igennem alle vores hold, der er med sikkerhed et for dig!
         </div>
 
