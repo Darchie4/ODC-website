@@ -30,8 +30,8 @@
             <h1>Sæson 23/24</h1>
             <h3>Tilmeldingen er åben!</h3>
 
-            <p>Så er vi klar med programmet for næste sæson. <a href="{{route("schedule")}}">Klik her</a> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder i sæson 23/24. Vi har både klassisk pardans
-            som fra Vild Med Dans, børnedans, K-pop og alt derimellem så vi kan næsten med garanti sige at der også er noget for dig!</p>
+            <p>Så er vi klar med programmet for næste sæson. <a href="{{route("schedule")}}">Klik her</a> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder. Vi har både klassisk pardans
+            som fra Vild Med Dans, børnedans, K-pop og alt derimellem. Vi kan næsten med garanti sige at der også er noget for dig!</p>
 
             <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen.</h3>
 
