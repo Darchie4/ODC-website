@@ -28,10 +28,12 @@
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
             <h1>Sæson 23/24</h1>
-            <p>Så er vi klar med programmet for næste sæson. Klik på program og se de mange spændende hold vi tilbyder i sæson 23/24.<br>
-            OBS: Tilmelding først mulig fra den 1. juli</p>
+            <h3>Tilmeldingen er åben!</h3>
 
-            <h3>Vi kan derudover afsløre vigtige datoer for sæsonen.</h3>
+            <p>Så er vi klar med programmet for næste sæson. <a href="{{route("schedule")}}">Klik her</a> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder i sæson 23/24. Vi har både klassisk pardans
+            som fra Vild Med Dans, børnedans, K-pop og alt derimellem så vi kan næsten med garanti sige at der også er noget for dig!</p>
+
+            <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen.</h3>
 
             <b>Lørdag den 1. Juli</b> er der mulighed for at tilmelde sig de forskellige hold. Vi planlægger også et åbenhuscarrangement i august, inden sæsonstart, hvor det er muligt at få en smagsprøve på de forskellige hold.<br><br>
             <b>Mandag den 14 august</b> starter sportsdans<br><br>
@@ -55,7 +57,7 @@
         <div class="fb-container">
             <h1>Talent hold audition</h1>
             <br>
-            
+
             <img src="{{asset("img/other/Ad_for_show.jpeg")}}" alt="">
 
             <br>
