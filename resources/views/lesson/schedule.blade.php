@@ -81,7 +81,7 @@
                                                    href="https://odensedansecenter.klub-modul.dk/cms/ProfileMaintainEnrollment.aspx?TeamID={{$lesson->km_id}}">Tilmeld</a>
                                             @else
                                                 <a class="lessonButton redBackground"
-                                                   title="Der er pt. lukket for tilmedling på dette hold">Tilmeld</a>
+                                                   title="Der er pt. lukket for tilmedling på dette hold">Tilmelding lukket</a>
                                             @endif
 
                                         </div>

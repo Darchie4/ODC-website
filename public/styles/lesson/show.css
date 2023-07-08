@@ -85,6 +85,19 @@ h1 {
     max-width: 70%;
     margin-right: 5%;
 }
+
+.lessonButton{
+    width: 30%;
+    background: rgb(41, 128, 187);
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin: auto;
+}
+
 @media screen and (max-device-width: 480px) {
     .teachersRowContainer {
         width: 100%;

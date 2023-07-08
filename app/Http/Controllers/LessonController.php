@@ -173,7 +173,7 @@ class LessonController extends Controller
         $lesson->season_start = \request("seasonStart");
         $lesson->season_end = \request("seasonEnd");
         $lesson->is_visible = (\request("is_visible") != null);
-        $lesson->is_available = (\request("is_visible") != null);
+        $lesson->is_available = (\request("is_available") != null);
 
         $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
         if ($DBFoundStyle->doesntExist()) {
