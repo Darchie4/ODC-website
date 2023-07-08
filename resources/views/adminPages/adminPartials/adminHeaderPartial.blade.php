@@ -10,9 +10,10 @@
         <ul class="rowLinkContainer">
             <a class="headerRowLink" href="/"><li>Normal Forside</li></a>
             <a class="headerRowLink" href="{{route("admin.index")}}"><li>Admin Forside</li></a>
-            <a class="headerRowLink" href="{{route("admin.teacher.index")}}"><li>Underviser Håndtering</li></a>
-            <a class="headerRowLink" href="{{route("admin.lesson.index")}}"><li>Hold håndtering</li></a>
-            <a class="headerRowLink" href="{{route("admin.location.index")}}"><li>Lokation håndtering</li></a>
+            <a class="headerRowLink" href="{{route("admin.teacher.index")}}"><li>Undervisere</li></a>
+            <a class="headerRowLink" href="{{route("admin.lesson.index")}}"><li>Hold</li></a>
+            <a class="headerRowLink" href="{{route("admin.location.index")}}"><li>Lokationer</li></a>
+            <a class="headerRowLink" href="/stats"><li>Statistikker</li></a>
         </ul>
     </div>
 </header>
