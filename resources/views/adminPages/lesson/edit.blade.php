@@ -112,6 +112,13 @@
                 <h2>Andet Information</h2>
                 <label for="km_id">Klubmodul ID</label><br>
                 <input name="km_id" type="number" value="{{$lesson -> km_id}}" required><br><br>
+
+                <label for="is_available">Åben for tilmelding</label>
+                <input type="checkbox" name="is_available" checked="checked" value="1"> <br><br>
+
+                <label for="is_visible">Synlig på hjemmesiden</label>
+                <input type="checkbox" name="is_visible" checked="checked" value="1"> <br><br>
+
                 <label for="shortLessonDescription">Kort beskrivelse</label> <br>
                 <textarea name="shortLessonDescription" id="shortLessonDescription" required>{!! $lesson -> short_description !!}</textarea><br><br>
             </div>

@@ -74,6 +74,8 @@ class LessonController extends Controller
             'danceStyle' => 'required|string',
             'location' => 'required|integer|exists:locations,id',
             'skillLevel' => 'required|string',
+            'is_visible' => 'sometimes',
+            'is_available' => 'sometimes',
             'shortLessonDescription' => 'required|string',
             'longLessonDescription' => 'required|string',
         ]);
@@ -91,6 +93,8 @@ class LessonController extends Controller
         $lesson->long_description = \request("longLessonDescription");
         $lesson->season_start = \request("seasonStart");
         $lesson->season_end = \request("seasonEnd");
+        $lesson->is_visible = (\request("is_visible") != null);
+        $lesson->is_available = (\request("is_visible") != null);
 
         $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
         if ($DBFoundStyle->doesntExist()) {
@@ -149,6 +153,8 @@ class LessonController extends Controller
             'danceStyle' => ['required', 'string'],
             'location' => ['required', 'integer', 'exists:locations,id'],
             'skillLevel' => ['required', 'string'],
+            'is_visible' => 'sometimes',
+            'is_available' => 'sometimes',
             'shortLessonDescription' => ['required', 'string'],
             'longLessonDescription' => ['required', 'string'],
         ]);
@@ -166,6 +172,8 @@ class LessonController extends Controller
         $lesson->long_description = \request("longLessonDescription");
         $lesson->season_start = \request("seasonStart");
         $lesson->season_end = \request("seasonEnd");
+        $lesson->is_visible = (\request("is_visible") != null);
+        $lesson->is_available = (\request("is_visible") != null);
 
         $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
         if ($DBFoundStyle->doesntExist()) {
