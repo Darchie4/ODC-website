@@ -25,6 +25,8 @@ return new class extends Migration
             $table->time("lesson_end_time");
             $table->string("short_description");
             $table->text("long_description");
+            //$table->boolean("is_available")->default(true);
+            //$table->boolean("is_visible")->default(true);
             $table->string("km_id") -> unique();
             $table->foreignId("location_id") -> constrained();
             $table->foreignId("dance_style_id") -> constrained();
