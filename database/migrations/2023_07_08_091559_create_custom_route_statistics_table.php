@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('method')->nullable();
             $table->string('route')->nullable();
             $table->integer('status')->nullable();
-            $table->ipAddress('ip')->nullable();
+            $table->foreignId('user_location_id')->nullable()->constrained();
             $table->dateTime('date');
             $table->unsignedInteger('counter');
 
