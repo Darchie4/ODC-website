@@ -32,18 +32,22 @@
             <div class="with-flex">
                 <div class="split-space-2">
                     <h3>Træningsmedlemskab</h3>
-                    Hos ODC tilbyder vi mulighed for at købe en nøgle til dansesalen så man kan komme og træne når
-                    salene ikke er i brug. <br>
-                    <a href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=16">Klik her
-                        for at læse mere</a>
+                    <p class="small-text no-margin">
+                        I ODC tilbyder vi mulighed for som sportsdanser at deltage i undervisningen på enkeltdage, selvom man er medlem af andre klubber, dette kræver dog et træningsmedlemsskab.  <br>
+                        Derudover tilbyder der mulighed for selvtræning i klubbens lokaler for medlemmerne. <br>
+                        <a href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=16">Klik her
+                            for at læse mere</a>
+                    </p>
                 </div>
 
                 <hr class="verticalHr">
 
                 <div class="split-space-2">
                     <h3>Støttemedlemskab</h3>
-                    Ønsker man at blive et støttemedlem i klubben kan man læse mere om det <a
-                        href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=15">her</a>
+                    <p class="small-text no-margin">
+                        Ønsker man at blive et støttemedlem i klubben kan man læse mere om det <a
+                            href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=15">her</a>
+                    </p>
                 </div>
             </div>
             <hr>
