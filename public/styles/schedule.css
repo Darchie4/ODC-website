@@ -149,6 +149,10 @@ nav > div > ul > li:last-child {
     margin: auto;
 }
 
+.small-text{
+    font-size: 15px;
+}
+
 @media screen and (max-device-width: 480px) {
     .lessonContainerRow{
         flex-direction: column;
