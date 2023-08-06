@@ -18,3 +18,5 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 /database/seeders/*
+
+open_workspace.bat
