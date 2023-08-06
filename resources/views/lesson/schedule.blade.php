@@ -25,7 +25,34 @@
             Herunder kan du se de stilarter vi tilbyder og ved et hurtigt klik kan du se hvilke hold vi har med præcis
             din yndlings stilart, eller du kan bare rulle ned og kigge igennem alle vores hold, der er med sikkerhed et
             for dig!
+
+
+            <hr>
+
+            <div class="with-flex">
+                <div class="split-space-2">
+                    <h3>Træningsmedlemskab</h3>
+                    Hos ODC tilbyder vi mulighed for at købe en nøgle til dansesalen så man kan komme og træne når
+                    salene ikke er i brug. <br>
+                    <a href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=16">Klik her
+                        for at læse mere</a>
+                </div>
+
+                <hr class="verticalHr">
+
+                <div class="split-space-2">
+                    <h3>Støttemedlemskab</h3>
+                    Ønsker man at blive et støttemedlem i klubben kan man læse mere om det <a
+                        href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=15">her</a>
+                </div>
+            </div>
+            <hr>
+
+            <h1 class="centered">Hold oversigt</h1>
+
+
         </div>
+
 
         <article class="danceStyles">
             <a class="danceStyleButton" href="{{route("schedule")}}">Alle hold</a>
@@ -81,7 +108,8 @@
                                                    href="https://odensedansecenter.klub-modul.dk/cms/ProfileMaintainEnrollment.aspx?TeamID={{$lesson->km_id}}">Tilmeld</a>
                                             @else
                                                 <a class="lessonButton redBackground"
-                                                   title="Der er pt. lukket for tilmedling på dette hold">Tilmelding lukket</a>
+                                                   title="Der er pt. lukket for tilmedling på dette hold">Tilmelding
+                                                    lukket</a>
                                             @endif
 
                                         </div>
