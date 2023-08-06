@@ -5,10 +5,11 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TeacherController;
 use App\Models\DanceStyle;
-use App\Models\Location;
 use App\Models\Teacher;
+use http\Client\Request;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
+use Stevebauman\Location\Facades\Location;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,9 @@ Route::middleware(['routestatistics'])->group(function () {
     });
 });
 Route::prefix('admin')->group(function () {
+    Route::get('/testIp', function (){
+        dd(Location::get("80.208.68.50"));
+    });
     Route::get('/registrer', [AdminController::class, 'create'])->name('admin.create');
     Route::post('/registrer', [AdminController::class, 'doCreate'])->name('admin.doCreate');
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login');

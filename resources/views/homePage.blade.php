@@ -30,8 +30,9 @@
             <h1>Sæson 23/24</h1>
             <h3>Tilmeldingen er åben!</h3>
 
-            <p>Så er vi klar med programmet for næste sæson. <a href="{{route("schedule")}}">Klik her</a> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder. Vi har både klassisk pardans
-            som fra Vild Med Dans, børnedans, K-pop og alt derimellem. Vi kan næsten med garanti sige at der også er noget for dig!</p>
+            <p>Så er vi klar med programmet for næste sæson. <b><a href="{{route("schedule")}}">Klik her</a></b> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder. Vi har både klassisk pardans
+            som fra Vild Med Dans, børnedans, K-pop og alt derimellem. <br>
+            Vi kan næsten med garanti sige at der også er noget for dig!</p>
 
             <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen.</h3>
 
@@ -55,14 +56,6 @@
         </div>
 
         <div class="fb-container">
-            <h1>Talent hold audition</h1>
-            <br>
-
-            <img src="{{asset("img/other/Ad_for_show.jpeg")}}" alt="">
-
-            <br>
-            <br>
-
             <div class="fb-page" data-href="https://www.facebook.com/OdenseDanseCenter" data-tabs="timeline"
                  data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true"
                  data-hide-cover="false" data-show-facepile="false">
