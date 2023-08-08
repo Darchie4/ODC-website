@@ -29,7 +29,7 @@ class CustomRouteStatistic extends RouteStatistic{
                 'method'  => $request->getMethod(),
                 'route'   => $request->path(),
                 'status'  => $response->getStatusCode(),
-                'user_location_id' => $userLocation!=null ? $userLocation->i : null,
+                'user_location_id' => $userLocation!=null ? $userLocation->id : null,
                 'date'    => $this->getDate(),
             ], ['counter' => 0])->increment('counter', 1);
         }
