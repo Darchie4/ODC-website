@@ -17,7 +17,7 @@ class LogFailedRequests {
             $userLocation = null;
 
             if($rawLocation = Location::get($request->ip())){
-                $userLocation = UserLocation::findOrCreate([
+                $userLocation = UserLocation::firstOrCreate([
                     'ip' => $request->ip(),
                     'countryName' => $rawLocation->countryName,
                     'countryCode' => $rawLocation->countryCode,
@@ -27,7 +27,7 @@ class LogFailedRequests {
                     'zipCode' => (int)$rawLocation->zipCode,
                     'latitude' => (double)$rawLocation->latitude,
                     'longitude' => (double)$rawLocation->longitude,
-                ])->save();
+                ]);
             }
             $mytime = Carbon::now();
             CustomRouteStatistic::firstOrCreate([
