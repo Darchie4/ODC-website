@@ -22,14 +22,15 @@ class CustomRouteStatistic extends RouteStatistic{
                     'zipCode' => (int)$rawLocation->zipCode,
                     'latitude' => (double)$rawLocation->latitude,
                     'longitude' => (double)$rawLocation->longitude,
-                ])->save();
+                ]);
             }
+            dd($userLocation);
             static::firstOrCreate([
                 'user_id' => optional($request->user())->getKey(),
                 'method'  => $request->getMethod(),
                 'route'   => $request->path(),
                 'status'  => $response->getStatusCode(),
-                'user_location_id' => $userLocation,
+                'user_location_id' => $userLocation!=null ? $userLocation->id : null,
                 'date'    => $this->getDate(),
             ], ['counter' => 0])->increment('counter', 1);
         }
