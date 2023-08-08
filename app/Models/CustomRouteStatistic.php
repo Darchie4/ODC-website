@@ -24,7 +24,6 @@ class CustomRouteStatistic extends RouteStatistic{
                     'longitude' => (double)$rawLocation->longitude,
                 ]);
             }
-            dd($userLocation);
             static::firstOrCreate([
                 'user_id' => optional($request->user())->getKey(),
                 'method'  => $request->getMethod(),
