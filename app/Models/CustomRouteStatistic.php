@@ -12,7 +12,7 @@ class CustomRouteStatistic extends RouteStatistic{
         if ($route = optional($request->route())->getName() ?? optional($request->route())->uri()) {
             $userLocation = null;
             if($rawLocation = Location::get($request->ip())){
-                $userLocation = UserLocation::findOrCreate([
+                $userLocation = UserLocation::firstOrCreate([
                     'ip' => $request->ip(),
                     'countryName' => $rawLocation->countryName,
                     'countryCode' => $rawLocation->countryCode,

@@ -17,7 +17,7 @@ class LogFailedRequests {
             $userLocation = null;
 
             if($rawLocation = Location::get($request->ip())){
-                $userLocation = UserLocation::findOrCreate([
+                $userLocation = UserLocation::firstOrCreate([
                     'ip' => $request->ip(),
                     'countryName' => $rawLocation->countryName,
                     'countryCode' => $rawLocation->countryCode,
