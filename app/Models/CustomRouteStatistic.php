@@ -22,7 +22,7 @@ class CustomRouteStatistic extends RouteStatistic{
                     'zipCode' => (int)$rawLocation->zipCode,
                     'latitude' => (double)$rawLocation->latitude,
                     'longitude' => (double)$rawLocation->longitude,
-                ])->save();
+                ]);
             }
             dd($userLocation);
             static::firstOrCreate([
