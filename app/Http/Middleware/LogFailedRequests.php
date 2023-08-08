@@ -27,7 +27,7 @@ class LogFailedRequests {
                     'zipCode' => (int)$rawLocation->zipCode,
                     'latitude' => (double)$rawLocation->latitude,
                     'longitude' => (double)$rawLocation->longitude,
-                ])->save();
+                ]);
             }
             $mytime = Carbon::now();
             CustomRouteStatistic::firstOrCreate([
