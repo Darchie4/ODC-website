@@ -17,7 +17,7 @@ class LogFailedRequests {
             $userLocation = null;
 
             if($rawLocation = Location::get($request->ip())){
-                $userLocation = UserLocation::firstOrCreate([
+                $userLocation = UserLocation::findOrCreate([
                     'ip' => $request->ip(),
                     'countryName' => $rawLocation->countryName,
                     'countryCode' => $rawLocation->countryCode,
@@ -36,7 +36,7 @@ class LogFailedRequests {
                 'method'  => $request->getMethod(),
                 'route'   => $request->path(),
                 'status'  => $response->getStatusCode(),
-                'user_location_id' => $userLocation,
+                'user_location_id' => $userLocation!=null ? $userLocation->id : null,
                 'date'    => $mytime->format('Y-m-d H'.':00:00'),
             ], ['counter' => 0])->increment('counter', 1);
         }
