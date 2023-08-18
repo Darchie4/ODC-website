@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ServeErrorController;
 use App\Http\Controllers\TeacherController;
 use App\Models\DanceStyle;
 use App\Models\Teacher;
@@ -30,7 +31,7 @@ Route::get('/sitemap', function () {
 Route::middleware(['routestatistics'])->group(function () {
     Route::get('/', function () {
         return view('homePage');
-    });
+    })->name("home");
     Route::get('/brudevals', function () {
         return view('bridalwaltz');
     })->name('bridalwaltz');
@@ -46,6 +47,8 @@ Route::middleware(['routestatistics'])->group(function () {
     Route::get('/udmelding', function () {
         return view('udmelding');
     });
+
+    Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone" ])->where('any', '.*');
 
     Route::prefix('aboutUs')->group(function () {
         Route::get('/', function () {
