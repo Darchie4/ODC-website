@@ -15,6 +15,7 @@
                     <ul>
                         <a class="dropdown-link" href="{{route('teacher.index')}}"><li class="dropdown-element">Undervisere</li></a>
                         <a class="dropdown-link" href="{{route('location.index')}}"><li class="dropdown-element">Lokaler</li></a>
+                        <a class="dropdown-link" href="{{route('about.calendar')}}"><li class="dropdown-element">Kalender</li></a>
                         <a class="dropdown-link" href="/aboutUs/board"><li class="dropdown-element">Bestyrelsen</li></a>
                         <a class="dropdown-link" href="#"><li class="dropdown-element">Generalforsamling</li></a>
                         <a class="dropdown-link" href="#"><li class="dropdown-element">Vedtægter</li></a>
