@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
@@ -51,9 +52,7 @@ Route::middleware(['routestatistics'])->group(function () {
     Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone" ])->where('any', '.*');
 
     Route::prefix('aboutUs')->group(function () {
-        Route::get('/', function () {
-            return view('aboutUs');
-        })->name('about.index');
+        Route::get('/', [AboutUsController::class, "index"])->name('about.index');
         Route::get('/board', function () {
             return view('aboutPages/board');
         });
