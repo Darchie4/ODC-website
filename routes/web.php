@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BoardMemberController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ServeErrorController;
@@ -24,7 +26,7 @@ use Stevebauman\Location\Facades\Location;
 */
 
 Route::get('/sitemap', function () {
-    SitemapGenerator::create('http://odcweb.madswp.dk/')
+    SitemapGenerator::create('https://odensedansecenter.dk/')
         ->writeToFile(public_path('sitemap.xml'));
     return 'Sitemap has been generated';
 });
@@ -51,16 +53,15 @@ Route::middleware(['routestatistics'])->group(function () {
     Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone" ])->where('any', '.*');
 
     Route::prefix('aboutUs')->group(function () {
-        Route::get('/', function () {
-            return view('aboutUs');
-        })->name('about.index');
-        Route::get('/board', function () {
-            return view('aboutPages/board');
-        });
+        Route::get('/', [AboutUsController::class, "index"])->name('about.index');
+        Route::get('/board', [BoardMemberController::class, "index"])->name('about.board.index');
+
         Route::get('/teachers', [TeacherController::class, "index"])->name('teacher.index');
         Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"])->name('teacherView');
 
         Route::get('/locations', [LocationController::class, 'index'])->name('location.index');
+
+        Route::get('/calendar', [AboutUsController::class, "calendar"])->name('about.calendar');
 
     });
 });
