@@ -26,7 +26,7 @@ use Stevebauman\Location\Facades\Location;
 */
 
 Route::get('/sitemap', function () {
-    SitemapGenerator::create('http://odcweb.madswp.dk/')
+    SitemapGenerator::create('https://odensedansecenter.dk/')
         ->writeToFile(public_path('sitemap.xml'));
     return 'Sitemap has been generated';
 });
@@ -55,11 +55,13 @@ Route::middleware(['routestatistics'])->group(function () {
     Route::prefix('aboutUs')->group(function () {
         Route::get('/', [AboutUsController::class, "index"])->name('about.index');
         Route::get('/board', [BoardMemberController::class, "index"])->name('about.board.index');
-        
+
         Route::get('/teachers', [TeacherController::class, "index"])->name('teacher.index');
         Route::get('/teacherView/{teacherID}', [TeacherController::class, "show"])->name('teacherView');
 
         Route::get('/locations', [LocationController::class, 'index'])->name('location.index');
+
+        Route::get('/calendar', [AboutUsController::class, "calendar"])->name('about.calendar');
 
     });
 });
