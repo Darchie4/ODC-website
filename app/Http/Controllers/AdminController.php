@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\DanceStyleChart;
 use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -47,8 +48,8 @@ class AdminController extends Controller
         return back();
     }
 
-    public function index(){
-        return view('adminPages/indexPage');
+    public function index(DanceStyleChart $chart){
+        return view('adminPages/indexPage', ['chart' => $chart->build()]);
     }
 
     public function logout(){

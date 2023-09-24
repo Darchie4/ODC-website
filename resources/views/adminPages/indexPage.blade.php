@@ -12,6 +12,11 @@
 <main>
     <article>
         <h1>Du er nu logget ind som admin</h1>
+
+        {!! $chart->container() !!}
+        <script src="{{ $chart->cdn() }}"></script>
+
+        {{ $chart->script() }}
     </article>
 </main>
 
