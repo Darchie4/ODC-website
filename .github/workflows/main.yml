@@ -3,10 +3,10 @@ on:
       branches:
       - Test
 
-name: 🚀 Deploy website on push
+name: 🚀 Deploy website to test env on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  simply-deploy:
+    name: 🎉 Deploy to Simply
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -19,3 +19,17 @@ jobs:
         username: madswp.dk
         password: ${{ secrets.ftp_password }}
         server-dir: /odc_website/laravel/
+  oracle_cloud-deploy:
+    name: 🎉 Deploy to Oracle cloud
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: odc.madswp.dk
+        username: Automated_deploy
+        password: ${{ secrets.Oracle-FTP-key }}
+        server-dir: /
