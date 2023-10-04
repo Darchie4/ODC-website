@@ -31,5 +31,5 @@ jobs:
       with:
         server: odc.madswp.dk
         username: Automated_deploy
-        password: ${{ secrets.Oracle-FTP-key }}
+        password: ${{ secrets.Oracle_FTP_key }}
         server-dir: /
