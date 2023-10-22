@@ -31,7 +31,8 @@
             Vi er godt i gang med sæsonen, men hvis du kan tænke dig en prøvetime, så ring og forhør om mulighederne.<br>
             Står du for at skulle giftes eller blot ønsker hjælp til et danseevent, så står vi også klar. Ring og få en snak med os, så finder vi ud af noget.<br><br>
 
-            Vi kan derudover de afsløre vigtige datoer for sæsonen. Se vores kalender under fanebladet <a href="{{route("about.calendar")}}">Om os</a><br><br>
+            <h2>Vi kan derudover de afsløre vigtige datoer for sæsonen</h2>
+            Se vores kalender under fanebladet <a href="{{route("about.calendar")}}">Om os</a><br><br>
             <b>Lørdag den 28. Oktober</b> er der Halloween fest. Se invitationen på <a href="https://www.facebook.com/OdenseDanseCenter/">Facebook</a> og <a href="https://www.instagram.com/odense_danse_center/">Instagram</a><br><br>
             <b>Fredag den 3. November</b> er der dansecafe for alle pardansere og andre der kan tænke sig en dejlig danseaften. Vi stiller musik og dansegulv til rådighed, og i skal blot komme med dansesko og godt humør.<br><br>
             <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
