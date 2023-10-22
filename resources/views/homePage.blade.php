@@ -38,10 +38,6 @@
             <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
             <b>Lørdag den 4. Maj</b> holder vi vores store sæsonopvisning<br><br>
 
-
-
-            <h4>Vi glæder os til at se jer i den kommende sæson.</h4>
-
             <br><br>
 
 
