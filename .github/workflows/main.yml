@@ -23,7 +23,7 @@ jobs:
                     SSH_PRIVATE_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
                     ARGS: "-rlgoDzvc -i --delete"
                     # EXCLUDE: "/storage/logs/, /database/seeders/" --exclude 'Dockerfile' --exclude '.env' 
-                    SOURCE: "dist/"
+                    # SOURCE: "dist/"
                     REMOTE_HOST: ${{ secrets.TEST_ENV_SERVER_IP }}
                     REMOTE_USER: ${{ secrets.TEST_ENV_SERVER_USER }}
                     TARGET: "/home/ubuntu/web/websites/ODC-website/"
