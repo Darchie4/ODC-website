@@ -3,33 +3,29 @@ on:
       branches:
       - Test
 
-name: 🚀 Deploy website to test env on push
+name: 🚀 Deploy website to test
 jobs:
-  simply-deploy:
-    name: 🎉 Deploy to Simply
-    runs-on: ubuntu-latest
+  deploy-to-test:
+    runs-on: ubuntu-22.04
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: linux296.unoeuro.com
-        username: madswp.dk
-        password: ${{ secrets.ftp_password }}
-        server-dir: /odc_website/laravel/
-  oracle_cloud-deploy:
-    name: 🎉 Deploy to Oracle cloud
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: oracle.madswp.dk
-        username: Mads_Automated_deploy
-        password: ${{ secrets.Oracle_FTP_key }}
-        server-dir: /
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Laravel Deployment Action
+        uses: Pentangle/laravel-deployment-action@v2.1.6
+        with:
+          # SSH key for deploying, Should be added as a **secret**
+          DEPLOY_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
+          # IP address of the server being deployed to, Should be added as a **secret**
+          SERVER_IP: ${{ secrets.TEST_ENV_SERVER_IP }}
+          # required, used for SSH and deployment path if APP_PATH not specified
+          SSH_USER: ubuntu
+          # required, used for deployment path if APP_PATH not specified
+          APP_NAME: ODC_test_Website
+          # leave blank for /srv/users/<SSH_USER>/apps/<APP_NAME>
+          APP_PATH: /home/ubuntu/web/websites/ODC-website
+          # leave blank for 8.0
+          PHP_VERSION: 8.2
+          # commands to run on server with prefix
+          ARTISAN_COMMANDS: | # optional, default is php artisan inspire
+            composer dump-autoload
+            php artisan inspire
