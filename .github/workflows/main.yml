@@ -5,27 +5,26 @@ on:
 
 name: 🚀 Deploy website to test
 jobs:
-  deploy-to-test:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Laravel Deployment Action
-        uses: Pentangle/laravel-deployment-action@v2.1.6
-        with:
-          # SSH key for deploying, Should be added as a **secret**
-          DEPLOY_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
-          # IP address of the server being deployed to, Should be added as a **secret**
-          SERVER_IP: ${{ secrets.TEST_ENV_SERVER_IP }}
-          # required, used for SSH and deployment path if APP_PATH not specified
-          SSH_USER: ubuntu
-          # required, used for deployment path if APP_PATH not specified
-          APP_NAME: ODC_test_Website
-          # leave blank for /srv/users/<SSH_USER>/apps/<APP_NAME>
-          APP_PATH: /home/ubuntu/web/websites/ODC-website
-          # leave blank for 8.0
-          PHP_VERSION: 8.2
-          # commands to run on server with prefix
-          ARTISAN_COMMANDS: | # optional, default is php artisan inspire
-            composer dump-autoload
-            php artisan inspire
+    build:
+        name: Build and Deploy
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout Repository
+                uses: actions/checkout@master
+            -   name: Setup Enviroment
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: '7.4'
+            -   name: Install Packages
+                run: composer install --no-dev
+            -   name: Deploy to Server
+                uses: charliex2/laravel-action@master
+                with:
+                    user: ubuntu
+                    host: ${{ secrets.TEST_ENV_SERVER_IP }}
+                    port: 22
+                    path: /home/ubuntu/web/websites/ODC-website
+                    owner: ubuntu
+                    commands: "# Customer commands"
+                env:
+                    DEPLOY_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
