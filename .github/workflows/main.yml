@@ -18,13 +18,13 @@ jobs:
             -   name: Install Packages
                 run: composer install --no-dev
             -   name: Deploy to Server
-                uses: charliex2/laravel-action@master
+                uses: easingthemes/ssh-deploy@main
                 with:
-                    user: ubuntu
-                    host: ${{ secrets.TEST_ENV_SERVER_IP }}
-                    port: 22
-                    path: /home/ubuntu/web/websites/ODC-website
-                    owner: ubuntu
-                    commands: "# Customer commands"
-                env:
-                    DEPLOY_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
+                    SSH_PRIVATE_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
+                    ARGS: "--exclude 'Dockerfile' --exclude '.env' --exclude 'storage/logs/' -rlgoDzvc -i --delete"
+                    SOURCE: "dist/"
+                    REMOTE_HOST: ${{ secrets.TEST_ENV_SERVER_IP }}
+                    REMOTE_USER: ${{ secrets.TEST_ENV_SERVER_USER }}
+                    TARGET: "/home/ubuntu/web/websites/ODC-website/"
+                    SCRIPT_AFTER: |
+                      sudo docker-compose -f /home/ubuntu/web/websites/docker-compose.yml up -d --build
