@@ -21,7 +21,8 @@ jobs:
                 uses: easingthemes/ssh-deploy@main
                 with:
                     SSH_PRIVATE_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
-                    ARGS: "--exclude 'Dockerfile' --exclude '.env' --exclude 'storage/logs' -rlgoDzvc -i --delete"
+                    ARGS: "-rlgoDzvc -i --delete"
+                    EXCLUDE: "Dockerfile, .env, /storage/logs/"
                     SOURCE: "dist/"
                     REMOTE_HOST: ${{ secrets.TEST_ENV_SERVER_IP }}
                     REMOTE_USER: ${{ secrets.TEST_ENV_SERVER_USER }}
