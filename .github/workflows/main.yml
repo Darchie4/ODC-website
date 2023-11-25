@@ -22,11 +22,12 @@ jobs:
                 with:
                     SSH_PRIVATE_KEY: ${{ secrets.TEST_ENV_DEPLOY_KEY }}
                     ARGS: "-rlgoDzvc -i --delete"
-                    EXCLUDE: "/storage/logs/, /database/seeders/, Dockerfile, .env"
+                    EXCLUDE: "/storage/logs/, /database/seeders/, Dockerfile, .env, /vendor/"
                     # SOURCE: "dist/"
                     REMOTE_HOST: ${{ secrets.TEST_ENV_SERVER_IP }}
                     REMOTE_USER: ${{ secrets.TEST_ENV_SERVER_USER }}
                     TARGET: "/home/ubuntu/web/websites/ODC-website/"
+                    SSH_CMD_ARGS: "-o StrictHostKeyChecking=no"
                     SCRIPT_BEFORE: |
                       sudo docker-compose -f /home/ubuntu/web/websites/docker-compose.yml down
                     SCRIPT_AFTER: |
