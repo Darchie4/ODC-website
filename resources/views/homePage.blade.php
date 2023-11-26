@@ -28,23 +28,15 @@
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
             <h1>Sæson 23/24</h1>
-            <h3>Tilmeldingen er åben!</h3>
+            Vi er godt i gang med sæsonen, men hvis du kan tænke dig en prøvetime, så ring og forhør om mulighederne.<br>
+            Står du for at skulle giftes eller blot ønsker hjælp til et danseevent, så står vi også klar. Ring og få en snak med os, så finder vi ud af noget.<br><br>
 
-            <p>Så er vi klar med programmet for næste sæson. <b><a href="{{route("schedule")}}">Klik her</a></b> eller på Program 23/24 i toppen og se de mange spændende hold vi tilbyder. Vi har både klassisk pardans
-            som fra Vild Med Dans, børnedans, K-pop og alt derimellem. <br>
-            Vi kan næsten med garanti sige at der også er noget for dig!</p>
-
-            <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen.</h3>
-
-            <b>Lørdag den 1. Juli</b> er der mulighed for at tilmelde sig de forskellige hold. Vi planlægger også et åbenhuscarrangement i august, inden sæsonstart, hvor det er muligt at få en smagsprøve på de forskellige hold.<br><br>
-            <b>Mandag den 14 august</b> starter sportsdans<br><br>
-            <b>Mandag den 21. August</b> er der sæsonstart for alle andre hold, bortset fra pardanserholdene, der starter den 4 september.<br><br>
+            <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen</h3>
+            <b>Se vores kalender</b> under fanebladet <a href="{{route("about.calendar")}}">Om os</a><br><br>
+            <b>Lørdag den 28. Oktober</b> er der Halloween fest. Se invitationen på <a href="https://www.facebook.com/OdenseDanseCenter/">Facebook</a> og <a href="https://www.instagram.com/odense_danse_center/">Instagram</a><br><br>
+            <b>Fredag den 3. November</b> er der dansecafe for alle pardansere og andre der kan tænke sig en dejlig danseaften. Vi stiller musik og dansegulv til rådighed, og i skal blot komme med dansesko og godt humør.<br><br>
             <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
-            <b>Lørdag den 4. Maj 2024</b> holder vi vores store sæsonopvisning<br><br>
-
-
-
-            <h4>Vi glæder os til at se jer i den kommende sæson.</h4>
+            <b>Lørdag den 4. Maj</b> holder vi vores store sæsonopvisning<br><br>
 
             <br><br>
 

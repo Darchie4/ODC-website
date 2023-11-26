@@ -26,7 +26,7 @@
         <li class="closedDate"><b>9. Maj - 12. Maj</b></li>
         <li class="closedDate"><b>20. Maj</b></li>
     </ul>
-
+    <b>NB!</b> Dage markeret med <b>*</b> I kalenderne nedenfor er der stadig undervisning for konkurrenceholdene
     <article class="with-flex calendarsContainer">
         <div class="with-flex calendarContainer">
             <h2 class="centered">Kalender 2023</h2>
