@@ -28,5 +28,8 @@ class AppServiceProvider extends ServiceProvider
             // Check if the value matches either HH:MM or HH:MM:SS format
             return preg_match('/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/', $value);
         });
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }
