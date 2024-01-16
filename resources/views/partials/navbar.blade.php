@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             </div>
-            <a><li>Events</li></a>
+            <a href="{{route('events.list')}}"><li>Events</li></a>
             <a href="{{route('schedule')}}"><li>Program</li></a>
             <a href="{{route('bridalwaltz')}}"><li>Brudevals</li></a>
             <a href="/"><li>Forside</li></a>

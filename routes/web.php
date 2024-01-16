@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BoardMemberController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ServeErrorController;
@@ -48,6 +49,10 @@ Route::middleware(['routestatistics'])->group(function () {
     })->name('contact');
     Route::get('/udmelding', function () {
         return view('udmelding');
+    });
+    Route::prefix('event')->group(function () {
+        Route::get('/list', [EventController::class, "index"])->name("events.list");
+        Route::get('/show/{eventID}', [EventController::class, "show"])->name("events.show");
     });
 
     Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone" ])->where('any', '.*');
@@ -103,6 +108,10 @@ Route::prefix('admin')->group(function () {
             Route::post('/doEditLesson/{lessonID}', [LessonController::class, 'doEdit'])->name('admin.lesson.doEdit');
             Route::get('/deleteLesson/{lessonID}', [LessonController::class, 'destroy'])->name('admin.lesson.destroy');
             Route::get('/doDeleteLesson/{lessonID}', [LessonController::class, 'doDestroy'])->name('admin.lesson.doDestroy');
+
+            Route::get('/createEvent', [EventController::class, 'create'])->name('admin.event.create');
+            Route::post('/createEvent', [EventController::class, 'doCreate'])->name('admin.event.doCreate');
+
         });
     });
 });

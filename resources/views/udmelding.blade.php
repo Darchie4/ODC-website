@@ -13,7 +13,7 @@
 <main>
     <article>
 
-        <h1>Udmelding</h1>
+        <h1 class="centered">Udmelding</h1>
 
         <hr>
 

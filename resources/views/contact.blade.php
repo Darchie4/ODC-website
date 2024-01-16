@@ -13,7 +13,7 @@
 <main>
     <article>
 
-        <h1>Kontakt os</h1>
+        <h1 class="centered">Kontakt os</h1>
 
         <hr>
 
