@@ -100,6 +100,11 @@ article > h1 {
         margin-bottom: 5vh;
         margin-left: 2.5%;
     }
+    .rightInfoColumn{
+        width: 100%;
+        margin-bottom: 5vh;
+        margin-left: 2.5%;
+    }
     .fb-container{
         width: 100%;
     }
