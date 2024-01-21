@@ -80,6 +80,10 @@ article > h1 {
     width: 35%;
 }
 
+.red{
+    color: red;
+}
+
 .announcmentcontainer > h1{
     font-size: max(22px, 3vw);
     color: rgb(41, 128, 187);
