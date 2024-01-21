@@ -33,9 +33,11 @@
 
             <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen</h3>
             <b>Se vores kalender</b> under fanebladet <a href="{{route("about.calendar")}}">Om os</a>, hvor ferie, lukkedag og øvrige begivenheder er markeret<br><br>
-            <b>Mandag den 27 november </b>starter billetsalget til Juleballet, og sidste salgsdag er den 9 december<br><br>
-            <b>Søndag den 17. December</b> vil vi holde vores Julebal<br><br>
-            <b>Lørdag den 4. Maj</b> holder vi vores store sæsonopvisning<br><br>
+            <b>Lørdag den 27. januar</b> holder vi workshop og danse cafe<br><br>
+            <b>Lørdag den 2. marts</b> holder vi workshop<br><br>
+            <b class="red">OBS! </b><b>Lørdag den 12 april</b> holder vi generalforsamling <br><br>
+            <b>Lørdag den 20 april</b> holder vi workshop<br><br>
+            <b class="red">Flyttet</b><b> Lørdag den 1. Juni</b> holder vi vores store sæsonopvisning<br><br>
 
             <br><br>
 
