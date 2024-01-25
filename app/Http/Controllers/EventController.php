@@ -19,12 +19,12 @@ class EventController extends Controller
 {
     public function index(): Factory|View|Application
     {
-        dd(EventPicture::all());
         $now = now();
         $events = Event::where('visible', true)
             ->where('end_time', '>', $now)
             ->get();
-        return view('eventPages/index', ["event" => $events]);
+        dd(Event::all());
+        return view('eventPages/index', ["events" => $events]);
     }
 
     public function show($eventID): Factory|View|Application

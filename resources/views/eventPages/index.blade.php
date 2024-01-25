@@ -19,6 +19,11 @@
         </p>
 
         <h2>Kommende events</h2>
+
+        @foreach($events as $event)
+            {{$event->name}}
+        @endforeach
+
     </article>
 </main>
 
