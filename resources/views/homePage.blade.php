@@ -35,7 +35,7 @@
             <b>Se vores kalender</b> under fanebladet <a href="{{route("about.calendar")}}">Om os</a>, hvor ferie, lukkedag og øvrige begivenheder er markeret<br><br>
             <b>Lørdag den 27. januar</b> holder vi workshop og danse cafe<br><br>
             <b>Lørdag den 2. marts</b> holder vi workshop<br><br>
-            <b class="red">OBS! </b><b>Lørdag den 12 april</b> holder vi generalforsamling <br><br>
+            <b class="red">OBS! </b><b>Lørdag den 14 april</b> holder vi generalforsamling <br><br>
             <b>Lørdag den 20 april</b> holder vi workshop<br><br>
             <b class="red">Flyttet</b><b> Lørdag den 1. Juni</b> holder vi vores store sæsonopvisning<br><br>
 
