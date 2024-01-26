@@ -59,7 +59,7 @@
 
             <b>Lørdag den 2. marts</b> holder vi Workshop med Julie Graversen<br><br>
 
-            <b>Lørdag den 20 april</b> holder vi workshop med Anders Koch<br><br><br>
+            <b>Lørdag den 6. april</b> holder vi workshop med Anders Koch<br><br><br>
 
 
             <div class="fb-page" data-href="https://www.facebook.com/OdenseDanseCenter" data-tabs="timeline"
