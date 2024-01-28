@@ -33,7 +33,6 @@
 
             <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen</h3>
             <b>Se vores kalender</b> under fanebladet <a href="{{route("about.calendar")}}">Om os</a>, hvor ferie, lukkedag og øvrige begivenheder er markeret<br><br>
-            <b>Lørdag den 27. januar</b> holder vi workshop og danse cafe<br><br>
             <b>Lørdag den 2. marts</b> holder vi workshop<br><br>
             <b class="red">OBS! </b><b>Lørdag den 14 april</b> holder vi generalforsamling <br><br>
             <b>Lørdag den 6 april</b> holder vi workshop<br><br>
@@ -52,10 +51,6 @@
 
             <h1>Workshops</h1>
             ODC tilstræber at afholde et antal workshops i løbet af sæsonen, hvor vi ofte vil invitere eksterne trænere til at stå for undervisningen. I workshops vil der være bestemte temaer for dagen, hvor der er fokus på at udvikle sin dans og lære nyt på en anden måde end ved den daglige træning. Derudover er det altid super hyggelige dage, hvor vi bliver blandet på tværs af holdene og ofte også med par ude fra andre foreninger og danseskoler. Alle er velkomne og der er også mulighed for at tilkøbe enetimer med vores instruktører.<br><br>
-
-            <b>Lørdag den 27. januar</b> holder vi Workshop med Peter og Helena, <b><a href="https://odensedansecenter.klub-modul.dk/cms/EventOverview.aspx">tilmeld her</a></b>.<br>
-            Odense Danse center inviterer til spændende og lærerig workshop med Peter Kristensen og Helena Bakholm, den 27 januar 2024. Peter og Helena vil give den maks gas og øse af deres store erfaring som dansere på højt niveau.<br><br>
-            Booking af enetimer, ring eller skriv til Flemming på 51613748.<br>
 
             <b>Lørdag den 2. marts</b> holder vi Workshop med Julie Graversen<br><br>
 
