@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->foreignId("location_id")->nullable()->constrained();
             $table->string("external_address")->nullable();
 
+            $table->string("one_line_description");
             $table->string("short_description");
             $table->text("long_description");
 

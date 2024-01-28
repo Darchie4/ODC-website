@@ -23,7 +23,6 @@ class EventController extends Controller
         $events = Event::where('visible', true)
             ->where('end_time', '>', $now)
             ->get();
-        dd(Event::all());
         return view('eventPages/index', ["events" => $events]);
     }
 
@@ -47,6 +46,7 @@ class EventController extends Controller
             'name' => 'required|string|max:255',
             'start_time' => 'required|date',
             'end_time' => 'required|date|after:start_time',
+            'oneLineDescription' => 'required|string',
             'shortDescription' => 'required|string',
             'locationText' => 'required_if:showLocation,1|nullable|string', // Only required if showLocation is checked
             'location' => [
@@ -69,9 +69,10 @@ class EventController extends Controller
         $event->end_time = $validatedData['end_time'];
         $event->location_id = $validatedData['location'];
         $event->external_address = $validatedData['locationText'];
+        $event->one_line_description = $validatedData['oneLineDescription'];
         $event->short_description = $validatedData['shortDescription'];
         $event->long_description = $validatedData['longDescription'];
-        $event->visible = $validatedData['visible'] ?? false;
+        $event->visible = $validatedData['visible'] ?? true;
         $event->internal_only = $validatedData['internal_only'] ?? false;
         $event->signup_needed = $validatedData['signupNeeded'] ?? false;
         $event->signup_link = $validatedData['signup_link'];

@@ -61,6 +61,9 @@
                 </div>
 
                 <div class="middelInfoContainer">
+                    <label for="oneLineDescription">En linje beskrivelse:</label> <br>
+                    <textarea name="oneLineDescription"></textarea><br><br>
+
                     <label for="shortDescription">Kort beskrivelse:</label> <br>
                     <textarea name="shortDescription"></textarea><br><br>
 
