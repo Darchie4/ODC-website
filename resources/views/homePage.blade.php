@@ -34,7 +34,7 @@
             <h3>Vi kan derudover de afsløre vigtige datoer for sæsonen</h3>
             <b>Se vores kalender</b> under fanebladet <a href="{{route("about.calendar")}}">Om os</a>, hvor ferie, lukkedag og øvrige begivenheder er markeret<br><br>
             <b>Lørdag den 2. marts</b> holder vi workshop<br><br>
-            <b class="red">OBS! </b><b>Lørdag den 14 april</b> holder vi generalforsamling <br><br>
+            <b class="red">OBS! </b><b>Søndag den 14 april</b> holder vi generalforsamling <b class="red">OBS!</b> <br><br>
             <b>Lørdag den 6 april</b> holder vi workshop<br><br>
             <b class="red">Flyttet</b><b> Lørdag den 1. Juni</b> holder vi vores store sæsonopvisning<br><br>
 
@@ -52,7 +52,7 @@
             <h1>Workshops</h1>
             ODC tilstræber at afholde et antal workshops i løbet af sæsonen, hvor vi ofte vil invitere eksterne trænere til at stå for undervisningen. I workshops vil der være bestemte temaer for dagen, hvor der er fokus på at udvikle sin dans og lære nyt på en anden måde end ved den daglige træning. Derudover er det altid super hyggelige dage, hvor vi bliver blandet på tværs af holdene og ofte også med par ude fra andre foreninger og danseskoler. Alle er velkomne og der er også mulighed for at tilkøbe enetimer med vores instruktører.<br><br>
 
-            <b>Lørdag den 2. marts</b> holder vi Workshop med Julie Graversen<br><br>
+            <b>Lørdag den 2. marts</b> holder vi Workshop med Julie Graversen <b class="blueText"><a href="https://odensedansecenter.klub-modul.dk/cms/EventOverview.aspx">Tilmed dig her!</a></b><br><br>
 
             <b>Lørdag den 6. april</b> holder vi workshop med Anders Koch<br><br><br>
 

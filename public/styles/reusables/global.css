@@ -86,6 +86,10 @@ h1 {
     margin: 1vh auto;
 }
 
+.blueText{
+    color: rgb(41, 128, 187);
+}
+
 @media screen and (max-device-width: 480px) {
     main {
         margin-left: 2vw;
