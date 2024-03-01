@@ -40,4 +40,4 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN chmod -R 777 ./storage
 USER $user
 
-CMD php artisan queue:work &; php artisan migrate; php artisan db:seed; npm run build; php artisan optimize:clear; php-fpm
+CMD php artisan queue:work &; php artisan migrate:fresh --seed; npm run build; php artisan optimize:clear; php-fpm
