@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             </div>
-            <a><li>Events</li></a>
+            <a href="https://odensedansecenter.klub-modul.dk/cms/EventOverview.aspx"><li>Events</li></a>
             <a href="{{route('schedule')}}"><li>Program</li></a>
             <a href="{{route('bridalwaltz')}}"><li>Brudevals</li></a>
             <a href="/"><li>Forside</li></a>
