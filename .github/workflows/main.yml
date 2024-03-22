@@ -9,8 +9,6 @@ jobs:
         name: Build and Deploy
         runs-on: ubuntu-latest
         steps:
-            -   name: test
-                run: echo ${{secrets.TEST_ENV_SERVER_IP}} | sed 's/./& /g'
             -   name: Checkout Repository
                 uses: actions/checkout@master
             -   name: Setup Enviroment
