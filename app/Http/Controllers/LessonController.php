@@ -191,7 +191,7 @@ class LessonController extends Controller
         }
         $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
         $lesson->save();
-        $lesson->teachers()->syncWithoutDetaching(\request('teachers'));
+        $lesson->teachers()->sync(\request('teachers'));
         return redirect(route('admin.lesson.index'));
     }
 
