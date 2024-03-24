@@ -7,9 +7,6 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ServeErrorController;
 use App\Http\Controllers\TeacherController;
-use App\Models\DanceStyle;
-use App\Models\Teacher;
-use http\Client\Request;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 use Stevebauman\Location\Facades\Location;
@@ -50,7 +47,7 @@ Route::middleware(['routestatistics'])->group(function () {
         return view('udmelding');
     });
 
-    Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone" ])->where('any', '.*');
+    Route::get('/wordpress/{any}', [ServeErrorController::class, "wp_gone"])->where('any', '.*');
 
     Route::prefix('aboutUs')->group(function () {
         Route::get('/', [AboutUsController::class, "index"])->name('about.index');
@@ -63,10 +60,14 @@ Route::middleware(['routestatistics'])->group(function () {
 
         Route::get('/calendar', [AboutUsController::class, "calendar"])->name('about.calendar');
 
+        Route::get('/articlesOfAssociation', function () {
+            return view('aboutPages/articlesOfAssociation');
+        })->name('about.articlesOfAssociation');
+
     });
 });
 Route::prefix('admin')->group(function () {
-    Route::get('/testIp', function (){
+    Route::get('/testIp', function () {
         dd(Location::get("80.208.68.50"));
     });
     Route::get('/registrer', [AdminController::class, 'create'])->name('admin.create');

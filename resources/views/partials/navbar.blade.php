@@ -19,7 +19,7 @@
                         <a class="dropdown-link" href="http://www.jensesport.dk/danseskole-klubber/odense-dansecenter.html"><li class="dropdown-element">Klub tøj</li></a>
                         <a class="dropdown-link" href="/aboutUs/board"><li class="dropdown-element">Bestyrelsen</li></a>
                         <a class="dropdown-link" href="#"><li class="dropdown-element">Generalforsamling</li></a>
-                        <a class="dropdown-link" href="#"><li class="dropdown-element">Vedtægter</li></a>
+                        <a class="dropdown-link" href="{{route('about.articlesOfAssociation')}}"><li class="dropdown-element">Vedtægter</li></a>
                     </ul>
                 </div>
             </div>
