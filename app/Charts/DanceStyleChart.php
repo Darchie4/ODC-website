@@ -17,7 +17,7 @@ class DanceStyleChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\BarChart
     {
-        $subquery1 = DB::table('custom_route_statistics_OLD')
+        $subquery1 = DB::table('custom_route_statistics')
             ->select('route')
             ->where('route', 'LIKE', 'schedule/%')
             ->get()
@@ -38,7 +38,6 @@ class DanceStyleChart
             ->groupBy('dance_styles.name')
             ->orderByRaw('COUNT(*) DESC')
             ->get();
-
         return $this->chart->barChart()
             ->setTitle('San Francisco vs Boston.')
             ->setSubtitle('Wins during season 2021.')
