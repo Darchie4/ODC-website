@@ -22,6 +22,12 @@
 
         Udmeldelse <b>SKAL</b> ske skriftligt, ved henvendelse til Odense Danse Center på kasserens mail: <a href="mailto:kasserer@odensedansecenter.dk">kasserer@odensedansecenter.dk</a> <br><br>
 
+        <b>Mailen skal inden holde følgende:</b>
+        <ul>
+            <li>Fulde navn på medlemmet der skal udmeldes</li>
+            <li>Hvilket hold man ønsker at blive udmeldt fra, også hvis man kun er tilmeldt et hold</li>
+        </ul><br>
+
         <b>Udmeldelse træder i kraft med øjeblikkelig virkning ved ratebetalte medlemskaber.</b><br>
 
         Ved udmeldelse i løbet en rate vil der ikke være tilbagebetaling af noget af raten. Der vil dog ikke blive trukket yderligere.<br><br>
