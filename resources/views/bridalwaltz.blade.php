@@ -23,7 +23,8 @@
         Om I ønsker brudevals undervisning som en klassisk brudevals eller ønsker individuelle trin, så kan vi håndtere det. Vi er vant til at undervise, både brudevals men også de klassiske standard og latin danse kendt fra fx. vild med dans.<br><br>
 
         <h3>Kontakt os gerne for en uforpligtende snak om netop jeres brudvals undervisning.<br>
-        Vi kan kontaktes både telefonisk og via sms på tlf. <a href="tel:+45-42-36-41-15">42 36 41 15 </a></h3><br><br>
+        Vi kan kontaktes både telefonisk og via sms på tlf. <a href="tel:+45-70-60-80-12">70 60 80 12</a><br>
+        Eller på mail <a href="mailto:Formand@odensedansecenter.dk">Formand@odensedansecenter.dk</a></h3><br><br>
     </article>
 </main>
 
