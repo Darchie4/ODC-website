@@ -20,13 +20,13 @@
 
             <p>
                 Her kan du læse Odense Danse Centers vedtægter.<br>
-                <b>Sidst opdateret: 24-03-2024</b>
+                <b>Sidst opdateret: 25-03-2024</b>
             </p>
         </article>
 
-        <object data={{asset("others/pdf/ODC-Vedtægter_24_03_2024.pdf")}} type="application/pdf" width="100%"
+        <object data={{asset("others/pdf/Vedtægter_22-04-2022.pdf")}} type="application/pdf" width="100%"
                 height="500px">
-            <p>Kunne ikke vise PDF. <a href={{asset("others/pdf/ODC-Vedtægter_24_03_2024.pdf")}}>Klik her</a> for at
+            <p>Kunne ikke vise PDF. <a href={{asset("others/pdf/Vedtægter_22-04-2022.pdf")}}>Klik her</a> for at
                 downloade i stedet.</p>
         </object>
     </section>
