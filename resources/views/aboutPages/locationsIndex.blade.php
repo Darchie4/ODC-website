@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/locationStyles/locationIndex.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
+@extends('layout.publicFull')
 
-<body>
-@include("partials.navbar")
-<main>
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Vi har 2 store flotte sale i Dalum samt et hyggeligt 'venterum' hvor man kan side og få en snak med de andre forældre, mens junior danser eller efter dit hold">
+    <link rel="stylesheet" href="{{ asset('styles/locationStyles/locationIndex.css') }}"/>
+@endsection
+
+@section('content')
     <article>
         <h1>Lokaler</h1>
         ODC har har {{count($locations)}} flotte dansesale, her kan du se lidt om dem.
@@ -40,8 +37,5 @@
             @endforeach
         </div>
     </article>
-</main>
+@endsection
 
-@include("partials.footer")
-</body>
-</html>

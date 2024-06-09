@@ -1,20 +1,14 @@
 @php use App\Models\Lesson;use Carbon\Carbon; @endphp
-    <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    @include("partials.metatags")
+@extends('layout.publicFull')
+
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Vi tilbyder en enormt bred vifte at stilarter med hold på tværs af næsten alle niveauer så vi kan garantere at der også er et hold for dig.">
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
-    <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <title>Odense Danse Center</title>
-</head>
+@endsection
 
-<body>
-@include("partials.navbar")
-
-<main>
+@section('content')
     <article>
         <div class="programTextContainer">
             <h1 class="centered">Program</h1>
@@ -128,11 +122,6 @@
             @endif
         @endforeach
 
-
     </article>
-</main>
+@endsection
 
-@include("partials.footer")
-</body>
-
-</html>

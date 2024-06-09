@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
+@extends('layout.publicFull')
+
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Vi har kalenderen godt fyldt både med ferie og lukkedage men i stor grad også med en bred vifte af fede events lige fra dansecafe for voksne til sodavandsdiskotek og halloween fest for de små.">
     <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/calendar.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
+@endsection
 
-<body>
-@include("partials.navbar")
-
-<main>
-
+@section('content')
     <h1 class="centered">Kalender og Lukkedage</h1>
     Her kan du se hvilke spændende planer vi har for året og hvilke dage vi tager en pause fra dansen og holder ferie.
     <h2>Lukkedage</h2>
@@ -43,8 +38,4 @@
             </object>
         </div>
     </article>
-</main>
-
-@include("partials.footer")
-</body>
-</html>
+@endsection
