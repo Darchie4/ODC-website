@@ -1,17 +1,11 @@
-@php use Carbon\Carbon; @endphp
-    <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    @include("partials.metatags")
-    <link rel="stylesheet" href="{{ asset('styles/lesson/show.css') }}"/>
-    <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
-@include("partials.navbar")
-<main>
+@extends('layout.publicFull')
 
+@section('head')
+    <link rel="stylesheet" href="{{ asset('styles/lesson/show.css') }}"/>
+
+@endsection
+
+@section('content')
     <h1>{{$lesson -> name}}</h1>
     <div class="lessonInfoContainer">
         <div class="leftInfoColumn">
@@ -95,8 +89,5 @@
             </div>
         </article>
     </div>
+@endsection
 
-
-</main>
-@include("partials.footer")
-</html>

@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    @include("partials.metatags")
+@extends('layout.publicFull')
+
+@section('head')
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
     <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <title>Odense Danse Center</title>
-</head>
 
-<body>
-@include("partials.navbar")
+@endsection
 
+@section('content')
 <nav>
     <div class="navBoarder">
 
@@ -324,9 +319,5 @@
             </tbody>
         </table>
     </article>
-</main>
+@endsection
 
-@include("partials.footer")
-</body>
-
-</html>
