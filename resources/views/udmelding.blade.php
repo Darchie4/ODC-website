@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
+@extends('layout.publicFull')
 
-<body>
-@include("partials.navbar")
-<main>
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Udmeldelse skal ske skriftligt, ved henvendelse til Odense Danse Center på kasserens mail: kasserer@odensedansecenter.dk">
+    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}"/>
+@endsection
+
+@section('content')
     <article>
 
         <h1>Udmelding</h1>
@@ -40,13 +37,7 @@
         OBS dette gælder ikke træningsmedlemskaber, da disse er løbende abonnementer, hvor de almindelige udmeldelsesbetingelser gælder hele året.<br>
         <br>
         <br>
-        <hr>
 
     </article>
-</main>
+@endsection
 
-
-@include("partials.footer")
-</body>
-
-</html>

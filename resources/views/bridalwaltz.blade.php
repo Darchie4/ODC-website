@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
+@extends('layout.publicFull')
+
+@section('head')
     <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
+@endsection
 
-<body>
-@include("partials.navbar")
-
-<main>
-
+@section('content')
     <h1>Brudevals på fyn</h1>
+
     <article>
         Bor du på fyn og ønsker brudevals undervisning, er Odense Danse Center det rigtige valg.<br>
         Vi ligger helt rigtigt placeret i Odense, nærmere Dalum, som er tæt på flere motorvejs til/afkørsler.<br><br>
@@ -26,10 +19,5 @@
         Vi kan kontaktes både telefonisk og via sms på tlf. <a href="tel:+45-70-60-80-12">70 60 80 12</a><br>
         Eller på mail <a href="mailto:Formand@odensedansecenter.dk">Formand@odensedansecenter.dk</a></h3><br><br>
     </article>
-</main>
+@endsection
 
-@include("partials.footer")
-
-</body>
-
-</html>
