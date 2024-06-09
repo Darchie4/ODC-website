@@ -1,5 +1,5 @@
+@php use Carbon\Carbon; @endphp
 @extends('layout.publicFull')
-
 @section('head')
     <link rel="stylesheet" href="{{ asset('styles/lesson/show.css') }}"/>
 
