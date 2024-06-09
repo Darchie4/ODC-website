@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
+@extends('layout.publicFull')
+
+@section('head')
+    <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/articlesOfAssociation.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <title>Odense Danse Center</title>
-</head>
+@endsection
 
-<body>
-@include("partials.navbar")
-
-<main>
+@section('content')
     <section>
         <article class="centered">
             <h1>Vedtægter oversigt</h1>
@@ -30,9 +22,4 @@
                 downloade i stedet.</p>
         </object>
     </section>
-</main>
-
-
-@include("partials.footer")
-</body>
-</html>
+@endsection

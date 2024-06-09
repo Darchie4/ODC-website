@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/schedule.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <title>Odense Danse Center</title>
-</head>
+@extends('layout.publicFull')
 
-<body>
-@include("partials.navbar")
-@include("partials.footer")
-</body>
-</html>
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Bestyrelsen ved Odense Danse Center består af 1 formand og 5 menige medelemmer">
+    <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
+@endsection
+
+@section('content')
+@endsection

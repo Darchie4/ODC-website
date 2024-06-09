@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teachers.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <script src="{{ asset('js/scheduleHide.js')}}"></script>
-    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <title>Odense Danse Center</title>
-</head>
+@extends('layout.publicFull')
 
-<body>
-@include("partials.navbar")
-<main>
+@section('head')
+    @php($customDescription = true)
+    <meta name="description"
+          content="Vi har en stærk trop mange af dygtige undervisere som til sammen favner en bred vifte af stilarter. Vores undervisere stræber efter at skabe stor udvikling i danserene og have en fantastisk stemning på holdene">
+    <link rel="stylesheet" href="{{ asset('styles/aboutUsStyles/teachers.css') }}"/>
+@endsection
+
+@section('content')
     <article>
         <h1>Undervisere</h1>
         Her hos ODC har vi mange super dygtige undervisere, her kan du læse lidt om dem.
@@ -46,8 +41,4 @@
             @endforeach
         </div>
     </article>
-</main>
-
-@include("partials.footer")
-</body>
-</html>
+@endsection

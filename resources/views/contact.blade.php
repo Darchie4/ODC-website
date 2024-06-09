@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    @include("partials.metatags")
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}"/>
-    <title>Odense Danse Center</title>
-</head>
+@extends('layout.publicFull')
 
-<body>
-@include("partials.navbar")
-<main>
+@section('head')
+    <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
+    @php($customDescription = true)
+    <meta name="description"
+          content="Vi kan kontaktes pr telefon mellem kl 18 og 20 i hverdagene mandag-torsdag på 70 60 80 12, eller alternativt på mail: Formand@odensedansecenter.dk">
+@endsection
+
+@section('content')
     <article>
 
         <h1>Kontakt os</h1>
@@ -30,10 +27,4 @@
         <hr>
 
     </article>
-</main>
-
-
-@include("partials.footer")
-</body>
-
-</html>
+@endsection
