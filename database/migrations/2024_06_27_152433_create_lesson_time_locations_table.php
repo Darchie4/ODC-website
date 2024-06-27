@@ -20,8 +20,8 @@ return new class extends Migration
             $table->time("start_time");
             $table->time("end_time");
 
-            $table->foreignId("lesson_id")->constrained()->cascadeOnDelete()->cascadeOnDelete();
-            $table->foreignId("location_id")->constrained()->cascadeOnDelete()->cascadeOnDelete();
+            $table->foreignId("lesson_id")->cascadeOnDelete()->cascadeOnDelete();
+            $table->foreignId("location_id")->cascadeOnDelete()->cascadeOnDelete();
 
             $table->timestamps();
         });
