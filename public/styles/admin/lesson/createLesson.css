@@ -19,3 +19,15 @@
 .choices{
     width: 75%;
 }
+
+.checkBoxContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkBox{
+    margin-left: 2vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
+}
