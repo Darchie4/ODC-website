@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -33,10 +34,11 @@
                                 <h2 class="lessonName">{{$lesson -> name}}</h2>
                                 <div class="mainInfoContainer">
                                     <b>Alder:</b> {{$lesson -> age_from}} - {{$lesson -> age_to}} <br>
-                                    <b>Tidspunkt:</b> {{$lesson -> day}} {{\Carbon\Carbon::parse($lesson -> lesson_start_time)->format('H:i')}}
-                                    - {{\Carbon\Carbon::parse($lesson -> lesson_end_time)->format('H:i')}} <br>
-                                    <b>Lokation:</b> <a
-                                        href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
+                                    <b>Tidspunkt:</b> <br>
+                                    @foreach($lesson->lessonTimeLocations()->get() as $timeSlot)
+                                         {{$timeSlot->dayName()}} {{Carbon::parse($timeSlot -> start_time)->format('H:i')}}
+                                        - {{Carbon::parse($timeSlot -> end_time)->format('H:i')}} {{$timeSlot -> location()->first() -> room_name}}<br>
+                                    @endforeach
                                     <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a
                                         href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a>
                                     <br>
