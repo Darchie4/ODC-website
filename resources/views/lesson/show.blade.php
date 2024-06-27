@@ -10,12 +10,13 @@
     <div class="lessonInfoContainer">
         <div class="leftInfoColumn">
             <b>Alder:</b> {{$lesson -> age_from}} - {{$lesson -> age_to}} <br>
-            <b>Tidspunkt:</b> {{$lesson -> day}} {{Carbon::parse($lesson -> lesson_start_time)->format('H:i')}}
-            - {{Carbon::parse($lesson -> lesson_end_time)->format('H:i')}} <br>
+            <b>Tid og sted:</b> <br>
+            @foreach($lesson->lessonTimeLocations()->get() as $timeSlot)
+                {{$timeSlot->dayName()}} {{Carbon::parse($timeSlot -> start_time)->format('H:i')}}
+                - {{Carbon::parse($timeSlot -> end_time)->format('H:i')}} <a href="{{route('location.index')}}">{{$timeSlot -> location()->first() -> room_name}}</a><br>
+            @endforeach
             <b>Sæson:</b> {{Carbon::parse($lesson->season_start)->format('d/m-y')}}
             - {{Carbon::parse($lesson->season_end)->format('d/m-y')}} <br>
-            <b>Lokation:</b>
-            <a href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a> <br>
             <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a
                 href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a>
             <br>
@@ -75,18 +76,22 @@
         <article class="locationContainer">
 
             <h2 class="centered">Lokation</h2>
+            @foreach($lesson->lessonTimeLocations()->take(1)->get() as $timeSlot)
+
             <h3 class="centered">
                 <a href="{{route("location.index")}}">
-                    {{$lesson -> location -> room_name}}
+                    {{$timeSlot -> location()->first()->room_name}}
                 </a>
             </h3>
             <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe title="Addresse på Google Maps" width="100%" height="250" id="gmap_canvas"
-                            src={{$lesson -> location -> g_maps_embed_link}}
+                            src={{$timeSlot -> location()->first() -> g_maps_embed_link}}
                             frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
             </div>
+            @endforeach
+
         </article>
     </div>
 @endsection
