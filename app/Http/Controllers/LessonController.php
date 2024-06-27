@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\DanceStyle;
 use App\Models\Lesson;
+use App\Models\LessonTimeLocation;
 use App\Models\Location;
 use App\Models\SkillLevel;
 use App\Models\Teacher;
+use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -25,8 +27,8 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('lesson.TEMPSchedule');
-//        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'danceStylesToList' => DanceStyle::all()]);
+//        return view('lesson.TEMPSchedule');
+        return view('lesson.schedule', ['danceStyles' => DanceStyle::all(), 'danceStylesToList' => DanceStyle::all()]);
     }
 
     public function adminIndex()
@@ -63,56 +65,54 @@ class LessonController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
+            'shortLessonDescription' => 'required|string|max:255',
+            'danceStyle' => 'required|string',
             'ageFrom' => 'required|integer|lte:ageTo',
             'ageTo' => 'required|integer|gte:ageFrom',
-            'day' => 'required|string',
-            'start_time' => 'required|custom_time_format|before:end_time',
-            'end_time' => 'required|custom_time_format|after:start_time',
+            'start_times.*' => 'required|date_format:H:i',
+            'end_times.*' => 'required|date_format:H:i|after:start_times.*',
+            'days.*' => 'required|integer|between:0,6',
+            'locations.*' => 'required|exists:locations,id',
             'km_id' => 'required|integer|unique:lessons,km_id',
             'seasonStart' => 'required|date_format:Y-m-d|before:seasonEnd',
             'seasonEnd' => 'required|date_format:Y-m-d|after:seasonStart',
             'teachers' => 'required|array',
-            'danceStyle' => 'required|string',
-            'location' => 'required|integer|exists:locations,id',
             'skillLevel' => 'required|string',
             'is_visible' => 'sometimes',
-            'is_available' => 'sometimes',
-            'shortLessonDescription' => 'required|string',
+            'can_signup' => 'sometimes',
             'longLessonDescription' => 'required|string',
         ]);
-
         $lesson = new Lesson();
         $lesson->name = \request("name");
         $lesson->age_from = \request("ageFrom");
         $lesson->age_to = \request("ageTo");
-        $lesson->day = \request("day");
-        $lesson->lesson_start_time = \request("start_time");
-        $lesson->lesson_end_time = \request("end_time");
         $lesson->km_id = \request("km_id");
-        $lesson->location_id = \request("location");
         $lesson->short_description = \request("shortLessonDescription");
         $lesson->long_description = \request("longLessonDescription");
         $lesson->season_start = \request("seasonStart");
         $lesson->season_end = \request("seasonEnd");
         $lesson->is_visible = (\request("is_visible") != null);
-        $lesson->is_available = (\request("is_visible") != null);
+        $lesson->is_available = (\request("can_signup") != null);
 
-        $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
-        if ($DBFoundStyle->doesntExist()) {
-            $danceStyle = new DanceStyle();
-            $danceStyle->name = \request('danceStyle');
-            $danceStyle->save();
-        }
-        $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+        $danceStyle = DanceStyle::firstOrCreate(['name' => \request('danceStyle')]);
+        $lesson->dance_style_id = $danceStyle->id;
 
-        $DBFoundSkillLevel = DB::table('skill_levels')->where('name', \request('skillLevel'));
-        if ($DBFoundSkillLevel->doesntExist()) {
-            $skillLevel = new SkillLevel();
-            $skillLevel->name = \request('skillLevel');
-            $skillLevel->save();
-        }
-        $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
+        $skillLevel = SkillLevel::firstOrCreate(['name' => \request('skillLevel')]);
+        $lesson->skill_Level_id = $skillLevel->id;
+
         $lesson->save();
+
+        foreach ($request->input('start_times') as $index => $startTime) {
+            $lessonTimeLocation = new LessonTimeLocation();
+            $lessonTimeLocation->week_day = $request->input('days')[$index];
+            $lessonTimeLocation->start_time = Carbon::parse($startTime)->format('H:i');
+            $lessonTimeLocation->end_time = Carbon::parse($request->input('end_times')[$index])->format('H:i');
+            $lessonTimeLocation->location_id = $request->input('locations')[$index];
+            $lessonTimeLocation->lesson_id = $lesson->id; // Associate the lesson ID
+            $lessonTimeLocation->save();
+            $lesson->lessonTimeLocations()->save($lessonTimeLocation);
+        }
+
         $lesson->teachers()->attach(\request('teachers'));
         return redirect(route('admin.lesson.index'));
     }
@@ -141,58 +141,58 @@ class LessonController extends Controller
     public function doEdit(Request $request, $lessonID)
     {
         $request->validate([
-            'name' => ['required', 'string'],
-            'ageFrom' => ['required', 'integer', 'lte:ageTo'],
-            'ageTo' => ['required', 'integer', 'gte:ageFrom'],
-            'day' => ['required', 'string'],
-            'start_time' => ['required', 'before:end_time', 'custom_time_format'],
-            'end_time' => ['required', 'after:start_time', 'custom_time_format'],
+            'name' => 'required|string',
+            'shortLessonDescription' => 'required|string|max:255',
+            'danceStyle' => 'required|string',
+            'ageFrom' => 'required|integer|lte:ageTo',
+            'ageTo' => 'required|integer|gte:ageFrom',
+            'start_times.*' => 'required|date_format:H:i',
+            'end_times.*' => 'required|date_format:H:i|after:start_times.*',
+            'days.*' => 'required|integer|between:0,6',
+            'locations.*' => 'required|exists:locations,id',
             'km_id' => ['required', 'integer', 'unique:lessons,km_id,'.$lessonID],
-            'seasonStart' => ['required', 'before:seasonEnd', 'date_format:Y-m-d'],
-            'seasonEnd' => ['required', 'after:seasonStart', 'date_format:Y-m-d'],
-            'teachers' => ['required', 'array'],
-            'danceStyle' => ['required', 'string'],
-            'location' => ['required', 'integer', 'exists:locations,id'],
-            'skillLevel' => ['required', 'string'],
+            'seasonStart' => 'required|date_format:Y-m-d|before:seasonEnd',
+            'seasonEnd' => 'required|date_format:Y-m-d|after:seasonStart',
+            'teachers' => 'required|array',
+            'skillLevel' => 'required|string',
             'is_visible' => 'sometimes',
-            'is_available' => 'sometimes',
-            'shortLessonDescription' => ['required', 'string'],
-            'longLessonDescription' => ['required', 'string'],
+            'can_signup' => 'sometimes',
+            'longLessonDescription' => 'required|string',
         ]);
 
-        $lesson = Lesson::findOrFail($lessonID);
+        $lesson = Lesson::find($lessonID);
         $lesson->name = \request("name");
         $lesson->age_from = \request("ageFrom");
         $lesson->age_to = \request("ageTo");
-        $lesson->day = \request("day");
-        $lesson->lesson_start_time = \request("start_time");
-        $lesson->lesson_end_time = \request("end_time");
         $lesson->km_id = \request("km_id");
-        $lesson->location_id = \request("location");
         $lesson->short_description = \request("shortLessonDescription");
         $lesson->long_description = \request("longLessonDescription");
         $lesson->season_start = \request("seasonStart");
         $lesson->season_end = \request("seasonEnd");
         $lesson->is_visible = (\request("is_visible") != null);
-        $lesson->is_available = (\request("is_available") != null);
+        $lesson->is_available = (\request("can_signup") != null);
 
-        $DBFoundStyle = DB::table('dance_styles')->where('name', \request('danceStyle'));
-        if ($DBFoundStyle->doesntExist()) {
-            $danceStyle = new DanceStyle();
-            $danceStyle->name = \request('danceStyle');
-            $danceStyle->save();
-        }
-        $lesson->dance_style_id = DanceStyle::where('name', \request('danceStyle'))->first()->id;
+        $danceStyle = DanceStyle::firstOrCreate(['name' => \request('danceStyle')]);
+        $lesson->dance_style_id = $danceStyle->id;
 
-        $DBFoundSkillLevel = DB::table('skill_levels')->where('name', \request('skillLevel'));
-        if ($DBFoundSkillLevel->doesntExist()) {
-            $skillLevel = new SkillLevel();
-            $skillLevel->name = \request('skillLevel');
-            $skillLevel->save();
-        }
-        $lesson->skill_Level_id = SkillLevel::where('name', \request('skillLevel'))->first()->id;
+        $skillLevel = SkillLevel::firstOrCreate(['name' => \request('skillLevel')]);
+        $lesson->skill_Level_id = $skillLevel->id;
+
         $lesson->save();
         $lesson->teachers()->sync(\request('teachers'));
+
+        foreach ($request->input('start_times') as $index => $startTime) {
+            LessonTimeLocation::updateOrCreate(
+                ['lesson_id' => $lesson->id, 'week_day' => $request->input('days')[$index]],
+                ['start_time' => Carbon::parse($startTime)->format('H:i'), 'end_time' => Carbon::parse($request->input('end_times')[$index])->format('H:i'), 'location_id' => $request->input('locations')[$index]]
+            );
+        }
+        if ($request->input('timeslotsToDeleteInput') != null){
+            foreach (json_decode($request->input('timeslotsToDeleteInput')) as $timeslotId) {
+                LessonTimeLocation::destroy($timeslotId);
+            }
+        }
+
         return redirect(route('admin.lesson.index'));
     }
 

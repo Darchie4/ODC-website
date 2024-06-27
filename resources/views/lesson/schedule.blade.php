@@ -76,11 +76,11 @@
                                         <div class="mainInfoContainer">
                                             <div class="leftInfoContainer">
                                                 <b>Alder:</b> {{$lesson -> age_from}} - {{$lesson -> age_to}} <br>
-                                                <b>Tidspunkt:</b> {{$lesson -> day}} {{Carbon::parse($lesson -> lesson_start_time)->format('H:i')}}
-                                                - {{Carbon::parse($lesson -> lesson_end_time)->format('H:i')}}
-                                                <br>
-                                                <b>Lokation:</b> <a
-                                                    href="{{route("location.index")}}">{{$lesson -> location -> room_name}}</a>
+                                                <b>Tidspunkt:</b> <br>
+                                                @foreach($lesson->lessonTimeLocations()->get() as $timeSlot)
+                                                    {{$timeSlot->dayName()}} {{Carbon::parse($timeSlot -> start_time)->format('H:i')}}
+                                                    - {{Carbon::parse($timeSlot -> end_time)->format('H:i')}} <a href="{{route('location.index')}}">{{$timeSlot -> location()->first() -> room_name}}</a><br>
+                                                @endforeach
                                                 <br>
                                                 <b>Stilart:</b> {{$lesson -> skillLevel -> name}} <a
                                                     href="{{route("schedule.search", ["styleID" => $lesson -> danceStyle -> id])}}">{{$lesson -> danceStyle -> name}}</a>

@@ -31,4 +31,11 @@ class Lesson extends Model
     {
         return $this->belongsTo(SkillLevel::class);
     }
+    /**
+     * Get the location(s) and time(s) of the lesson
+     */
+    public function lessonTimeLocations(): HasMany
+    {
+        return $this->hasMany(LessonTimeLocation::class);
+    }
 }
