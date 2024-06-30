@@ -9,6 +9,11 @@ hr {
     display: flex;
 }
 
+.with-col-flex{
+    display: flex;
+    flex-direction: column;
+}
+
 .with-margin {
     margin-right: auto;
     margin-left: auto;

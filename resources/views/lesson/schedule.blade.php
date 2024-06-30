@@ -11,57 +11,41 @@
 @section('content')
     <article>
         <div class="programTextContainer">
-            <h1 class="centered">Program</h1>
-
-            <h2>Tilmelding åben!</h2>
-
-            Så fik vi programmet for 23/24 sæsonen klar og tilmeldingen er nu <b>åben!</b><br>
-            Herunder kan du se de stilarter vi tilbyder og ved et hurtigt klik kan du se hvilke hold vi har med præcis
-            din yndlings stilart, eller du kan bare rulle ned og kigge igennem alle vores hold, der er med sikkerhed et
-            for dig!
-
-
-            <hr>
-
-            <div class="with-flex">
-                <div class="split-space-2">
-                    <h3>Træningsmedlemskab</h3>
-                    <p class="small-text no-margin">
-                        I ODC tilbyder vi mulighed for som sportsdanser at deltage i undervisningen på enkeltdage, selvom man er medlem af andre klubber, dette kræver dog et træningsmedlemsskab.  <br>
-                        Derudover tilbyder der mulighed for selvtræning i klubbens lokaler for medlemmerne. <br>
-                        <a href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=16">Klik her
-                            for at læse mere</a>
-                    </p>
-                </div>
-
-                <hr class="verticalHr">
-
-                <div class="split-space-2">
-                    <h3>Støttemedlemskab</h3>
-                    <p class="small-text no-margin">
-                        Ønsker man at blive et støttemedlem i klubben kan man læse mere om det <a
-                            href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=15">her</a>
-                    </p>
-                </div>
-            </div>
-            <hr>
-
             <h1 class="centered">Hold oversigt</h1>
+
+            <div class="centered">
+                <a href="{{asset('others/pdf/Program-24_25.pdf')}}" download rel="noopener noreferrer" target="_blank">
+                    Klik her for at downloade vores program
+                </a><br>
+                Herunder kan du se de stilarter vi tilbyder og ved et hurtigt klik kan du se hvilke hold vi har med præcis
+                din yndlings stilart, eller du kan bare rulle ned og kigge igennem alle vores hold, der er med sikkerhed et
+                for dig!
+
+            </div>
+
+
 
 
         </div>
 
+        <div class="danceStylesContainer">
+            <h2 class="centered danceStylesTitle">Stilarter</h2>
+            <article class="danceStyles centered">
 
-        <article class="danceStyles">
-            <a class="danceStyleButton" href="{{route("schedule")}}">Alle hold</a>
+                <a class="danceStyleButton" href="{{route("schedule")}}">Alle hold</a>
 
-            @foreach($danceStyles as $danceStyle)
-                <a class="danceStyleButton"
-                   href="{{route("schedule.search", $danceStyle->id)}}">{{$danceStyle -> name}}</a>
-            @endforeach
-
-
-        </article>
+                @foreach($danceStyles as $danceStyle)
+                    <a class="danceStyleButton"
+                       href="{{route("schedule.search", $danceStyle->id)}}">{{$danceStyle -> name}}</a>
+                @endforeach
+            </article>
+            <hr class="no-margin">
+        </div>
+        @if(count($danceStylesToList) == 1 && Lesson::where('dance_style_id', $danceStylesToList[0]->id)->get()->isEmpty())
+            <div class="noClassesContainer with-flex">
+                <b class="centered textRed">Beklager, vi har pt. ingen hold i denne stilart</b>
+            </div>
+        @endif
         @foreach($danceStylesToList as $danceStyle)
             @if(!Lesson::where('dance_style_id', $danceStyle->id)->get()->isEmpty())
                 <h1>{{$danceStyle->name}}</h1>
@@ -121,6 +105,30 @@
                 </section>
             @endif
         @endforeach
+
+        <hr>
+        <div class="with-flex">
+            <div class="split-space-2">
+                <h3>Træningsmedlemskab</h3>
+                <p class="small-text no-margin">
+                    I ODC tilbyder vi mulighed for som sportsdanser at deltage i undervisningen på enkeltdage, selvom man er medlem af andre klubber, dette kræver dog et træningsmedlemsskab.  <br>
+                    Derudover tilbyder der mulighed for selvtræning i klubbens lokaler for medlemmerne. <br>
+                    <a href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=16">Klik her
+                        for at læse mere</a>
+                </p>
+            </div>
+
+            <hr class="verticalHr">
+
+            <div class="split-space-2">
+                <h3>Støttemedlemskab</h3>
+                <p class="small-text no-margin">
+                    Ønsker man at blive et støttemedlem i klubben kan man læse mere om det <a
+                        href="https://odensedansecenter.klub-modul.dk/cms/TeamEnrollmentAlt.aspx?TeamNameID=15">her</a>
+                </p>
+            </div>
+        </div>
+        <hr>
 
     </article>
 @endsection
