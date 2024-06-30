@@ -98,7 +98,7 @@
             <br>
             <datalist id="$skillLevels">
                 @foreach($skillLevels as $skillLevel)
-                    <option value="{{$skillLevel->id}}">{{$skillLevel->name}}</option>
+                    <option value="{{$skillLevel->name}}">{{$skillLevel->name}}</option>
                 @endforeach
             </datalist>
 
@@ -110,7 +110,7 @@
                     name="teachers[]" required>
                 @foreach($teachers as $teacher)
                     <option
-                        value={{$teacher -> name}} {{$lesson -> teachers()->where('teachers.id', $teacher->id)->exists() ? 'selected' : '' }}>{{$teacher->name}}</option>
+                        value={{$teacher -> id}} {{$lesson -> teachers()->where('teachers.id', $teacher->id)->exists() ? 'selected' : '' }}>{{$teacher->name}}</option>
                 @endforeach
             </select>
             @error('teachers')
