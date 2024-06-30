@@ -110,7 +110,7 @@
                     name="teachers[]" required>
                 @foreach($teachers as $teacher)
                     <option
-                        value={{$teacher -> id}} {{$lesson -> teachers()->where('teachers.id', $teacher->id)->exists() ? 'selected' : '' }}>{{$teacher->name}}</option>
+                        value={{$teacher -> name}} {{$lesson -> teachers()->where('teachers.id', $teacher->id)->exists() ? 'selected' : '' }}>{{$teacher->name}}</option>
                 @endforeach
             </select>
             @error('teachers')
