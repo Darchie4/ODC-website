@@ -77,8 +77,6 @@ nav > div > ul > li:last-child {
 
 .danceStyles{
     display: flex;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -94,7 +92,7 @@ nav > div > ul > li:last-child {
     margin-top: 2vh;
     margin-bottom: 2vh;
     white-space: nowrap;
-    margin-right: 1.5vw;
+    margin-right: 1vw;
 }
 
 .lessonsContainer{
@@ -151,6 +149,27 @@ nav > div > ul > li:last-child {
 
 .small-text{
     font-size: 15px;
+}
+
+.danceStylesContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.danceStylesTitle{
+    color: rgb(41, 128, 187);
+
+    margin-top: 4vh;
+    margin-bottom: 0;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.noClassesContainer{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 @media screen and (max-device-width: 480px) {
