@@ -19,13 +19,10 @@
 
     <article class="splitInfoBox">
         <div class="leftInfoColumn">
-            <h1>Tak for sæsonen!</h1>
-                Nu er sæsonen så småt ved at være slut, vi har den sidste dans i uge 25.<br>
-            <b>Men frygt ej!</b> Vi vender stærkt tilbage igen efter sommerferien!<br>
-                Vi arbejder på højtryk for at få udarbejdet et fantastisk program med en masse fede hold til næste sæson og vi forventer at kunne åbne for tilmeldinger den 1. Juli. Dertil bestræber vi os også på at holde en masse events så det er virkelig ikke noget man vil gå glip af. <br>
-                <b>Følg med <a href="{{route("schedule")}}">her</a></b> på hjemmesiden eller på vores sociale medier hvor vi vil melde ud når næste sæsons program er klart.<br><br>
-                Vi takker for en forrygende sæson og håber på at se dig igen til den næste!
-
+            <h1>Tilmeldingen er åben!</h1>
+                Så er vi klar med <b>programmet for 24/25 sæsonen</b> Og tilmeldingen er åben!<br>
+                Skynd dig ind og tilmeld dig til dit yndlingshold eller se hvilke nye spændende ting vi har på programmet <b><a href="{{route("schedule")}}">her</a></b><br>
+                Vi glæder os meget til at se dig igen eller byde dig velkommen for første gang i den kommende sæson.
 
             <h2>Husk at følge os på de sociale medier!</h2>
             Vi er både på <a href="https://www.facebook.com/OdenseDanseCenter/">Facebook</a> og
