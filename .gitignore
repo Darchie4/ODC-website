@@ -20,3 +20,5 @@ Homestead.json
 /database/seeders/*
 
 open_workspace.bat
+
+public/sitemap.xml
