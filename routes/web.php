@@ -22,7 +22,7 @@ use Stevebauman\Location\Facades\Location;
 |
 */
 
-Route::get('/sitemap', function () {
+Route::get('/sitemapGenerate', function () {
     SitemapGenerator::create('https://odensedansecenter.dk/')
         ->writeToFile(public_path('sitemap.xml'));
     return 'Sitemap has been generated';

@@ -102,7 +102,7 @@
                 <br>
                 <datalist id="$skillLevels">
                     @foreach($skillLevels as $skillLevel)
-                        <option value="{{$skillLevel->id}}">{{$skillLevel->name}}</option>
+                        <option value="{{$skillLevel->name}}">{{$skillLevel->name}}</option>
                     @endforeach
                 </datalist>
 

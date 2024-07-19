@@ -10,12 +10,12 @@ return new class extends Migration
     {
         Schema::create('custom_route_statistics', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->cascadeOnDelete();
             $table->unsignedBigInteger('team_id')->nullable(); // Can be changed to the following if your application uses teams: $table->foreignId('team_id')->nullable()->constrained();
             $table->string('method')->nullable();
             $table->string('route')->nullable();
             $table->integer('status')->nullable();
-            $table->foreignId('user_location_id')->nullable()->constrained();
+            $table->foreignId('user_location_id')->nullable();
             $table->dateTime('date');
             $table->unsignedInteger('counter');
 

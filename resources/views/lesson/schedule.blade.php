@@ -39,9 +39,9 @@
                        href="{{route("schedule.search", $danceStyle->id)}}">{{$danceStyle -> name}}</a>
                 @endforeach
             </article>
-            <hr class="no-margin">
         </div>
-        @if(count($danceStylesToList) == 1 && Lesson::where('dance_style_id', $danceStylesToList[0]->id)->get()->isEmpty())
+        <hr class="danceStyleLessonDivider">
+    @if(count($danceStylesToList) == 1 && Lesson::where('dance_style_id', $danceStylesToList[0]->id)->get()->isEmpty())
             <div class="noClassesContainer with-flex">
                 <b class="centered textRed">Beklager, vi har pt. ingen hold i denne stilart</b>
             </div>

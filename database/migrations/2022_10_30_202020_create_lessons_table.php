@@ -25,8 +25,8 @@ return new class extends Migration
             $table->boolean("is_available")->default(true);
             $table->boolean("is_visible")->default(true);
             $table->string("km_id") -> unique();
-            $table->foreignId("dance_style_id") -> constrained();
-            $table->foreignId("skill_level_id") -> constrained();
+            $table->foreignId("dance_style_id");
+            $table->foreignId("skill_level_id");
             $table->timestamps();
 
         });
