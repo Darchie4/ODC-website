@@ -12,6 +12,11 @@ class LogFailedRequests {
     public function handle($request, \Closure  $next)
     {
         $response = $next($request);
+
+        if (app()->environment() == 'testing') {
+            return $response;
+        }
+
         app('log')->info("Request Captured", $request->all());
         if ($response->getStatusCode() != 200) {
             $userLocation = null;
