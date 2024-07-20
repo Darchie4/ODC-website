@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BoardMemberController;
+use App\Http\Controllers\BoardTitelController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ServeErrorController;
@@ -109,6 +110,11 @@ Route::prefix('admin')->group(function () {
                 Route::post('/edit/{lessonID}', [LessonController::class, 'doEdit'])->name('admin.lesson.doEdit');
                 Route::get('/delete/{lessonID}', [LessonController::class, 'destroy'])->name('admin.lesson.destroy');
                 Route::get('/doDelete/{lessonID}', [LessonController::class, 'doDestroy'])->name('admin.lesson.doDestroy');
+            });
+
+            Route::prefix('boardTitel')->group(function () {
+               Route::post('/create', [BoardTitelController::class, 'create'])->name('admin.boardTitel.create');
+               Route::post('/edit/{boardTitle}', [BoardTitelController::class, 'update'])->name('admin.boardTitel.update');
             });
         });
     });
