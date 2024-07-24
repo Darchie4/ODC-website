@@ -13,6 +13,7 @@
             <a class="headerRowLink" href="{{route("admin.teacher.index")}}"><li>Undervisere</li></a>
             <a class="headerRowLink" href="{{route("admin.lesson.index")}}"><li>Hold</li></a>
             <a class="headerRowLink" href="{{route("admin.location.index")}}"><li>Lokationer</li></a>
+            <a class="headerRowLink" href="{{route("admin.board.index")}}"><li>Bestyrelsen</li></a>
             <a class="headerRowLink" href="/stats"><li>Statistikker</li></a>
         </ul>
     </div>

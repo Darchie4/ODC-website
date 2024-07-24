@@ -22,3 +22,5 @@ Homestead.json
 open_workspace.bat
 
 public/sitemap.xml
+
+.env.testing
