@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->year('elected_year');
             $table->string('img_path');
+
+            $table->foreignId('board_title_id');
 
             $table->timestamps();
         });

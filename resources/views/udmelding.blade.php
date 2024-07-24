@@ -31,10 +31,10 @@
 
         <b>Ved månedlig betaling er der en udmeldelsesperiode på løbende måned plus 30 dage.</b><br>
 
-        Sæsonen er gældende fra medio august 2023 til ultimo juni 2024.<br><br>
+        Sæsonen er gældende fra medio august 2024 til ultimo juni 2025.<br><br>
 
         Medlemskab ophører automatisk ved sæsonens udløb.<br>
-        OBS dette gælder ikke træningsmedlemskaber, da disse er løbende abonnementer, hvor de almindelige udmeldelsesbetingelser gælder hele året.<br>
+        <b>OBS</b> dette gælder ikke træningsmedlemskaber, da disse er løbende abonnementer, hvor de almindelige udmeldelsesbetingelser gælder hele året.<br>
         <br>
         <br>
 

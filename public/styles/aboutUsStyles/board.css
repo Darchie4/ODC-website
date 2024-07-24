@@ -1,0 +1,51 @@
+h1 {
+    font-size: max(22px, 3vw);
+    color: rgb(41, 128, 187);
+}
+.boardMembersRowContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.boardMemberContainer {
+    margin: 1%;
+    border-radius: 4px;
+    width: min(22%, 260px);
+    flex: 0 1 auto;
+}
+.boardMemberTextContainer {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.boardMemberImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    max-width: min(250px, 100%);
+    max-height: 250px;
+    border-radius: 50%;
+}
+
+.boardMemberName {
+    margin-top: 4%;
+    margin-bottom: 0;
+    font-size: 1.6em;
+    text-align: center;
+    color: rgb(41, 128, 187);
+}
+
+.boardMemberTitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1em;
+    text-align: center;
+    color: rgb(140, 140, 140);
+}
+
+.boardMembersContainer {
+    display: block;
+
+}

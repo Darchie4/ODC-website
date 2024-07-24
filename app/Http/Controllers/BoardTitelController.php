@@ -33,7 +33,8 @@ class BoardTitelController extends Controller
             'sorting_index' => ['required', 'integer'],
         ]);
 
-        if (BoardTitle::where('sorting_index', \request('sorting_index'))->first()->id != $boardTitle->id) {
+        $existingWithSameIndex = BoardTitle::where('sorting_index', \request('sorting_index'))->first();
+        if ($existingWithSameIndex != null && $existingWithSameIndex->id != $boardTitle->id) {
             return back()->withErrors(['msg' => 'Der eksistere allerede en titel med det index']);
         }
 
@@ -44,4 +45,10 @@ class BoardTitelController extends Controller
 
         return back();
     }
+
+    public function delete(BoardTitle $boardTitle){
+        $boardTitle->delete();
+        return back();
+    }
+
 }

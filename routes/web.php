@@ -103,7 +103,7 @@ Route::prefix('admin')->group(function () {
             });
 
             Route::prefix('/lesson')->group(function () {
-                Route::get('/Index', [LessonController::class, 'adminIndex'])->name('admin.lesson.index');
+                Route::get('/index', [LessonController::class, 'adminIndex'])->name('admin.lesson.index');
                 Route::get('/create', [LessonController::class, 'create'])->name('admin.lesson.create');
                 Route::post('/create', [LessonController::class, 'doCreate'])->name('admin.lesson.doCreate');
                 Route::get('/edit/{lessonID}', [LessonController::class, 'edit'])->name('admin.lesson.edit');
@@ -112,9 +112,19 @@ Route::prefix('admin')->group(function () {
                 Route::get('/doDelete/{lessonID}', [LessonController::class, 'doDestroy'])->name('admin.lesson.doDestroy');
             });
 
+            Route::prefix('board')->group(function () {
+                Route::get('/index', [BoardMemberController::class, 'adminIndex'])->name('admin.board.index');
+                Route::get('/create', [BoardMemberController::class, 'create'])->name('admin.board.create');
+                Route::post('/create', [BoardMemberController::class, 'doCreate'])->name('admin.board.doCreate');
+                Route::get('/update/{boardMember}', [BoardMemberController::class, 'update'])->name('admin.board.update');
+                Route::post('/update/{boardMember}', [BoardMemberController::class, 'doUpdate'])->name('admin.board.doUpdate');
+                Route::delete('delete/{boardMember}', [BoardMemberController::class, 'destroy'])->name('admin.board.destroy');
+            });
+
             Route::prefix('boardTitel')->group(function () {
-               Route::post('/create', [BoardTitelController::class, 'create'])->name('admin.boardTitel.create');
-               Route::post('/edit/{boardTitle}', [BoardTitelController::class, 'update'])->name('admin.boardTitel.update');
+               Route::post('/create', [BoardTitelController::class, 'create'])->name('admin.boardTitel.doCreate');
+               Route::post('/edit/{boardTitle}', [BoardTitelController::class, 'update'])->name('admin.boardTitel.doUpdate');
+               Route::delete('/delete/{boardTitle}', [BoardTitelController::class, 'delete'])->name('admin.boardTitel.doDelete');
             });
         });
     });
