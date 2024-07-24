@@ -1,7 +1,7 @@
 @extends('layout.publicFull')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('styles/bridalwaltz.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}"/>
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
         Vi er eksperter i, at undervise i brudevals, men derfor er vi absolut ikke de dyreste. Tværtimod - skal du have kyndig brudevals undervisning på fyn, så er vi i den billige ende, sammenlignet med andre udbydere på fyn og i Odense.<br><br>
 
-        Om I ønsker brudevals undervisning som en klassisk brudevals eller ønsker individuelle trin, så kan vi håndtere det. Vi er vant til at undervise, både brudevals men også de klassiske standard og latin danse kendt fra fx. vild med dans.<br><br>
+        Om I ønsker brudevals undervisning som en klassisk brudevals eller ønsker individuelle trin, så kan vi håndtere det. Vi er vant til at undervise, både brudevals men også de klassiske standard og latin danse kendt fra fx. Vild Med Dans.<br><br>
 
         <h3>Kontakt os gerne for en uforpligtende snak om netop jeres brudvals undervisning.<br>
         Vi kan kontaktes både telefonisk og via sms på tlf. <a href="tel:+45-70-60-80-12">70 60 80 12</a><br>

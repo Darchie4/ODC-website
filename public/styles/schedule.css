@@ -89,8 +89,8 @@ nav > div > ul > li:last-child {
     color: white;
     font-weight: bold;
     line-height: 25px;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 0;
     white-space: nowrap;
     margin-right: 1vw;
 }
@@ -163,8 +163,9 @@ nav > div > ul > li:last-child {
     margin-bottom: 0;
 }
 
-.no-margin{
-    margin: 0;
+.danceStyleLessonDivider{
+    margin-top: 1vh;
+    margin-bottom: 0;
 }
 
 .noClassesContainer{

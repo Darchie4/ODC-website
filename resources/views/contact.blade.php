@@ -5,6 +5,8 @@
     @php($customDescription = true)
     <meta name="description"
           content="Vi kan kontaktes pr telefon mellem kl 18 og 20 i hverdagene mandag-torsdag på 70 60 80 12, eller alternativt på mail: Formand@odensedansecenter.dk">
+    <link rel="stylesheet" href="{{ asset('styles/contact.css') }}"/>
+
 @endsection
 
 @section('content')

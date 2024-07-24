@@ -6,9 +6,6 @@
     <title>Odense Danse Center</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    {{--    <link rel="stylesheet" href="{{ asset('styles/admin/lesson/createLesson.css') }}"/>--}}
-
-    {{--    <link rel="stylesheet" href="{{ asset('styles/reusables/inputAndFormStyle.css') }}"/>--}}
     <link rel="stylesheet" href="{{ asset('styles/reusables/global.css') }}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 
@@ -52,7 +49,6 @@
     @endif
     <div class="container">
     <form class="row g-3" novalidate action="{{route("admin.lesson.doCreate")}}" method="post"
-
               enctype="multipart/form-data">
             @csrf
             @method('post')
@@ -102,7 +98,7 @@
                 <br>
                 <datalist id="$skillLevels">
                     @foreach($skillLevels as $skillLevel)
-                        <option value="{{$skillLevel->id}}">{{$skillLevel->name}}</option>
+                        <option value="{{$skillLevel->name}}">{{$skillLevel->name}}</option>
                     @endforeach
                 </datalist>
 
