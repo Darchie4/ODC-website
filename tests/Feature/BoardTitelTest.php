@@ -2,12 +2,13 @@
 
 namespace Tests\Feature;
 
+use App\Models\BoardMember;
 use App\Models\BoardTitle;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Testing\TestResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 class BoardTitelTest extends TestCase
@@ -135,7 +136,42 @@ class BoardTitelTest extends TestCase
         $response3 = $this->sendUpdateRequest(BoardTitle::first()->id, $name2, $sorting_index2);
         $this->assertEquals(302, $response3->getStatusCode());
         $response2->assertSessionHasErrors(['msg' => 'Der eksistere allerede en titel med det index']);
+    }
 
+    /**
+     * Testing that an existing Board Titel can be deleted
+     *
+     * @return void
+     * @test
+     */
+    public function test_can_delete_existing_boardTitel()
+    {
+        $this->createAndLoginAsAdmin();
+
+        $name = 'test';
+        $sorting_index = 1;
+
+        $response = $this->sendCreateRequest($name, $sorting_index);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertTrue(BoardTitle::where('name', $name)->exists());
+
+        $deleteResponse = $this->delete(route('admin.boardTitel.doDelete', ['boardTitle' => BoardTitle::where('name', $name)->first()->id]));
+        $this->assertEquals(302, $deleteResponse->getStatusCode());
+        $this->assertFalse(BoardTitle::where('name', $name)->exists());
+    }
+
+    /**
+     * Testing that attempting deleting a non-existing board title will return 404
+     *
+     * @return void
+     * @test
+     */
+    public function test_cannot_delete_non_existing_boardTitel()
+    {
+        $this->createAndLoginAsAdmin();
+
+        $deleteResponse = $this->delete(route('admin.boardTitel.doDelete', ['boardTitle' => 1]));
+        $this->assertEquals(404, $deleteResponse->getStatusCode());
     }
 
     /**
@@ -159,7 +195,7 @@ class BoardTitelTest extends TestCase
      */
     public function sendCreateRequest(string $name, int $sorting_index): TestResponse
     {
-        return $this->post(route('admin.boardTitel.create'), array(
+        return $this->post(route('admin.boardTitel.doCreate'), array(
             '_token' => csrf_token(),
             'name' => $name,
             'sorting_index' => $sorting_index
@@ -174,7 +210,7 @@ class BoardTitelTest extends TestCase
      */
     public function sendUpdateRequest(int $id, string $name, int $sorting_index): TestResponse
     {
-        return $this->post(route('admin.boardTitel.update', $id), array(
+        return $this->post(route('admin.boardTitel.doUpdate', $id), array(
             '_token' => csrf_token(),
             'name' => $name,
             'sorting_index' => $sorting_index
