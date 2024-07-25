@@ -118,13 +118,13 @@ Route::prefix('admin')->group(function () {
                 Route::post('/create', [BoardMemberController::class, 'doCreate'])->name('admin.board.doCreate');
                 Route::get('/update/{boardMember}', [BoardMemberController::class, 'update'])->name('admin.board.update');
                 Route::post('/update/{boardMember}', [BoardMemberController::class, 'doUpdate'])->name('admin.board.doUpdate');
-                Route::delete('delete/{boardMember}', [BoardMemberController::class, 'destroy'])->name('admin.board.destroy');
+                Route::delete('delete/{boardMember}', [BoardMemberController::class, 'destroy'])->name('admin.board.doDestroy');
             });
 
             Route::prefix('boardTitel')->group(function () {
                Route::post('/create', [BoardTitelController::class, 'create'])->name('admin.boardTitel.doCreate');
                Route::post('/edit/{boardTitle}', [BoardTitelController::class, 'update'])->name('admin.boardTitel.doUpdate');
-               Route::delete('/delete/{boardTitle}', [BoardTitelController::class, 'delete'])->name('admin.boardTitel.doDelete');
+               Route::delete('/delete/{boardTitle}', [BoardTitelController::class, 'delete'])->name('admin.boardTitel.doDestroy');
             });
         });
     });

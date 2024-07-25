@@ -155,7 +155,7 @@ class BoardTitelTest extends TestCase
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertTrue(BoardTitle::where('name', $name)->exists());
 
-        $deleteResponse = $this->delete(route('admin.boardTitel.doDelete', ['boardTitle' => BoardTitle::where('name', $name)->first()->id]));
+        $deleteResponse = $this->delete(route('admin.boardTitel.doDestroy', ['boardTitle' => BoardTitle::where('name', $name)->first()->id]));
         $this->assertEquals(302, $deleteResponse->getStatusCode());
         $this->assertFalse(BoardTitle::where('name', $name)->exists());
     }
@@ -170,7 +170,7 @@ class BoardTitelTest extends TestCase
     {
         $this->createAndLoginAsAdmin();
 
-        $deleteResponse = $this->delete(route('admin.boardTitel.doDelete', ['boardTitle' => 1]));
+        $deleteResponse = $this->delete(route('admin.boardTitel.doDestroy', ['boardTitle' => 1]));
         $this->assertEquals(404, $deleteResponse->getStatusCode());
     }
 
