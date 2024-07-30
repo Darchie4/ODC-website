@@ -30,22 +30,18 @@
             billeder eller videoer af hvad der ellers forgår på danseskolen.
         </div>
         <div class="rightInfoColumn">
-        <!--
 
             <h1>Workshops</h1>
-            ODC tilstræber at afholde et antal workshops i løbet af sæsonen, hvor vi ofte vil invitere eksterne trænere
-            til at stå for undervisningen. I workshops vil der være bestemte temaer for dagen, hvor der er fokus på at
-            udvikle sin dans og lære nyt på en anden måde end ved den daglige træning. Derudover er det altid super
-            hyggelige dage, hvor vi bliver blandet på tværs af holdene og ofte også med par ude fra andre foreninger og
-            danseskoler. Alle er velkomne og der er også mulighed for at tilkøbe enetimer med vores
-            instruktører.<br><br>
+            Vi kan allerede nu løfte sløret for at vi i den kommende sæson afholder workshop;<br>
+            <b>den 10. november</b>, hvor <b>Anders Koch</b> kommer på besøg,<br>
+            <b>den 25 januar</b>, hvor <b>Peter og Helena</b> kommer til Odense<br>
+            <b>den 8 marts</b>, hvor <b>Julie</b> står for undervisningen. <br>
+            Husk allerede nu at sætte kryds i kalenderen på de datoer<br><br>
 
-            <b>Lørdag den 6. april</b> holder vi workshop med Anders Koch <b class="blueText"><a
-                    href="https://odensedansecenter.klub-modul.dk/cms/EventOverview.aspx">Tilmed dig
-                    her!</a></b><br><br>
+{{--            <b>Lørdag den 6. april</b> holder vi workshop med Anders Koch <b class="blueText"><a--}}
+{{--                    href="https://odensedansecenter.klub-modul.dk/cms/EventOverview.aspx">Tilmed dig--}}
+{{--                    her!</a></b><br><br>--}}
 
-
-           -->
             <div class="fb-page" data-href="https://www.facebook.com/OdenseDanseCenter" data-tabs="timeline"
                  data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true"
                  data-hide-cover="false" data-show-facepile="false">

@@ -10,32 +10,26 @@
 @section('content')
     <h1 class="centered">Kalender og Lukkedage</h1>
     Her kan du se hvilke spændende planer vi har for året og hvilke dage vi tager en pause fra dansen og holder ferie.
-    <h2>Lukkedage</h2>
-    Vi holder dansefri på følgende datoer:
 
+    
+    <h2>Vigtige datoer</h2>
     <ul>
-        <li class="closedDate"><b>16. Oktober - 22. Oktober</b><span>, Efterårsferie</span></li>
-        <li class="closedDate"><b>18. December - 3. Januar</b><span>, Juleferie</span></li>
-        <li class="closedDate"><b>11. Februar - 18. Februar</b><span>, Vinterferie</span></li>
-        <li class="closedDate"><b>26. Marts - 1. April</b><span>, Påske</span></li>
-        <li class="closedDate"><b>9. Maj - 12. Maj</b></li>
-        <li class="closedDate"><b>20. Maj</b></li>
+        <li class="closedDate"><b>21. August</b><span>, sæsonopstart for sportsdans</span></li>
+        <li class="closedDate"><b>19. August</b><span>, sæsonopstart for alle hold bortset fra pardans og dans for studerende</span></li>
+        <li class="closedDate"><b>2. September</b><span>, sæsonopstart for pardans og dans for studerende</span></li>
+        <li class="closedDate"><b>27 September</b><span>, Danse Cafe</span></li>
+        <li class="closedDate"><b>10 November</b><span>, Workshop med Anders Koch</span></li>
+        <li class="closedDate"><b>15. November</b><span>, Danse Cafe</span></li>
+        <li class="closedDate"><b>15. December</b><span>, Julebal</span></li>
+        <li class="closedDate"><b>25 Januar</b><span>, Workshop med Peter og Helena</span></li>
+        <li class="closedDate"><b>8. Marts</b><span>, Workshop med Julie</span></li>
+        <li class="closedDate"><b>17. Maj</b><span>, Sæsonopvisning</span></li>
+        <li class="closedDate"><b>22. Juni</b><span>, Dansesæson slut</span></li>
     </ul>
-    <b>NB!</b> Dage markeret med <b>*</b> I kalenderne nedenfor er der stadig undervisning for konkurrenceholdene
-    <article class="with-flex calendarsContainer">
-        <div class="with-flex calendarContainer">
-            <h2 class="centered">Kalender 2023</h2>
-            <object data={{asset("others/pdf/calendar_Q3-Q4_2023.pdf")}} type="application/pdf" width="100%" height="500px">
-                <p>Kunne ikke vise PDF. <a href={{asset("others/pdf/calendar_Q3-Q4_2023.pdf")}}>Klik her</a> for at downloade i stedet.</p>
 
-            </object>
-        </div>
-        <hr>
-        <div class="with-flex calendarContainer">
-            <h2 class="centered">Kalender 2024</h2>
-            <object data={{asset("others/pdf/calendar_Q1-Q2_2024.pdf")}} type="application/pdf" width="100%" height="500px">
-                <p>Kunne ikke vise PDF. <a href={{asset("others/pdf/calendar_Q1-Q2_2024.pdf")}}>Klik her</a> for at downloade i stedet.</p>
-            </object>
-        </div>
-    </article>
+    <h2 class="centered">Kalender for sæson 2024/2025</h2>
+    <object data={{asset("others/pdf/Kalender_2024-2025.pdf")}} type="application/pdf" width="100%" height="500px">
+        <p>Kunne ikke vise PDF. <a href={{asset("others/pdf/Kalender_2024-2025.pdf")}}>Klik her</a> for at downloade i stedet.</p>
+    </object>
+    <b>NB!</b> Dage markeret med <b>*</b> I kalenderne nedenfor er der stadig undervisning for konkurrenceholdene
 @endsection
