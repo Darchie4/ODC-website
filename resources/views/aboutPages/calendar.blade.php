@@ -11,7 +11,7 @@
     <h1 class="centered">Kalender og Lukkedage</h1>
     Her kan du se hvilke spændende planer vi har for året og hvilke dage vi tager en pause fra dansen og holder ferie.
 
-    
+
     <h2>Vigtige datoer</h2>
     <ul>
         <li class="closedDate"><b>21. August</b><span>, sæsonopstart for sportsdans</span></li>

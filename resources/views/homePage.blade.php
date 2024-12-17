@@ -33,9 +33,8 @@
 
             <h1>Workshops</h1>
             Vi kan allerede nu løfte sløret for at vi i den kommende sæson afholder workshop;<br>
-            <b>den 10. november</b>, hvor <b>Anders Koch</b> kommer på besøg,<br>
-            <b>den 25 januar</b>, hvor <b>Peter og Helena</b> kommer til Odense<br>
-            <b>den 8 marts</b>, hvor <b>Julie</b> står for undervisningen. <br>
+            <b>den 25 januar</b>, hvor <b>Peter Poder Christen</b> kommer til Odense<br>
+            <b>den 8 marts</b>, hvor vores egen <b>Julie Graversen </b> står for undervisningen. <br>
             Husk allerede nu at sætte kryds i kalenderen på de datoer<br><br>
 
 {{--            <b>Lørdag den 6. april</b> holder vi workshop med Anders Koch <b class="blueText"><a--}}
