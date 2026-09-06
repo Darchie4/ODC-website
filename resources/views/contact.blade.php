@@ -18,7 +18,7 @@
 
         <br>
 
-        Vi kan kontaktes mellem kl 18 og 20 i hverdagene mandag-torsdag. <br><br>
+        Vi kan kontaktes mellem kl. 16 og 18 i hverdagene mandag-torsdag. <br><br>
 
         Tlf. <a href="tel:+45-70-60-80-12">70 60 80 12</a><br><br>
 
